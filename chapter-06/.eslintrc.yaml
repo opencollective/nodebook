@@ -1,5 +1,4 @@
 rules:
-  strict: off
   max-len:
     - error
     - { code: 63 }

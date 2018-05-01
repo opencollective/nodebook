@@ -4,3 +4,6 @@ parserOptions:
 rules:
   strict: off
   handle-callback-err: off
+  max-len:
+    - error
+    - { code: 63 }
