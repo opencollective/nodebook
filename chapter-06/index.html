@@ -1,0 +1,5300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.6.2">
+<title>Déployer notre code</title>
+<style>
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+/* Uncomment @import statement below to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+script {
+  display: none !important;
+}
+html {
+  /* font-family: sans-serif; */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+a {
+  background: transparent;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace;
+  font-size: 1em;
+}
+pre {
+  white-space: pre-wrap;
+}
+q {
+  quotes: '\201C' '\201D' '\2018' '\2019';
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+input[type='checkbox'],
+input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 18px;
+}
+body {
+  background: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  padding: 0;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  position: relative;
+  cursor: auto;
+  tab-size: 4;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+a:hover {
+  cursor: pointer;
+}
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+object,
+embed {
+  height: 100%;
+}
+img {
+  -ms-interpolation-mode: bicubic;
+}
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-justify {
+  text-align: justify !important;
+}
+.hide {
+  display: none;
+}
+img,
+object,
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+textarea {
+  height: auto;
+  min-height: 50px;
+}
+select {
+  width: 100%;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.stretch {
+  width: 100%;
+}
+p.lead,
+.paragraph.lead > p,
+#preamble > .sectionbody > .paragraph:first-of-type p {
+  font-size: 1.21875em;
+  line-height: 1.6;
+}
+.subheader,
+.admonitionblock td.content > .title,
+.audioblock > .title,
+.exampleblock > .title,
+.imageblock > .title,
+.listingblock > .title,
+.literalblock > .title,
+.stemblock > .title,
+.openblock > .title,
+.paragraph > .title,
+.quoteblock > .title,
+table.tableblock > .title,
+.verseblock > .title,
+.videoblock > .title,
+.dlist > .title,
+.olist > .title,
+.ulist > .title,
+.qlist > .title,
+.hdlist > .title {
+  line-height: 1.45;
+  color: #7a2518;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+#toctitle,
+.sidebarblock > .content > .title,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  direction: ltr;
+}
+a {
+  color: #2156a5;
+  text-decoration: underline;
+  line-height: inherit;
+}
+a:hover,
+a:focus {
+  color: #1d4b8f;
+}
+a img {
+  border: none;
+}
+p {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 1.25em;
+  text-rendering: optimizeLegibility;
+}
+p aside {
+  font-size: 0.875em;
+  line-height: 1.35;
+  font-style: italic;
+}
+h1,
+h2,
+h3,
+#toctitle,
+.sidebarblock > .content > .title,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', 'DejaVu Sans', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #ba3925;
+  text-rendering: optimizeLegibility;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  line-height: 1.0125em;
+}
+h1 small,
+h2 small,
+h3 small,
+#toctitle small,
+.sidebarblock > .content > .title small,
+h4 small,
+h5 small,
+h6 small {
+  font-size: 60%;
+  color: #e99b8f;
+  line-height: 0;
+}
+h1 {
+  font-size: 2.125em;
+}
+h2 {
+  font-size: 1.6875em;
+}
+h3,
+#toctitle,
+.sidebarblock > .content > .title {
+  font-size: 1.375em;
+}
+h4,
+h5 {
+  font-size: 1.125em;
+}
+h6 {
+  font-size: 1em;
+}
+hr {
+  border: solid #ddddd8;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1.25em 0 1.1875em;
+  height: 0;
+}
+em,
+i {
+  font-style: italic;
+  line-height: inherit;
+}
+strong,
+b {
+  font-weight: bold;
+  line-height: inherit;
+}
+small {
+  font-size: 60%;
+  line-height: inherit;
+}
+code {
+  font-family: 'Droid Sans Mono', 'DejaVu Sans Mono', monospace;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+}
+ul,
+ol,
+dl {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 1.25em;
+  list-style-position: outside;
+  font-family: inherit;
+}
+ul,
+ol {
+  margin-left: 1.5em;
+}
+ul li ul,
+ul li ol {
+  margin-left: 1.25em;
+  margin-bottom: 0;
+  font-size: 1em;
+}
+ul.square li ul,
+ul.circle li ul,
+ul.disc li ul {
+  list-style: inherit;
+}
+ul.square {
+  list-style-type: square;
+}
+ul.circle {
+  list-style-type: circle;
+}
+ul.disc {
+  list-style-type: disc;
+}
+ol li ul,
+ol li ol {
+  margin-left: 1.25em;
+  margin-bottom: 0;
+}
+dl dt {
+  margin-bottom: 0.3125em;
+  font-weight: bold;
+}
+dl dd {
+  margin-bottom: 1.25em;
+}
+abbr,
+acronym {
+  text-transform: uppercase;
+  font-size: 90%;
+  color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px dotted #ddd;
+  cursor: help;
+}
+abbr {
+  text-transform: none;
+}
+blockquote {
+  margin: 0 0 1.25em;
+  padding: 0.5625em 1.25em 0 1.1875em;
+  border-left: 1px solid #ddd;
+}
+blockquote cite {
+  display: block;
+  font-size: 0.9375em;
+  color: rgba(0, 0, 0, 0.6);
+}
+blockquote cite::before {
+  content: '\2014 \0020';
+}
+blockquote cite a,
+blockquote cite a:visited {
+  color: rgba(0, 0, 0, 0.6);
+}
+blockquote,
+blockquote p {
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.85);
+}
+@media only screen and (min-width: 768px) {
+  h1,
+  h2,
+  h3,
+  #toctitle,
+  .sidebarblock > .content > .title,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: 2.75em;
+  }
+  h2 {
+    font-size: 2.3125em;
+  }
+  h3,
+  #toctitle,
+  .sidebarblock > .content > .title {
+    font-size: 1.6875em;
+  }
+  h4 {
+    font-size: 1.4375em;
+  }
+}
+table {
+  background: #fff;
+  margin-bottom: 1.25em;
+  border: solid 1px #dedede;
+}
+table thead,
+table tfoot {
+  background: #f7f8f7;
+}
+table thead tr th,
+table thead tr td,
+table tfoot tr th,
+table tfoot tr td {
+  padding: 0.5em 0.625em 0.625em;
+  font-size: inherit;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: left;
+}
+table tr th,
+table tr td {
+  padding: 0.5625em 0.625em;
+  font-size: inherit;
+  color: rgba(0, 0, 0, 0.8);
+}
+table tr.even,
+table tr.alt,
+table tr:nth-of-type(even) {
+  background: #f8f8f7;
+}
+table thead tr th,
+table tfoot tr th,
+table tbody tr td,
+table tr td,
+table tfoot tr td {
+  display: table-cell;
+  line-height: 1.6;
+}
+h1,
+h2,
+h3,
+#toctitle,
+.sidebarblock > .content > .title,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  word-spacing: -0.05em;
+}
+h1 strong,
+h2 strong,
+h3 strong,
+#toctitle strong,
+.sidebarblock > .content > .title strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  font-weight: 400;
+}
+.clearfix::before,
+.clearfix::after,
+.float-group::before,
+.float-group::after {
+  content: ' ';
+  display: table;
+}
+.clearfix::after,
+.float-group::after {
+  clear: both;
+}
+*:not(pre) > code {
+  font-size: 0.9375em;
+  font-style: normal !important;
+  letter-spacing: 0;
+  padding: 0.1em 0.5ex;
+  word-spacing: -0.15em;
+  background-color: #f7f7f8;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  line-height: 1.45;
+  text-rendering: optimizeSpeed;
+  word-wrap: break-word;
+}
+*:not(pre) > code.nobreak {
+  word-wrap: normal;
+}
+*:not(pre) > code.nowrap {
+  white-space: nowrap;
+}
+pre,
+pre > code {
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.9);
+  font-family: 'Droid Sans Mono', 'DejaVu Sans Mono', monospace;
+  font-weight: 400;
+  text-rendering: optimizeSpeed;
+}
+em em {
+  font-style: normal;
+}
+strong strong {
+  font-weight: 400;
+}
+.keyseq {
+  color: rgba(51, 51, 51, 0.8);
+}
+kbd {
+  font-family: 'Droid Sans Mono', 'DejaVu Sans Mono', monospace;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 0.65em;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 0.1em white inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 0.1em #fff inset;
+  margin: 0 0.15em;
+  padding: 0.2em 0.5em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.1em;
+  white-space: nowrap;
+}
+.keyseq kbd:first-child {
+  margin-left: 0;
+}
+.keyseq kbd:last-child {
+  margin-right: 0;
+}
+.menuseq,
+.menuref {
+  color: #000;
+}
+.menuseq b:not(.caret),
+.menuref {
+  font-weight: inherit;
+}
+.menuseq {
+  word-spacing: -0.02em;
+}
+.menuseq b.caret {
+  font-size: 1.25em;
+  line-height: 0.8;
+}
+.menuseq i.caret {
+  font-weight: bold;
+  text-align: center;
+  width: 0.45em;
+}
+b.button::before,
+b.button::after {
+  position: relative;
+  top: -1px;
+  font-weight: 400;
+}
+b.button::before {
+  content: '[';
+  padding: 0 3px 0 2px;
+}
+b.button::after {
+  content: ']';
+  padding: 0 2px 0 3px;
+}
+p a > code:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+#header,
+#content,
+#footnotes,
+#footer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 62.5em;
+  *zoom: 1;
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+}
+#header::before,
+#header::after,
+#content::before,
+#content::after,
+#footnotes::before,
+#footnotes::after,
+#footer::before,
+#footer::after {
+  content: ' ';
+  display: table;
+}
+#header::after,
+#content::after,
+#footnotes::after,
+#footer::after {
+  clear: both;
+}
+#content {
+  margin-top: 1.25em;
+}
+#content::before {
+  content: none;
+}
+#header > h1:first-child {
+  color: rgba(0, 0, 0, 0.85);
+  margin-top: 2.25rem;
+  margin-bottom: 0;
+}
+#header > h1:first-child + #toc {
+  margin-top: 8px;
+  border-top: 1px solid #ddddd8;
+}
+#header > h1:only-child,
+body.toc2 #header > h1:nth-last-child(2) {
+  border-bottom: 1px solid #ddddd8;
+  padding-bottom: 8px;
+}
+#header .details {
+  border-bottom: 1px solid #ddddd8;
+  line-height: 1.45;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 0.25em;
+  color: rgba(0, 0, 0, 0.6);
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+#header .details span:first-child {
+  margin-left: -0.125em;
+}
+#header .details span.email a {
+  color: rgba(0, 0, 0, 0.85);
+}
+#header .details br {
+  display: none;
+}
+#header .details br + span::before {
+  content: '\00a0\2013\00a0';
+}
+#header .details br + span.author::before {
+  content: '\00a0\22c5\00a0';
+  color: rgba(0, 0, 0, 0.85);
+}
+#header .details br + span#revremark::before {
+  content: '\00a0|\00a0';
+}
+#header #revnumber {
+  text-transform: capitalize;
+}
+#header #revnumber::after {
+  content: '\00a0';
+}
+#content > h1:first-child:not([class]) {
+  color: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid #ddddd8;
+  padding-bottom: 8px;
+  margin-top: 0;
+  padding-top: 1rem;
+  margin-bottom: 1.25rem;
+}
+#toc {
+  border-bottom: 1px solid #efefed;
+  padding-bottom: 0.5em;
+}
+#toc > ul {
+  margin-left: 0.125em;
+}
+#toc ul.sectlevel0 > li > a {
+  font-style: italic;
+}
+#toc ul.sectlevel0 ul.sectlevel1 {
+  margin: 0.5em 0;
+}
+#toc ul {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  list-style-type: none;
+}
+#toc li {
+  line-height: 1.3334;
+  margin-top: 0.3334em;
+}
+#toc a {
+  text-decoration: none;
+  white-space: normal;
+}
+#toc a:active {
+  text-decoration: underline;
+}
+#toctitle {
+  color: #7a2518;
+  font-size: 1.2em;
+}
+@media only screen and (min-width: 768px) {
+  #toctitle {
+    font-size: 1.375em;
+  }
+  body.toc2 {
+    padding-left: 16em;
+    padding-right: 1em;
+  }
+  #toc.toc2 {
+    margin-top: 0 !important;
+    background-color: #f8f8f7;
+    position: fixed;
+    width: 15em;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #efefed;
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
+    z-index: 1000;
+    padding: 1.25em 1em;
+    height: 100%;
+    overflow: auto;
+  }
+  #toc.toc2 #toctitle {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.2em;
+  }
+  #toc.toc2 > ul {
+    font-size: 0.85em;
+    margin-bottom: 0;
+  }
+  #toc.toc2 ul ul {
+    margin-left: 0;
+    padding-left: 1em;
+  }
+  #toc.toc2 ul.sectlevel0 ul.sectlevel1 {
+    padding-left: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  body.toc2.toc-right {
+    padding-left: 0;
+    padding-right: 15em;
+  }
+  body.toc2.toc-right #toc.toc2 {
+    border-right-width: 0;
+    border-left: 1px solid #efefed;
+    left: auto;
+    right: 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  body.toc2 {
+    padding-left: 27%;
+    padding-left: 27vw;
+    padding-right: 2%;
+    padding-right: 2vw;
+  }
+  #toc.toc2 {
+    width: 25%;
+    width: 25vw;
+  }
+  #toc.toc2 #toctitle {
+    font-size: 1.375em;
+  }
+  #toc.toc2 ul ul {
+    padding-left: 1.25em;
+  }
+  body.toc2.toc-right {
+    padding-left: 0;
+    padding-right: 20em;
+  }
+}
+#content #toc {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e0e0dc;
+  margin-bottom: 1.25em;
+  padding: 1.25em;
+  background: #f8f8f7;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+#content #toc > :first-child {
+  margin-top: 0;
+}
+#content #toc > :last-child {
+  margin-bottom: 0;
+}
+#footer {
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1.25em;
+}
+#footer-text {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.44;
+}
+#content {
+  margin-bottom: 0.625em;
+}
+.sect1 {
+  padding-bottom: 0.625em;
+}
+@media only screen and (min-width: 768px) {
+  #content {
+    margin-bottom: 1.25em;
+  }
+  .sect1 {
+    padding-bottom: 1.25em;
+  }
+}
+.sect1:last-child {
+  padding-bottom: 0;
+}
+.sect1 + .sect1 {
+  border-top: 1px solid #efefed;
+}
+#content h1 > a.anchor,
+h2 > a.anchor,
+h3 > a.anchor,
+#toctitle > a.anchor,
+.sidebarblock > .content > .title > a.anchor,
+h4 > a.anchor,
+h5 > a.anchor,
+h6 > a.anchor {
+  position: absolute;
+  z-index: 1001;
+  width: 1.5ex;
+  margin-left: -1.5ex;
+  display: block;
+  text-decoration: none !important;
+  visibility: hidden;
+  text-align: center;
+  font-weight: 400;
+}
+#content h1 > a.anchor::before,
+h2 > a.anchor::before,
+h3 > a.anchor::before,
+#toctitle > a.anchor::before,
+.sidebarblock > .content > .title > a.anchor::before,
+h4 > a.anchor::before,
+h5 > a.anchor::before,
+h6 > a.anchor::before {
+  content: '\00A7';
+  font-size: 0.85em;
+  display: block;
+  padding-top: 0.1em;
+}
+#content h1:hover > a.anchor,
+#content h1 > a.anchor:hover,
+h2:hover > a.anchor,
+h2 > a.anchor:hover,
+h3:hover > a.anchor,
+#toctitle:hover > a.anchor,
+.sidebarblock > .content > .title:hover > a.anchor,
+h3 > a.anchor:hover,
+#toctitle > a.anchor:hover,
+.sidebarblock > .content > .title > a.anchor:hover,
+h4:hover > a.anchor,
+h4 > a.anchor:hover,
+h5:hover > a.anchor,
+h5 > a.anchor:hover,
+h6:hover > a.anchor,
+h6 > a.anchor:hover {
+  visibility: visible;
+}
+#content h1 > a.link,
+h2 > a.link,
+h3 > a.link,
+#toctitle > a.link,
+.sidebarblock > .content > .title > a.link,
+h4 > a.link,
+h5 > a.link,
+h6 > a.link {
+  color: #ba3925;
+  text-decoration: none;
+}
+#content h1 > a.link:hover,
+h2 > a.link:hover,
+h3 > a.link:hover,
+#toctitle > a.link:hover,
+.sidebarblock > .content > .title > a.link:hover,
+h4 > a.link:hover,
+h5 > a.link:hover,
+h6 > a.link:hover {
+  color: #a53221;
+}
+.audioblock,
+.imageblock,
+.literalblock,
+.listingblock,
+.stemblock,
+.videoblock {
+  margin-bottom: 1.25em;
+}
+.admonitionblock td.content > .title,
+.audioblock > .title,
+.exampleblock > .title,
+.imageblock > .title,
+.listingblock > .title,
+.literalblock > .title,
+.stemblock > .title,
+.openblock > .title,
+.paragraph > .title,
+.quoteblock > .title,
+table.tableblock > .title,
+.verseblock > .title,
+.videoblock > .title,
+.dlist > .title,
+.olist > .title,
+.ulist > .title,
+.qlist > .title,
+.hdlist > .title {
+  text-rendering: optimizeLegibility;
+  text-align: left;
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 300;
+}
+table.tableblock > caption.title {
+  white-space: nowrap;
+  overflow: visible;
+  max-width: 0;
+}
+.paragraph.lead > p,
+#preamble > .sectionbody > .paragraph:first-of-type p {
+  color: rgba(0, 0, 0, 0.85);
+}
+table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
+  font-size: inherit;
+}
+.admonitionblock > table {
+  border-collapse: separate;
+  border: 0;
+  background: none;
+  width: 100%;
+}
+.admonitionblock > table td.icon {
+  text-align: center;
+  width: 80px;
+}
+.admonitionblock > table td.icon img {
+  max-width: none;
+}
+.admonitionblock > table td.icon .title {
+  font-weight: bold;
+  /* font-family: 'Open Sans', 'DejaVu Sans', sans-serif; */
+  text-transform: uppercase;
+}
+.admonitionblock > table td.content {
+  padding-left: 1.125em;
+  padding-right: 1.25em;
+  border-left: 1px solid #ddddd8;
+  color: rgba(0, 0, 0, 0.6);
+}
+.admonitionblock > table td.content > :last-child > :last-child {
+  margin-bottom: 0;
+}
+.exampleblock > .content {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  margin-bottom: 1.25em;
+  padding: 1.25em;
+  background: #fff;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.exampleblock > .content > :first-child {
+  margin-top: 0;
+}
+.exampleblock > .content > :last-child {
+  margin-bottom: 0;
+}
+.sidebarblock {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e0e0dc;
+  margin-bottom: 1.25em;
+  padding: 1.25em;
+  background: #f8f8f7;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.sidebarblock > :first-child {
+  margin-top: 0;
+}
+.sidebarblock > :last-child {
+  margin-bottom: 0;
+}
+.sidebarblock > .content > .title {
+  color: #7a2518;
+  margin-top: 0;
+  text-align: center;
+}
+.exampleblock > .content > :last-child > :last-child,
+.exampleblock > .content .olist > ol > li:last-child > :last-child,
+.exampleblock > .content .ulist > ul > li:last-child > :last-child,
+.exampleblock > .content .qlist > ol > li:last-child > :last-child,
+.sidebarblock > .content > :last-child > :last-child,
+.sidebarblock > .content .olist > ol > li:last-child > :last-child,
+.sidebarblock > .content .ulist > ul > li:last-child > :last-child,
+.sidebarblock > .content .qlist > ol > li:last-child > :last-child {
+  margin-bottom: 0;
+}
+.literalblock pre,
+.listingblock pre:not(.highlight),
+.listingblock pre[class='highlight'],
+.listingblock pre[class^='highlight '],
+.listingblock pre.CodeRay,
+.listingblock pre.prettyprint {
+  background: #f7f7f8;
+}
+.sidebarblock .literalblock pre,
+.sidebarblock .listingblock pre:not(.highlight),
+.sidebarblock .listingblock pre[class='highlight'],
+.sidebarblock .listingblock pre[class^='highlight '],
+.sidebarblock .listingblock pre.CodeRay,
+.sidebarblock .listingblock pre.prettyprint {
+  background: #f2f1f1;
+}
+.literalblock pre,
+.literalblock pre[class],
+.listingblock pre,
+.listingblock pre[class] {
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  word-wrap: break-word;
+  padding: 1em;
+  font-size: 0.8125em;
+}
+.literalblock pre.nowrap,
+.literalblock pre[class].nowrap,
+.listingblock pre.nowrap,
+.listingblock pre[class].nowrap {
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+}
+@media only screen and (min-width: 768px) {
+  .literalblock pre,
+  .literalblock pre[class],
+  .listingblock pre,
+  .listingblock pre[class] {
+    font-size: 0.90625em;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .literalblock pre,
+  .literalblock pre[class],
+  .listingblock pre,
+  .listingblock pre[class] {
+    font-size: 1em;
+  }
+}
+.literalblock.output pre {
+  color: #f7f7f8;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.listingblock pre.highlightjs {
+  padding: 0;
+}
+.listingblock pre.highlightjs > code {
+  padding: 1em;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.listingblock pre.prettyprint {
+  border-width: 0;
+}
+.listingblock > .content {
+  position: relative;
+}
+.listingblock code[data-lang]::before {
+  display: none;
+  content: attr(data-lang);
+  position: absolute;
+  font-size: 0.75em;
+  top: 0.425rem;
+  right: 0.5rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #999;
+}
+.listingblock:hover code[data-lang]::before {
+  display: block;
+}
+.listingblock.terminal pre .command::before {
+  content: attr(data-prompt);
+  padding-right: 0.5em;
+  color: #999;
+}
+.listingblock.terminal pre .command:not([data-prompt])::before {
+  content: '$';
+}
+table.pyhltable {
+  border-collapse: separate;
+  border: 0;
+  margin-bottom: 0;
+  background: none;
+}
+table.pyhltable td {
+  vertical-align: top;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1.45;
+}
+table.pyhltable td.code {
+  padding-left: 0.75em;
+  padding-right: 0;
+}
+pre.pygments .lineno,
+table.pyhltable td:not(.code) {
+  color: #999;
+  padding-left: 0;
+  padding-right: 0.5em;
+  border-right: 1px solid #ddddd8;
+}
+pre.pygments .lineno {
+  display: inline-block;
+  margin-right: 0.25em;
+}
+table.pyhltable .linenodiv {
+  background: none !important;
+  padding-right: 0 !important;
+}
+.quoteblock {
+  margin: 0 1em 1.25em 1.5em;
+  display: table;
+}
+.quoteblock > .title {
+  margin-left: -1.5em;
+  margin-bottom: 0.75em;
+}
+.quoteblock blockquote,
+.quoteblock blockquote p {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 1.15rem;
+  line-height: 1.75;
+  word-spacing: 0.1em;
+  letter-spacing: 0;
+  font-style: italic;
+  text-align: justify;
+}
+.quoteblock blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.quoteblock blockquote::before {
+  content: '\201c';
+  float: left;
+  font-size: 2.75em;
+  font-weight: bold;
+  line-height: 0.6em;
+  margin-left: -0.6em;
+  color: #7a2518;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.quoteblock blockquote > .paragraph:last-child p {
+  margin-bottom: 0;
+}
+.quoteblock .attribution {
+  margin-top: 0.5em;
+  margin-right: 0.5ex;
+  text-align: right;
+}
+.quoteblock .quoteblock {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0.5em 0;
+  border-left: 3px solid rgba(0, 0, 0, 0.6);
+}
+.quoteblock .quoteblock blockquote {
+  padding: 0 0 0 0.75em;
+}
+.quoteblock .quoteblock blockquote::before {
+  display: none;
+}
+.verseblock {
+  margin: 0 1em 1.25em 1em;
+}
+.verseblock pre {
+  /* font-family: 'Open Sans', 'DejaVu Sans', sans; */
+  font-size: 1.15rem;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+.verseblock pre strong {
+  font-weight: 400;
+}
+.verseblock .attribution {
+  margin-top: 1.25rem;
+  margin-left: 0.5ex;
+}
+.quoteblock .attribution,
+.verseblock .attribution {
+  font-size: 0.9375em;
+  line-height: 1.45;
+  font-style: italic;
+}
+.quoteblock .attribution br,
+.verseblock .attribution br {
+  display: none;
+}
+.quoteblock .attribution cite,
+.verseblock .attribution cite {
+  display: block;
+  letter-spacing: -0.025em;
+  color: rgba(0, 0, 0, 0.6);
+}
+.quoteblock.abstract {
+  margin: 0 0 1.25em 0;
+  display: block;
+}
+.quoteblock.abstract blockquote,
+.quoteblock.abstract blockquote p {
+  text-align: left;
+  word-spacing: 0;
+}
+.quoteblock.abstract blockquote::before,
+.quoteblock.abstract blockquote p:first-of-type::before {
+  display: none;
+}
+table.tableblock {
+  max-width: 100%;
+  border-collapse: separate;
+}
+p.tableblock:last-child {
+  margin-bottom: 0;
+}
+td.tableblock > .content {
+  margin-bottom: -1.25em;
+}
+table.tableblock,
+th.tableblock,
+td.tableblock {
+  border: 0 solid #dedede;
+}
+table.grid-all > thead > tr > .tableblock,
+table.grid-all > tbody > tr > .tableblock {
+  border-width: 0 1px 1px 0;
+}
+table.grid-all > tfoot > tr > .tableblock {
+  border-width: 1px 1px 0 0;
+}
+table.grid-cols > * > tr > .tableblock {
+  border-width: 0 1px 0 0;
+}
+table.grid-rows > thead > tr > .tableblock,
+table.grid-rows > tbody > tr > .tableblock {
+  border-width: 0 0 1px 0;
+}
+table.grid-rows > tfoot > tr > .tableblock {
+  border-width: 1px 0 0 0;
+}
+table.grid-all > * > tr > .tableblock:last-child,
+table.grid-cols > * > tr > .tableblock:last-child {
+  border-right-width: 0;
+}
+table.grid-all > tbody > tr:last-child > .tableblock,
+table.grid-all > thead:last-child > tr > .tableblock,
+table.grid-rows > tbody > tr:last-child > .tableblock,
+table.grid-rows > thead:last-child > tr > .tableblock {
+  border-bottom-width: 0;
+}
+table.frame-all {
+  border-width: 1px;
+}
+table.frame-sides {
+  border-width: 0 1px;
+}
+table.frame-topbot {
+  border-width: 1px 0;
+}
+table.stripe-all tr,
+table.stripe-odd tr:nth-of-type(odd) {
+  background: #f8f8f7;
+}
+table.stripe-none tr,
+table.stripe-odd tr:nth-of-type(even) {
+  background: none;
+}
+th.halign-left,
+td.halign-left {
+  text-align: left;
+}
+th.halign-right,
+td.halign-right {
+  text-align: right;
+}
+th.halign-center,
+td.halign-center {
+  text-align: center;
+}
+th.valign-top,
+td.valign-top {
+  vertical-align: top;
+}
+th.valign-bottom,
+td.valign-bottom {
+  vertical-align: bottom;
+}
+th.valign-middle,
+td.valign-middle {
+  vertical-align: middle;
+}
+table thead th,
+table tfoot th {
+  font-weight: bold;
+}
+tbody tr th {
+  display: table-cell;
+  line-height: 1.6;
+  background: #f7f8f7;
+}
+tbody tr th,
+tbody tr th p,
+tfoot tr th,
+tfoot tr th p {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
+p.tableblock > code:only-child {
+  background: none;
+  padding: 0;
+}
+p.tableblock {
+  font-size: 1em;
+}
+td > div.verse {
+  white-space: pre;
+}
+ol {
+  margin-left: 1.75em;
+}
+ul li ol {
+  margin-left: 1.5em;
+}
+dl dd {
+  margin-left: 1.125em;
+}
+dl dd:last-child,
+dl dd:last-child > :last-child {
+  margin-bottom: 0;
+}
+ol > li p,
+ul > li p,
+ul dd,
+ol dd,
+.olist .olist,
+.ulist .ulist,
+.ulist .olist,
+.olist .ulist {
+  margin-bottom: 0.625em;
+}
+ul.checklist,
+ul.none,
+ol.none,
+ul.no-bullet,
+ol.no-bullet,
+ol.unnumbered,
+ul.unstyled,
+ol.unstyled {
+  list-style-type: none;
+}
+ul.no-bullet,
+ol.no-bullet,
+ol.unnumbered {
+  margin-left: 0.625em;
+}
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+}
+ul.checklist {
+  margin-left: 0.625em;
+}
+ul.checklist li > p:first-child > .fa-square-o:first-child,
+ul.checklist li > p:first-child > .fa-check-square-o:first-child {
+  width: 1.25em;
+  font-size: 0.8em;
+  position: relative;
+  bottom: 0.125em;
+}
+ul.checklist li > p:first-child > input[type='checkbox']:first-child {
+  margin-right: 0.25em;
+}
+ul.inline {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  list-style: none;
+  margin: 0 0 0.625em -1.25em;
+}
+ul.inline > li {
+  margin-left: 1.25em;
+}
+.unstyled dl dt {
+  font-weight: 400;
+  font-style: normal;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.decimal {
+  list-style-type: decimal-leading-zero;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+ol.lowergreek {
+  list-style-type: lower-greek;
+}
+.hdlist > table,
+.colist > table {
+  border: 0;
+  background: none;
+}
+.hdlist > table > tbody > tr,
+.colist > table > tbody > tr {
+  background: none;
+}
+td.hdlist1,
+td.hdlist2 {
+  vertical-align: top;
+  padding: 0 0.625em;
+}
+td.hdlist1 {
+  font-weight: bold;
+  padding-bottom: 1.25em;
+}
+.literalblock + .colist,
+.listingblock + .colist {
+  margin-top: -0.5em;
+}
+.colist td:not([class]):first-child {
+  padding: 0.4em 0.75em 0 0.75em;
+  line-height: 1;
+  vertical-align: top;
+}
+.colist td:not([class]):first-child img {
+  max-width: none;
+}
+.colist td:not([class]):last-child {
+  padding: 0.25em 0;
+}
+.thumb,
+.th {
+  line-height: 0;
+  display: inline-block;
+  border: solid 4px #fff;
+  -webkit-box-shadow: 0 0 0 1px #ddd;
+  box-shadow: 0 0 0 1px #ddd;
+}
+.imageblock.left,
+.imageblock[style*='float: left'] {
+  margin: 0.25em 0.625em 1.25em 0;
+}
+.imageblock.right,
+.imageblock[style*='float: right'] {
+  margin: 0.25em 0 1.25em 0.625em;
+}
+.imageblock > .title {
+  margin-bottom: 0;
+}
+.imageblock.thumb,
+.imageblock.th {
+  border-width: 6px;
+}
+.imageblock.thumb > .title,
+.imageblock.th > .title {
+  padding: 0 0.125em;
+}
+.image.left,
+.image.right {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  display: inline-block;
+  line-height: 0;
+}
+.image.left {
+  margin-right: 0.625em;
+}
+.image.right {
+  margin-left: 0.625em;
+}
+a.image {
+  text-decoration: none;
+  display: inline-block;
+}
+a.image object {
+  pointer-events: none;
+}
+sup.footnote,
+sup.footnoteref {
+  font-size: 0.875em;
+  position: static;
+  vertical-align: super;
+}
+sup.footnote a,
+sup.footnoteref a {
+  text-decoration: none;
+}
+sup.footnote a:active,
+sup.footnoteref a:active {
+  text-decoration: underline;
+}
+#footnotes {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  margin-bottom: 0.625em;
+}
+#footnotes hr {
+  width: 20%;
+  min-width: 6.25em;
+  margin: -0.25em 0 0.75em 0;
+  border-width: 1px 0 0 0;
+}
+#footnotes .footnote {
+  padding: 0 0.375em 0 0.225em;
+  line-height: 1.3334;
+  font-size: 0.875em;
+  margin-left: 1.2em;
+  margin-bottom: 0.2em;
+}
+#footnotes .footnote a:first-of-type {
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: -1.05em;
+}
+#footnotes .footnote:last-of-type {
+  margin-bottom: 0;
+}
+#content #footnotes {
+  margin-top: -0.625em;
+  margin-bottom: 0;
+  padding: 0.75em 0;
+}
+.gist .file-data > table {
+  border: 0;
+  background: #fff;
+  width: 100%;
+  margin-bottom: 0;
+}
+.gist .file-data > table td.line-data {
+  width: 99%;
+}
+div.unbreakable {
+  page-break-inside: avoid;
+}
+.big {
+  font-size: larger;
+}
+.small {
+  font-size: smaller;
+}
+.underline {
+  text-decoration: underline;
+}
+.overline {
+  text-decoration: overline;
+}
+.line-through {
+  text-decoration: line-through;
+}
+.aqua {
+  color: #00bfbf;
+}
+.aqua-background {
+  background-color: #00fafa;
+}
+.black {
+  color: #000;
+}
+.black-background {
+  background-color: #000;
+}
+.blue {
+  color: #0000bf;
+}
+.blue-background {
+  background-color: #0000fa;
+}
+.fuchsia {
+  color: #bf00bf;
+}
+.fuchsia-background {
+  background-color: #fa00fa;
+}
+.gray {
+  color: #606060;
+}
+.gray-background {
+  background-color: #7d7d7d;
+}
+.green {
+  color: #006000;
+}
+.green-background {
+  background-color: #007d00;
+}
+.lime {
+  color: #00bf00;
+}
+.lime-background {
+  background-color: #00fa00;
+}
+.maroon {
+  color: #600000;
+}
+.maroon-background {
+  background-color: #7d0000;
+}
+.navy {
+  color: #000060;
+}
+.navy-background {
+  background-color: #00007d;
+}
+.olive {
+  color: #606000;
+}
+.olive-background {
+  background-color: #7d7d00;
+}
+.purple {
+  color: #600060;
+}
+.purple-background {
+  background-color: #7d007d;
+}
+.red {
+  color: #bf0000;
+}
+.red-background {
+  background-color: #fa0000;
+}
+.silver {
+  color: #909090;
+}
+.silver-background {
+  background-color: #bcbcbc;
+}
+.teal {
+  color: #006060;
+}
+.teal-background {
+  background-color: #007d7d;
+}
+.white {
+  color: #bfbfbf;
+}
+.white-background {
+  background-color: #fafafa;
+}
+.yellow {
+  color: #bfbf00;
+}
+.yellow-background {
+  background-color: #fafa00;
+}
+span.icon > .fa {
+  cursor: default;
+}
+a span.icon > .fa {
+  cursor: inherit;
+}
+.admonitionblock td.icon [class^='fa icon-'] {
+  font-size: 2.5em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+.admonitionblock td.icon .icon-note::before {
+  content: '\f05a';
+  color: #19407c;
+}
+.admonitionblock td.icon .icon-tip::before {
+  content: '\f0eb';
+  text-shadow: 1px 1px 2px rgba(155, 155, 0, 0.8);
+  color: #111;
+}
+.admonitionblock td.icon .icon-warning::before {
+  content: '\f071';
+  color: #bf6900;
+}
+.admonitionblock td.icon .icon-caution::before {
+  content: '\f06d';
+  color: #bf3400;
+}
+.admonitionblock td.icon .icon-important::before {
+  content: '\f06a';
+  color: #bf0000;
+}
+.conum[data-value] {
+  display: inline-block;
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  text-align: center;
+  font-size: 0.75em;
+  width: 1.67em;
+  height: 1.67em;
+  line-height: 1.67em;
+  /* font-family: 'Open Sans', 'DejaVu Sans', sans-serif; */
+  font-style: normal;
+  font-weight: bold;
+}
+.conum[data-value] * {
+  color: #fff !important;
+}
+.conum[data-value] + b {
+  display: none;
+}
+.conum[data-value]::after {
+  content: attr(data-value);
+}
+pre .conum[data-value] {
+  position: relative;
+  top: -0.125em;
+}
+b.conum * {
+  color: inherit !important;
+}
+.conum:not([data-value]):empty {
+  display: none;
+}
+dt,
+th.tableblock,
+td.content,
+div.footnote {
+  text-rendering: optimizeLegibility;
+}
+h1,
+h2,
+p,
+td.content,
+span.alt {
+  letter-spacing: -0.01em;
+}
+p strong,
+td.content strong,
+div.footnote strong {
+  letter-spacing: -0.005em;
+}
+p,
+blockquote,
+dt,
+td.content,
+span.alt {
+  font-size: 1.0625rem;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+.sidebarblock p,
+.sidebarblock dt,
+.sidebarblock td.content,
+p.tableblock {
+  font-size: 1em;
+}
+.exampleblock > .content {
+  background-color: #fffef7;
+  border-color: #e0e0dc;
+  -webkit-box-shadow: 0 1px 4px #e0e0dc;
+  box-shadow: 0 1px 4px #e0e0dc;
+}
+.print-only {
+  display: none !important;
+}
+@page {
+  margin: 1.25cm 0.75cm;
+}
+@media print {
+  * {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  html {
+    font-size: 80%;
+  }
+  a {
+    color: inherit !important;
+    text-decoration: underline !important;
+  }
+  a.bare,
+  a[href^='#'],
+  a[href^='mailto:'] {
+    text-decoration: none !important;
+  }
+  a[href^='http:']:not(.bare)::after,
+  a[href^='https:']:not(.bare)::after {
+    content: '(' attr(href) ')';
+    display: inline-block;
+    font-size: 0.875em;
+    padding-left: 0.25em;
+  }
+  abbr[title]::after {
+    content: ' (' attr(title) ')';
+  }
+  pre,
+  blockquote,
+  tr,
+  img,
+  object,
+  svg {
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  svg {
+    max-width: 100%;
+  }
+  p,
+  blockquote,
+  dt,
+  td.content {
+    font-size: 1em;
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3,
+  #toctitle,
+  .sidebarblock > .content > .title {
+    page-break-after: avoid;
+  }
+  #toc,
+  .sidebarblock,
+  .exampleblock > .content {
+    background: none !important;
+  }
+  #toc {
+    border-bottom: 1px solid #ddddd8 !important;
+    padding-bottom: 0 !important;
+  }
+  .sect1 {
+    padding-bottom: 0 !important;
+  }
+  .sect1 + .sect1 {
+    border: 0 !important;
+  }
+  #header > h1:first-child {
+    margin-top: 1.25rem;
+  }
+  body.book #header {
+    text-align: center;
+  }
+  body.book #header > h1:first-child {
+    border: 0 !important;
+    margin: 2.5em 0 1em 0;
+  }
+  body.book #header .details {
+    border: 0 !important;
+    display: block;
+    padding: 0 !important;
+  }
+  body.book #header .details span:first-child {
+    margin-left: 0 !important;
+  }
+  body.book #header .details br {
+    display: block;
+  }
+  body.book #header .details br + span::before {
+    content: none !important;
+  }
+  body.book #toc {
+    border: 0 !important;
+    text-align: left !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  body.book #toc,
+  body.book #preamble,
+  body.book h1.sect0,
+  body.book .sect1 > h2 {
+    page-break-before: always;
+  }
+  .listingblock code[data-lang]::before {
+    display: block;
+  }
+  #footer {
+    background: none !important;
+    padding: 0 0.9375em;
+  }
+  #footer-text {
+    color: rgba(0, 0, 0, 0.6) !important;
+    font-size: 0.9em;
+  }
+  .hide-on-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .hide-for-print {
+    display: none !important;
+  }
+  .show-for-print {
+    display: inherit !important;
+  }
+}
+
+.admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title, #toctitle {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title {
+  font-size: 1.0625rem;
+}
+/* highlight code (grepping) */
+.listingblock pre > code i,
+.listingblock pre > i {
+  background-color: #e0c1ff;
+  color: #000;
+  font-style: normal;
+}
+
+a {
+  white-space: nowrap;
+}
+.RemarquePreTitre {
+  font-style: normal;
+  font-weight: bold;
+}
+  .RemarquePreTitre::after {
+    content: "•";
+    padding-left: 5px;
+  }
+.admonitionblock {
+}
+.admonitionblock > table {
+  border: 1px solid #ddddd8;
+  box-shadow: 0 0 8px rgba(0,0,0,.1);
+  margin: 1.5em 0;
+  padding: 1em;
+}
+.icon .title {
+  font-size: 2em;
+}
+
+.colist ol {
+  margin-left: 1em;    /* aligns with the listing edge */
+  font-weight: bold;   /* makes it stand out more */
+}
+.listingblock pre:not(.hljs),
+.language-bash.hljs {
+  background: #323232;
+  color: wheat;
+}
+.language-bash.hljs .hljs-built_in,
+.language-bash.hljs .hljs-builtin-name {
+  color: white;
+}
+.language-bash.hljs .hljs-string {
+  color: lightgreen;
+}
+.language-bash.hljs .hljs-variable {
+  color: lightskyblue;
+}
+.keyseq {
+  font-weight: normal;
+  white-space: nowrap;
+}
+.language-bash.hljs .keyseq {
+  color: white;
+}
+.language-bash.hljs kbd {
+  background: transparent;
+  box-shadow: none;
+  color: white;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding: 0.1em 0.4em;
+}
+
+.listingblock pre.highlightjs > code {
+  border-left: 4px solid #7a2518;
+}
+.listingblock pre.highlightjs > code.language-bash {
+  border-color: #323232;
+}
+
+</style>
+<style type="text/css">[data-interactive-runtime="loaded"] .interactive--javascript code[data-lang]:before {
+  display: block;
+  color: #00c72b;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+  [lang="en"] [data-interactive-runtime="loaded"] .interactive--javascript code[data-lang]:before {
+    content: "▶ run code";
+  }
+  [lang="fr"] [data-interactive-runtime="loaded"] .interactive--javascript code[data-lang]:before {
+    content: "▶ voir le résultat";
+  }
+  .interactive--javascript code[data-label]:before {
+    content: attr(data-label);
+  }
+
+.interactive iframe {
+  position: absolute;
+  visibility: hidden;
+}
+
+.interactive.status--loaded iframe {
+  position: inherit;
+  visibility: visible;
+}
+
+.interactive.status--loading {
+  opacity: .5;
+}
+</style>
+<script>
+(function(d){
+  document.addEventListener('DOMContentLoaded', function(){
+    const script = d.createElement('script');
+    script.src = 'https://embed.runkit.com/';
+    script.async = true;
+    script.onload = function(){
+      function makeListingInteractive (element){
+  if (element.classList.contains('interactive--installed') || element.classList.contains('status--loading')) {
+    return;
+  }
+
+  const code = element.querySelector('code');
+  const nodeVersion = /interactive--runtime--node-([^\s]+)/.exec(element.className)[1];
+  const isEndpoint = element.classList.contains('interactive--endpoint');
+  const mode = isEndpoint ? 'endpoint' : null;
+  let preamble = '';
+
+  const source = code
+    .textContent
+    .replace(/\(\d+\)$/gm, '')
+    .replace(/^["']?use strict["'][; ]*\n/, '');
+
+  if (isEndpoint) {
+    preamble = `process.nextTick(() => {
+      if (typeof module.exports === 'function') {
+        exports.endpoint = module.exports;
+      }
+      else if (typeof server !== 'undefined') {
+        exports.endpoint = server.listeners("request").pop();
+      }
+});`
+  }
+
+  element.classList.add('status--loading');
+
+  // eslint-disable-next-line no-undef
+  RunKit.createNotebook({
+    nodeVersion,
+    element,
+    source,
+    mode,
+    preamble,
+    onLoad: function(ntbk) {
+      element.classList.add('interactive--installed');
+      element.classList.remove('status--loading');
+      element.classList.add('status--loaded');
+      code.parentNode.setAttribute('hidden', true);
+
+      ntbk.evaluate();
+    }
+  });
+}
+function installEvents () {
+  function getParent(el, condition) {
+    let parent = el;
+
+    while(parent = parent.parentNode) {
+      if (condition(parent)) {
+        return parent;
+      }
+    }
+  }
+
+  function hasClass(className) {
+    return function check(el) {
+      return el.classList.contains(className);
+    }
+  }
+
+  document.querySelector('body').addEventListener('click', function(el) {
+    if (el.target.classList.contains('language-javascript') || el.target.classList.contains('language-js')) {
+      const parentNode = getParent(
+        el.target,
+        hasClass('interactive--javascript')
+      );
+
+      makeListingInteractive(parentNode);
+    }
+  });
+}
+      installEvents();
+      document.body.dataset.interactiveRuntime = 'loaded';
+    };
+    document.body.appendChild(script);
+  });
+})(document);</script>
+<style type="text/css">
+.listingblock [data-bash-subs]::before {
+  content: attr(data-bash-subs) " ";
+  opacity: .5; }
+
+.listingblock [data-bash-conum]::before {
+  content: "(" attr(data-bash-conum) ")";
+  font-weight: bold;
+  opacity: .7;
+}</style>
+<script>
+(function(d){
+  d.addEventListener('DOMContentLoaded', function(){
+    const script = d.createElement('script');
+    script.src = 'https://wzrd.in/standalone/menuspy';
+    script.async = true;
+    script.onload = () => new menuspy(document.querySelector('#toc'), {enableLocationHash: false});
+    d.body.appendChild(script);
+  });
+})(document);</script>
+<style type="text/css">
+#toc li.active > a[href^="#"] {
+  background: #ffc;
+  font-weight: bold;
+}
+#toc li.active > a[href^="#"]::before {
+  content: "▶ ";
+  display: inline-block;
+  position: absolute;
+  margin-left: -1.2em;
+  font-size: .8em;
+  margin-top: 3px;
+}
+</style>
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>Déployer notre code</h1>
+<div class="details">
+<span id="revdate">2018-06-13</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table des matières</div>
+<ul class="sectlevel1">
+<li><a href="#deploy">1. Déployer une application Node</a>
+<ul class="sectlevel2">
+<li><a href="#deploy.notebook">1.1. En codant dans un navigateur web</a></li>
+<li><a href="#deploy.sftp">1.2. En transférant des fichiers via SSH</a></li>
+<li><a href="#deploy.github">1.3. En important du code depuis GitHub</a></li>
+<li><a href="#deploy.cli">1.4. Avec l&#8217;outil en ligne de commande de l&#8217;hébergeur</a></li>
+<li><a href="#deploy.git">1.5. En faisant <code>git push</code> depuis sa machine</a></li>
+<li><a href="#deploy.clone">1.6. En faisant <code>git pull</code> lors d&#8217;une session SSH</a></li>
+<li><a href="#deploy.recipe">1.7. Avec une recette de déploiement (<em>Ansible</em>, <em>Chef</em>, etc.)</a></li>
+<li><a href="#deploy.docker">1.8. En publiant une image Docker</a></li>
+<li><a href="#deploy.ci">1.9. En paramétrant un logiciel d&#8217;intégration continue</a></li>
+</ul>
+</li>
+<li><a href="#hosting">2. Choisir son hébergement</a>
+<ul class="sectlevel2">
+<li><a href="#hosting.paas">2.1. Plate-forme de services (<em>Platform as a Service</em>, <em>PaaS</em>)</a></li>
+<li><a href="#hosting.shared">2.2. Hébergement mutualisé</a></li>
+<li><a href="#hosting.cloud">2.3. Serveur virtualisé, dédié ou cloud</a></li>
+<li><a href="#hosting.lambda">2.4. Fonction événementielle (<em>Serverless</em>, <em>Lambda</em>)</a></li>
+</ul>
+</li>
+<li><a href="#améliorer_la_portabilité_applicative">3. Améliorer la portabilité applicative</a>
+<ul class="sectlevel2">
+<li><a href="#node.version">3.1. Utiliser la bonne version de Node</a></li>
+<li><a href="#port">3.2. L&#8217;application tourne mais elle est injoignable</a></li>
+<li><a href="#configuration">3.3. S&#8217;affranchir des chemins et configurations écrits "en dur"</a></li>
+<li><a href="#data-persistence">3.4. Persister les fichiers en dehors de notre application</a></li>
+<li><a href="#database-migration">3.5. Versionner les schémas de base de données</a></li>
+</ul>
+</li>
+<li><a href="#startup">4. Démarrer automatiquement une application</a>
+<ul class="sectlevel2">
+<li><a href="#l_hébergeur_s_en_occupe_à_notre_place">4.1. L&#8217;hébergeur s&#8217;en occupe à notre place</a></li>
+<li><a href="#process-manager">4.2. Avec un gestionnaire de processus</a></li>
+<li><a href="#system-service">4.3. En créant un service système</a></li>
+<li><a href="#application-manager">4.4. Avec un serveur d&#8217;applications web</a></li>
+</ul>
+</li>
+<li><a href="#monitoring">5. À quoi penser après la mise en ligne ?</a>
+<ul class="sectlevel2">
+<li><a href="#uptime">5.1. L&#8217;application a planté</a></li>
+<li><a href="#exceptions">5.2. S&#8217;informer des erreurs applicatives</a></li>
+<li><a href="#security.node">5.3. Notre version de Node fait l&#8217;objet d&#8217;une faille de sécurité</a></li>
+<li><a href="#security.npm">5.4. Un des modules npm fait l&#8217;objet d&#8217;une faille de sécurité</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">6. Conclusion</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Le déploiement d&#8217;une application Node nous permettra d&#8217;améliorer la
+qualité de notre code en gommant les derniers bugs et en automatisant
+la détection des erreurs et des failles de sécurité.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="ulist">
+<div class="title">Sommaire</div>
+<ul>
+<li>
+<p>Déployer une application Node</p>
+</li>
+<li>
+<p>Choisir son hébergement</p>
+</li>
+<li>
+<p>Améliorer la portabilité</p>
+</li>
+<li>
+<p>Démarrer automatiquement nos applications</p>
+</li>
+<li>
+<p>À quoi penser après la mise en ligne&#160;?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="quoteblock abstract">
+<blockquote>
+<div class="paragraph">
+<p>Ce chapitre nous permettra d&#8217;y voir plus clair du côté de l&#8217;hébergement
+et de la mise en ligne d&#8217;une application Node.
+Nous pourrons choisir ce qui nous paraît le plus abordable,
+que ça soit en termes d&#8217;argent ou de complexité d&#8217;utilisation.</p>
+</div>
+<div class="paragraph">
+<p>Nous mettrons en œuvre les
+<a href="../chapter-04/index.html#process.env">variables d&#8217;environnement</a>
+du chapitre 4 pour que nos applications en ligne
+fonctionnent de la même manière que sur notre ordinateur.</p>
+</div>
+<div class="paragraph">
+<p>Enfin, nous verrons différents types de service pour être tenu·e informé·e
+des erreurs applicatives et des failles de sécurité sans effort et sans
+être des expert·e.</p>
+</div>
+</blockquote>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💬</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Remarque</span> Versions de Node et npm</div>
+<div class="paragraph">
+<p>Le contenu de ce chapitre utilise les versions <strong>Node v10</strong> et <strong>npm v6</strong>.
+Ce sont les versions stables recommandées en 2018.
+J&#8217;explique comment les installer au <a href="../chapter-02/index.html#install">chapitre 2</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Pratique</span> Jouer avec les exemples dans un terminal</div>
+<div class="paragraph">
+<p>Les exemples titrés d&#8217;un nom de fichier peuvent être installés sur votre ordinateur.
+Exécutez-les dans un terminal et amusez-vous à les modifier en parallèle de
+votre lecture pour voir ce qui change.</p>
+</div>
+<div class="listingblock">
+<div class="title">Installation des exemples via le module npm <code>nodebook</code>.</div>
+<div class="content">
+<pre><span data-bash-subs="$"></span>npm install --global nodebook
+<span data-bash-subs="$"></span>nodebook install chapter-06
+<span data-bash-subs="$"></span>cd $(nodebook dir chapter-06)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>La commande suivante devrait afficher un résultat qui confirme que vous êtes
+au bon endroit&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>node hello.js</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Suivez à nouveau les installations d&#8217;instruction pour rétablir les exemples
+dans leur état initial.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploy">1. Déployer une application Node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Le choix de la technique de déploiement dépend de plusieurs facteurs qui se
+renvoient à eux-mêmes&#160;: l&#8217;hébergement peut dépendre du déploiement et vice-versa.</p>
+</div>
+<div class="paragraph">
+<p>Je vous propose de partir balayer les différentes techniques de déploiement
+avec des exemples et de voir quelles seraient les raisons d&#8217;opter pour l&#8217;une
+d&#8217;entre elles.</p>
+</div>
+<div class="paragraph">
+<p>Le choix est subjectif et vous appartient, en fonction de l&#8217;aisance que vous avez
+à vous en emparer.
+C&#8217;est un sujet qui prend du temps avant d&#8217;être maitrisé donc n&#8217;hésitez pas
+à vous y reprendre à plusieurs fois.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Quelles techniques de déploiement s&#8217;utilisent avec quel type d&#8217;hébergement ?</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><a href="#hosting.paas"><em>PaaS</em></a></th>
+<th class="tableblock halign-left valign-top"><a href="#hosting.shared">Mutualisé</a></th>
+<th class="tableblock halign-left valign-top"><a href="#hosting.cloud">Cloud</a></th>
+<th class="tableblock halign-left valign-top"><a href="#hosting.lambda">Lambda</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deploy.notebook">Notebook Web</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deploy.sftp">SSH/SFTP</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2248;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deploy.github">Import GitHub</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deploy.cli">CLI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deploy.git"><code>git push</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deploy.clone">SSH + <code>git pull</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deploy.recipe">Recette</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deploy.docker"><code>docker push</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deploy.ci">Intégration continue</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="deploy.notebook">1.1. En codant dans un navigateur web</h3>
+<div class="paragraph">
+<p>Le moyen le plus rapide d&#8217;exécuter du code Node sans avoir à se préoccuper
+du déploiement est d&#8217;utiliser un service en ligne et de modifier du code
+avec un navigateur web.</p>
+</div>
+<div class="paragraph">
+<p>Je recommande <em>RunKit</em> (<span class="URL"><a href="https://runkit.com/" class="bare">runkit.com/</a></span>) pour créer rapidement
+du code qui tient dans un seul fichier, sans installer Node sur sa machine.
+Le code est exécuté sur les serveurs de RunKit, le résultat s&#8217;affiche chez nous.
+Les <a href="../chapter-05/index.html#modules">modules npm</a>
+(<a href="../chapter-05/index.html">chapitre 5</a>) sont installés automatiquement dans
+leur version la plus récente.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/runkit-notebook.png" alt="runkit notebook" width="85%">
+</div>
+<div class="title">Figure 1. Exemple de <em>notebook</em> RunKit dans le navigateur Firefox.</div>
+</div>
+<div class="paragraph">
+<p>RunKit propose aussi un modèle de <a href="#lambda">fonction éphémère</a> dont le
+résultat devient accessible depuis une URL dédiée.
+Essayez de copier/coller le code suivant dans un nouveau notebook en vous
+rendant sur <span class="URL"><a href="https://runkit.com/new" class="bare">runkit.com/new</a></span>&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">runkit-endpoint.js</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">'use strict';
+
+const pokemon = require('pokemon-random-name'); <b class="conum">(1)</b>
+
+exports.endpoint = (request, response) =&gt; {     <b class="conum">(2)</b>
+  response.end(pokemon());
+};</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Le module npm <span class="URL"><a href="https://npmjs.com/pokemon-random-name" class="bare">npmjs.com/pokemon-random-name</a></span> exporte une fonction qui retourne un nom aléatoire de Pokémon.</p>
+</li>
+<li>
+<p><code>exports.endpoint</code> est spécifique à RunKit et accepte une fonction identique à l&#8217;événement <code>server.on('request')</code> du <a href="../chapter-04/index.html#http">module <code>http</code></a> (<a href="../chapter-04/index.html">chapitre 4</a>).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Une fois sauvegardé et après avoir cliqué sur le lien <strong>endpoint</strong>,
+un nouvel onglet s&#8217;ouvre et affiche un nom aléatoire de Pokémon.
+C&#8217;est la valeur de retour passé à la réponse, comme on l&#8217;aurait fait
+avec le <a href="../chapter-04/index.html#http">module <code>http</code></a>
+(<a href="../chapter-04/index.html">chapitre 4</a>) ou dans une
+<a href="../chapter-07/index.html">application web</a> (<a href="../chapter-07/index.html">chapitre 7</a>).</p>
+</div>
+<div class="paragraph">
+<p>Le service en ligne <em>glitch</em> (<span class="URL"><a href="https://glitch.com/" class="bare">glitch.com/</a></span>) permet d&#8217;aller
+plus loin en développant, hébergeant et partageant des applications complètes.
+Le service redéploie notre application à chaque changement.
+Le fichier <code>.env</code> stocke les
+<a href="../chapter-04/index.html#process.env">variables d&#8217;environnement</a> de manière
+sécurisée&#160;— nous seul y avons accès.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/glitch-app.png" alt="glitch app" width="85%">
+</div>
+<div class="title">Figure 2. Exemple d&#8217;application Node sur glitch.com.</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Pratique</span> Console web</div>
+<div class="paragraph">
+<p>Glitch nous offre même une console web&#160;: un <a href="#../chapter-04/index.adoc">terminal</a>
+entièrement fonctionnel, depuis un navigateur web&#160;!</p>
+</div>
+<div class="paragraph">
+<p>Parfait pour <a href="../chapter-08/index.html">coder un outil en ligne de commande</a>
+(<a href="../chapter-08/index.html">chapitre 8</a>) en travaillant depuis plusieurs
+ordinateurs sans avoir à tout réinstaller à chaque fois.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Pratique</span> Remixez les exemples de cet ouvrage</div>
+<div class="paragraph">
+<p>Vous pouvez créer votre premier projet sur glitch.
+<em>Remixez</em> cet ouvrage en cliquant en vous rendant sur
+<span class="URL">https://glitch.com/edit/#!/remix/nodebook</span>.</p>
+</div>
+<div class="paragraph">
+<p>Le contenu et les exemples seront copiés dans un nouveau projet,
+exécutable et modifiable selon vos envies.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy.sftp">1.2. En transférant des fichiers via SSH</h3>
+<div class="paragraph">
+<p>Transférer des fichiers est idéal pour débuter et lorsqu&#8217;on n&#8217;utilise pas Git
+pour versionner son code.</p>
+</div>
+<div class="paragraph">
+<p>Les services d&#8217;hébergement mutualisé, virtualisé ou dédié accordent
+un accès à votre espace en ligne par le biais du protocole
+SSH (<span class="URL"><a href="https://fr.wikipedia.org/wiki/Secure_Shell" class="bare">fr.wikipedia.org/wiki/Secure_Shell</a></span>).
+Ce protocole crée une connexion sécurisée&#160;: les commandes saisies dans votre
+terminal font effet sur la machine sur laquelle vous êtes connecté·e.</p>
+</div>
+<div class="paragraph">
+<p>Des logiciels comme <em>FileZilla Client</em> (<span class="URL"><a href="https://filezilla-project.org/" class="bare">filezilla-project.org/</a></span>)
+servent d&#8217;interfaces graphiques pour transférer des fichiers de notre machine
+vers une machine distante.<br>
+Les codes d&#8217;accès SSH se trouvent en général dans la section <em>Aide</em> ou <em>Guides</em>
+de votre hébergeur.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/filezilla-file-transfer.png" alt="filezilla file transfer" width="85%">
+</div>
+<div class="title">Figure 3. Exemple de connexion à un serveur SSH distant avec FileZilla Client sous macOS.</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Windows</span> WinSCP</div>
+<div class="paragraph">
+<p><em>WinSCP</em> (<span class="URL"><a href="https://winscp.net" class="bare">winscp.net</a></span>) est une alternative libre à
+FileZilla pour Windows.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💬</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Avancé</span> <code>scp</code> et <code>rsync</code></div>
+<div class="paragraph">
+<p>Notre terminal peut aussi servir à transférer des fichiers.
+Deux programmes se basent sur SSH et sont installés par défaut sur la plupart
+des ordinateurs Linux et macOS&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>scp</code> pour envoyer des fichiers de machine à machine</p>
+</li>
+<li>
+<p><code>rsync</code> pour n&#8217;envoyer que les fichiers qui ont été modifiés ou supprimés</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy.github">1.3. En important du code depuis GitHub</h3>
+<div class="paragraph">
+<p>Importer du code depuis GitHub est la manière la plus simple de transférer
+tous les fichiers versionnés sans être familier avec Git.</p>
+</div>
+<div class="paragraph">
+<p>La plate-forme de <a href="#deploy.notebook">programmation en ligne</a> glitch
+offre une option pour importer n&#8217;importe quel projet GitHub&#160;— à partir du moment
+où le dépôt est public.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/glitch-github-import.png" alt="glitch github import" width="85%">
+</div>
+<div class="title">Figure 4. Bouton d&#8217;import d&#8217;un dépôt GitHub sur glitch.com.</div>
+</div>
+<div class="paragraph">
+<p>Un clic sur le bouton <b class="button">Import from GitHub</b> ouvre une invite de saisie
+destinée à mentionner le nom du dépôt GitHub à importer.
+Le projet en cours sera entièrement remplacé par le contenu du dépôt distant.
+C&#8217;est pratique pour récupérer des exercices ou pour apprendre en travaillant
+sur du code écrit par quelqu&#8217;un d&#8217;autre.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Pratique</span> Importer les exemples de cet ouvrage</div>
+<div class="paragraph">
+<p>Récupérez tout le contenu et les exemples de cet ouvrage
+en recopiant <code>oncletom/nodebook</code> dans l&#8217;invite de saisie.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>La <a href="#paas">plate-forme de services</a> Heroku (<span class="URL"><a href="https://heroku.com" class="bare">heroku.com</a></span>)
+pousse l&#8217;import GitHub un peu plus loin.
+Sa fonctionnalité <em>déploie</em> l&#8217;application à chaque nouveau commit.
+L&#8217;application redémarre ensuite automatiquement pour prendre les changements en compte.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/heroku-github-import.png" alt="heroku github import" width="85%">
+</div>
+<div class="title">Figure 5. Paramétrage de déploiement automatisé depuis un dépôt GitHub sur heroku.com.</div>
+</div>
+<div class="paragraph">
+<p>Une option nous permet de déployer une nouvelle version de l&#8217;application
+à la suite d&#8217;une <a href="#deploy.ci">intégration continue réussie</a>.
+Nous réduisons ainsi les risques de déployer une version défectueuse.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy.cli">1.4. Avec l&#8217;outil en ligne de commande de l&#8217;hébergeur</h3>
+<div class="paragraph">
+<p>L&#8217;outil en ligne de commande d&#8217;un hébergeur permet de gérer les déploiements
+<em>et</em> d&#8217;autres aspects de l&#8217;hébergement en même temps.</p>
+</div>
+<div class="paragraph">
+<p>La <a href="#paas">plate-forme de services</a> <em>now</em> (<span class="URL"><a href="https://zeit.co/now" class="bare">zeit.co/now</a></span>)
+est un exemple de simplicité à ce niveau.</p>
+</div>
+<div class="listingblock">
+<div class="title">Installation et configuration de l&#8217;outil <code>now</code></div>
+<div class="content">
+<pre><span data-bash-subs="$"></span>npm install -g now
+<span data-bash-subs="$"></span>now login</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dans un terminal, déplacez-vous vers le répertoire de l&#8217;application à déployer.
+Il suffit de taper <code>now</code> pour transférer les fichiers.
+Les dépendances s&#8217;installent et le déploiement est accessible quelques secondes
+plus tard&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>now
+Deploying ~/workspace/dtc-innovation/food-coops-dashboards
+<span data-bash-subs=">"></span>Using Node.js 9.10.1 (requested: `&gt;=8.0.0`)
+<span data-bash-subs=">"></span>https://food-coops-dashboards-okgwzegyus.now.sh
+<span data-bash-subs=">"></span>Synced 1 file (169.84KB) [11s]
+<span data-bash-subs=">"></span>Building...
+<span data-bash-subs=">"></span>▲ npm install
+<span data-bash-subs=">"></span>✓ Using "package-lock.json"
+<span data-bash-subs=">"></span>⧗ Installing 9 main dependencies...
+<span data-bash-subs=">"></span>▲ npm install
+<span data-bash-subs=">"></span>added 389 packages in 8.609s
+<span data-bash-subs=">"></span>▲ Snapshotting deployment
+<span data-bash-subs=">"></span>Build completed
+<span data-bash-subs=">"></span>Verifying instantiation in bru1
+<span data-bash-subs=">"></span>✔ Scaled 1 instance in bru1 [31s]
+<span data-bash-subs=">"></span>Success! Deployment ready</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En optant pour l&#8217;offre payante, nous pouvons aussi gérer les noms de domaine et
+sous-domaines en leur attribuant l&#8217;URL du déploiement&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>now alias food-coops-dashboards-okgwzegyus.now.sh my-domain.com</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💬</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Pratique</span> Application de bureau</div>
+<div class="paragraph">
+<p>Le client en ligne de commande existe en version graphique.
+Un glissé/déposé de fichiers suffit à lancer un déploiement.</p>
+</div>
+<div class="paragraph">
+<p>Il se télécharge sur <span class="URL"><a href="https://zeit.co/download" class="bare">zeit.co/download</a></span>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>L&#8217;outil de la <a href="#paas">plate-forme de services</a> Heroku suit une approche
+légèrement différente.
+Il nous informe de l&#8217;état de nos applications et en augmente ou diminue
+la quantité de ressources allouée à leur fonctionnement.
+Il simplifie la configuration de Git et
+<a href="#deploy.git">délègue le déploiement</a> à ce dernier.
+L&#8217;outil se télécharge sur
+<span class="URL"><a href="https://devcenter.heroku.com/articles/heroku-cli" class="bare">devcenter.heroku.com/articles/heroku-cli</a></span>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Configuration de l&#8217;outil <code>heroku</code></div>
+<div class="content">
+<pre><span data-bash-subs="$"></span>heroku login</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>La commande <code>heroku apps:create</code> crée une nouvelle application chez Heroku.
+On peut faire la même chose dans un navigateur web en nous rendant sur
+<span class="URL"><a href="https://dashboard.heroku.com/new-app" class="bare">dashboard.heroku.com/new-app</a></span>.
+La commande <code>heroku git:remote</code> associe notre copie locale Git à cette application&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">Configuration de notre dépôt Git pour en faire une application Heroku.</div>
+<div class="content">
+<pre><span data-bash-subs="$"></span>heroku apps:create --region eu
+Creating app... done, ⬢ <i>polar-taiga-61296</i>, region is eu
+https://polar-taiga-61296.herokuapp.com/
+https://git.heroku.com/polar-taiga-61296.git
+<span data-bash-subs="$"></span>heroku git:remote --app <i>polar-taiga-61296</i></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Il ne nous reste plus qu&#8217;à <a href="#deploy.git">pousser notre code avec Git</a>
+pour terminer la mise en ligne.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy.git">1.5. En faisant <code>git push</code> depuis sa machine</h3>
+<div class="paragraph">
+<p>Le déploiement d&#8217;une branche Git est le moyen le plus facile d&#8217;automatiser
+tous les aspects d&#8217;un déploiement.</p>
+</div>
+<div class="paragraph">
+<p>Cette méthode est privilégiée par les <a href="#paas">plates-formes de services</a>
+comme <em>Heroku</em>, <em>now</em> et <em>Clever Cloud</em>.
+Chaque projet d&#8217;application est accessible via un dépôt Git distant
+(<em>remote</em>)&#160;: un dépôt est utilisé pour versionner notre code (GitHub par exemple)
+tandis qu&#8217;un autre dépôt est utilisé pour réceptionner le code à déployer.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;exemple suivant part du principe que notre terminal est positionné dans un
+répertoire qui est un projet Git contenant au moins 1 commit.
+Vous avez déjà configuré le dépôt distant à l&#8217;aide de
+l'<a href="#deploy.cli">outil de déploiement</a> Heroku (cf. section précédente).</p>
+</div>
+<div class="paragraph">
+<p>Nous pouvons vérifier si le dépôt est bien configuré à l&#8217;aide de la
+commande <code>git remote</code>&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">Liste des dépôts distants d&#8217;un projet Git configuré pour Heroku.</div>
+<div class="content">
+<pre><span data-bash-subs="$"></span>git remote -v
+<i>heroku</i>	https://git.heroku.com/mon-application.git (fetch)
+<i>heroku</i>	https://git.heroku.com/mon-application.git (push)
+origin	git@github.com:mon-compte/mon-application.git (fetch)
+origin	git@github.com:mon-compte/mon-application.git (push)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dans le cas d&#8217;Heroku, la commande <code>heroku git:remote</code> crée un <em>remote</em> nommé
+<code>heroku</code>.
+Heroku redéploie notre application dès qu&#8217;on lui envoie du code en faisant
+<code>git push heroku</code>&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>git push heroku
+<span data-bash-subs=">"></span>Counting objects: 4, done.
+<span data-bash-subs=">"></span>Delta compression using up to 4 threads.
+<span data-bash-subs=">"></span>Compressing objects: 100% (4/4), done.
+<span data-bash-subs=">"></span>Writing objects: 100% (4/4), 17.77 KiB | 5.92 MiB/s, done.
+<span data-bash-subs=">"></span>Total 4 (delta 2), reused 0 (delta 0)
+<span data-bash-subs=">"></span>remote: Compressing source files... done.
+<span data-bash-subs=">"></span>remote: Building source:
+<span data-bash-subs=">"></span>remote:
+<span data-bash-subs=">"></span>remote: -----&gt; Node.js app detected
+<span data-bash-subs=">"></span>remote:
+<span data-bash-subs=">"></span>remote: -----&gt; Creating runtime environment
+<span data-bash-subs=">"></span>...
+<span data-bash-subs=">"></span>remote: -----&gt; Launching...
+<span data-bash-subs=">"></span>remote:        Released v30                     <b class="conum">(1)</b>
+<span data-bash-subs=">"></span>remote:        https://mon-application.herokuapp.com/ deployed
+<span data-bash-subs=">"></span>remote:
+<span data-bash-subs=">"></span>remote: Verifying deploy... done.</pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>C&#8217;est le trentième déploiement&#160;— on peut revenir à une version antérieure si nécessaire.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>L&#8217;URL de l&#8217;application est rappelée dans les <em>logs</em> du déploiement.<br>
+En cas d&#8217;erreur, la version précédente de l&#8217;application reste en ligne.
+Nous avons ainsi le temps de corriger le problème sans interruption de service.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy.clone">1.6. En faisant <code>git pull</code> lors d&#8217;une session SSH</h3>
+<div class="paragraph">
+<p>La récupération du code source à distance avec Git et SSH est une manière de déployer
+similaire à la mise à jour et au démarrage d&#8217;une application sur notre ordinateur.</p>
+</div>
+<div class="paragraph">
+<p>Cette technique s&#8217;applique si notre application est placée sur un
+<a href="#hosting.shared">hébergement mutualisé</a>,
+<a href="#hosting.vm">dédié ou virtualisé</a> ou une <a href="#hosting.cloud">offre <em>cloud</em></a>.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;exemple suivant illustre l&#8217;initialisation d&#8217;un projet via la connexion
+SSH à un <a href="#hosting.shared">hébergement mutualisé</a> chez alwaysdata.</p>
+</div>
+<div class="listingblock">
+<div class="title">Première récupération d&#8217;un dépôt Git lors d&#8217;une session SSH.</div>
+<div class="content">
+<pre><span data-bash-subs="$"></span>ssh moncompte@ssh-moncompte.alwaysdata.net
+<span data-bash-subs="$$"></span>git clone https://github.com/moncompte/monprojet .
+<span data-bash-subs="$$"></span>npm install</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nous avons cloné un projet comme nous aurions pu le faire si on installait
+notre projet depuis zéro sur notre ordinateur.</p>
+</div>
+<div class="paragraph">
+<p>Dans le cas d&#8217;une mise à jour, nous récupérons les changements depuis le dépôt
+distant en faisant <code>git pull</code>.
+<code>npm install</code> mettra à jour les dépendances s&#8217;il y a des différences entre
+le contenu du fichier <code>package.json</code> et les modules déjà installés
+—&#160;voir le <a href="../chapter-05/index.html">chapitre 5</a>&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">Mise à jour d&#8217;une application lors d&#8217;une session SSH.</div>
+<div class="content">
+<pre><span data-bash-subs="$"></span>ssh moncompte@ssh-moncompte.alwaysdata.net
+<span data-bash-subs="$$"></span>git pull
+<span data-bash-subs="$$"></span>npm install</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dans le cas d&#8217;alwaysdata, l&#8217;application se redémarre depuis leur
+<a href="#hosting.shared">interface d&#8217;administration</a>.<br>
+Dans les autres cas, redémarrez l&#8217;application selon le procédé choisi après
+avoir lu la section <a href="#startup">démarrer automatiquement nos applications</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy.recipe">1.7. Avec une recette de déploiement (<em>Ansible</em>, <em>Chef</em>, etc.)</h3>
+<div class="paragraph">
+<p>La recette de déploiement est la manière la plus complète de partager et
+d&#8217;automatiser un déploiement complexe.</p>
+</div>
+<div class="paragraph">
+<p>Cette méthode se place dans la continuité de
+<a href="#deploy.clone"><code>git pull</code> lors d&#8217;une session SSH</a>&#160;: nous orchestrons les
+actions nécessaires au déploiement en les listant dans un
+fichier de configuration, en choisissant dans quel ordre les déclencher
+et sur quel(s) serveur(s).</p>
+</div>
+<div class="paragraph">
+<p>Nous retrouvons <em>Puppet</em> (<span class="URL"><a href="https://puppet.com" class="bare">puppet.com</a></span>),
+<em>Chef</em> (<span class="URL"><a href="https://www.chef.io" class="bare">www.chef.io</a></span>) et <em>Ansible</em> (<span class="URL"><a href="https://ansible.com" class="bare">ansible.com</a></span>)
+parmi les outils les plus utilisés et les mieux documentés.
+Ils ont chacun une philosophie de configuration et d&#8217;exécution différente
+—&#160;l&#8217;idéal est encore d&#8217;essayer d&#8217;écrire une première recette avec chacun d&#8217;entre
+eux pour voir celui qui vous semble le plus naturel à utiliser.</p>
+</div>
+<div class="paragraph">
+<p>Ma préférence va vers <em>Ansible</em> car le logiciel s&#8217;installe facilement
+sur macOS et Linux, se configure avec une syntaxe que je connais déjà (<em>YAML</em>)
+et je trouve ses messages d&#8217;erreurs informatifs.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;exemple suivant illustre le déploiement de l&#8217;application Node <em>Slackin</em>
+(<span class="URL"><a href="https://github.com/rauchg/slackin" class="bare">github.com/rauchg/slackin</a></span>) sur
+l'<a href="#hosting.shared">hébergement mutualisé</a> alwaysdata&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>ansible-playbook  -i ansible/inventory.yaml ansible/playbook.yaml
+
+PLAY [webservers] *******************************
+
+TASK [Gathering Facts] **************************
+ok: [ssh-moncompte.alwaysdata.net]
+
+TASK [code source via git] **********************
+ok: [ssh-moncompte.alwaysdata.net]
+
+TASK [mise à jour des modules npm] **************
+ok: [ssh-moncompte.alwaysdata.net]
+
+PLAY RECAP **************************************
+ssh-moncompte.alwaysdata.net : ok=3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>La commande précédente a eu pour effet de créer des connexions SSH avec les
+machines listées dans le fichier <code>inventory.yaml</code> puis de jouer les actions
+listées dans le fichier <code>playbook.yaml</code>.</p>
+</div>
+<div class="hdlist">
+<div class="title">Concepts importants d&#8217;Ansible</div>
+<table>
+<tr>
+<td class="hdlist1">
+Inventaire
+</td>
+<td class="hdlist2">
+<p><strong>Liste de serveurs connus</strong> sur lesquels effectuer des déploiements.<br>
+Les serveurs peuvent être catégorisés (par type, par emplacement)
+pour contrôler finement les actions à déclencher.
+Par exemple&#160;: uniquement les serveurs web de production,
+les bases de données de test, l&#8217;API de la région Europe.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Playbook
+</td>
+<td class="hdlist2">
+<p><strong>Liste des actions possibles</strong> en fonction des types de serveurs.<br>
+Ces actions peuvent être rejouées à l&#8217;infini et de manière prédictible.</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Le <em>playbook</em> suivant illustre 2 tâches appliquées uniquement sur
+les serveurs étiquetés dans notre <em>inventaire</em> en tant que <code>webservers</code>&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">ansible/playbook.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">---
+- hosts: webservers
+  tasks:
+    - name: code source via git
+      git:                                            <b class="conum">(1)</b>
+        repo: "https://github.com/rauchg/slackin.git" <b class="conum">(2)</b>
+        dest: "{{ ansible_env.HOME }}"
+        clone: yes                                    <b class="conum">(3)</b>
+        update: yes                                   <b class="conum">(4)</b>
+    - name: mise à jour des modules npm
+      npm:                                            <b class="conum">(5)</b>
+        state: present                                <b class="conum">(6)</b>
+        path: "{{ ansible_env.HOME }}"
+        production: true                              <b class="conum">(7)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Actions Git&#160;— pour en savoir plus <span class="URL"><a href="https://docs.ansible.com/ansible/2.5/modules/git_module" class="bare">docs.ansible.com/ansible/2.5/modules/git_module</a></span>.</p>
+</li>
+<li>
+<p>Adresse du dépôt Git à récupérer.</p>
+</li>
+<li>
+<p>Indique de cloner le dépôt s&#8217;il n&#8217;est pas déjà présent.</p>
+</li>
+<li>
+<p>Indique de récupérer les commits du dépôt en faisant <code>git pull</code>.</p>
+</li>
+<li>
+<p>Actions npm&#160;— pour en savoir plus <span class="URL"><a href="https://docs.ansible.com/ansible/2.5/modules/npm_module" class="bare">docs.ansible.com/ansible/2.5/modules/npm_module</a></span>.</p>
+</li>
+<li>
+<p>Indique d&#8217;installer les dépendances npm en faisant <code>npm install</code>.</p>
+</li>
+<li>
+<p>Indique de lancer la mise en jour des modules npm avec l&#8217;option <code>--production</code>&#160;— c&#8217;est-à-dire sans les dépendances listées dans le champ <code>devDependencies</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Les tâches sont réplicables sur les serveurs listés dans un fichier d&#8217;inventaire&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">ansible/inventory.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">webservers:
+  hosts:
+    ssh-moncompte.alwaysdata.net</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nous déployons sur un seul serveur dans ce cas de figure.
+Mais nous pourrions tout à fait déployer une même application avec la même
+configuration sur une dizaine de serveurs (application à fort trafic)
+ou une même application déployée chez plusieurs centaines de clients.
+Dans tous les cas, l&#8217;application serait dans un état consistant sur toutes les
+machines, avec peu de chances d&#8217;oublier une opération et une plus grande facilité
+à revenir en arrière.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy.docker">1.8. En publiant une image Docker</h3>
+<div class="paragraph">
+<p>Une image Docker est un moyen fiable de reproduire le même environnement
+applicatif et ses dépendances sur plusieurs systèmes d&#8217;exploitation
+—&#160;y compris Windows, Linux et macOS.</p>
+</div>
+<div class="paragraph">
+<p>Un des objectifs de Node est de pouvoir faire fonctionner un script
+sur tout système d&#8217;exploitation compatible.
+Docker (<span class="URL"><a href="https://www.docker.com" class="bare">www.docker.com</a></span>) pousse cette compatibilité plus
+loin en empaquetant tout ce qui est nécessaire au bon fonctionnement
+de l&#8217;application (dépendances, logiciels système).
+Le mécanisme d&#8217;exécution aide à la fois à orchestrer plusieurs conteneurs entre
+eux&#160;— y compris bases de données et moteurs de recherche&#160;— et de pouvoir
+revenir dans l&#8217;état applicatif initial.</p>
+</div>
+<div class="paragraph">
+<p>Le fichier suivant est un exemple fonctionnel d&#8217;image Docker.
+Son intention est de créer un environnement Node v10
+pour une <a href="../chapter-07/index.html">application web</a> (cf. chapitre 7)
+qui comporte une <a href="../chapter-05/index.html">dépendance npm</a> (cf. chapitre 5)&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">Dockerfile</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-dockerfile hljs" data-lang="dockerfile">FROM node:8-alpine
+
+WORKDIR /app
+
+COPY ./app.js ./app.js
+COPY ./package.json ./package.json
+RUN npm install --production
+
+EXPOSE 4000
+
+CMD ["npm", "start"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nous pouvons constater le choix de l&#8217;environnement Node (<code>FROM</code>),
+avant de procéder à la copie des fichiers applicatifs vers l&#8217;image (<code>COPY</code>).
+Suite à ça nous installons aussi les dépendances de l&#8217;application et spécifions
+quelle commande effectuer lorsque l&#8217;image Docker est lancée (<code>CMD</code>).</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;image se construit et le conteneur se démarre sur notre ordinateur comme suit&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>docker build -t nodebook/demo .
+<span data-bash-subs="$"></span>docker run -ti --rm -p 4000:4000 nodebook/demo
+<span data-bash-subs="$"></span>curl -L http://localhost:4000</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Le transfert de l&#8217;image Docker vers un registre comme <em>Docker Hub</em>
+(<span class="URL"><a href="https://hub.docker.com" class="bare">hub.docker.com</a></span>) garantit l&#8217;exécution de ce même environnement
+applicatif, partout.</p>
+</div>
+<div class="paragraph">
+<p>Nous avons déjà parlé de l'<a href="#deploy.cli">outil en ligne de commande</a>
+du service <em>now</em> (<span class="URL"><a href="https://zeit.co/now" class="bare">zeit.co/now</a></span>) dans la section du même nom.
+Il est aussi capable de déployer un conteneur Docker en se basant sur un fichier
+<code>Dockerfile</code> en rajoutant l&#8217;option <code>--docker</code>&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>now <i>--docker</i> --public
+<span data-bash-subs=">"></span>Deploying ~/.../examples under oncletom
+<span data-bash-subs=">"></span>https://examples-zlssezfiej.now.sh [in clipboard] (bru1) [7s]
+<span data-bash-subs=">"></span>Synced 1 file (156B) [7s]
+<span data-bash-subs=">"></span>Building…
+<span data-bash-subs=">"></span>▲ docker build
+<span data-bash-subs=">"></span>Sending build context to Docker daemon 17.92 kBkB
+<span data-bash-subs=">"></span>▲ Storing image
+<span data-bash-subs=">"></span>Build completed
+<span data-bash-subs=">"></span>Verifying instantiation in bru1
+<span data-bash-subs=">"></span>✔ Scaled 1 instance in bru1 [18s]
+<span data-bash-subs=">"></span>Success! Deployment ready</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Une autre solution consiste à publier notre image sur <em>Docker Hub</em>,
+la plate-forme officielle de partage d&#8217;images Docker.
+Docker Hub dispose d&#8217;une fonctionnalité de construction automatique connectée
+à GitHub.
+Docker Hub construit l&#8217;image à chaque nouveau commit, puis la met à disposition.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/docker-automated-build.png" alt="docker automated build" width="85%">
+</div>
+<div class="title">Figure 6. Création d&#8217;un <em>build</em> automatisé à partir d&#8217;un dépôt GitHub.</div>
+</div>
+<div class="paragraph">
+<p>Il ne reste alors plus qu&#8217;à la collecter sur un ordinateur avec la commande
+<code>docker pull</code>&#160;— que ce soit sur notre machine, chez notre hébergeur
+ou par le biais du <a href="#deploy.ci">service d&#8217;intégration continue</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💬</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Avancé</span> Amazon Elastic Container Registry</div>
+<div class="paragraph">
+<p>Le <a href="#hosting.cloud">fournisseur <em>cloud</em></a> Amazon Web Services intègre
+un registre privé d&#8217;images Docker pour chaque compte client.</p>
+</div>
+<div class="paragraph">
+<p><em>Elastic Container Registry</em> (ECR, <span class="URL"><a href="https://aws.amazon.com/ecr/" class="bare">aws.amazon.com/ecr/</a></span>)
+se connecte à d&#8217;autres services comme <em>Amazon CodeDeploy</em> pour déclencher
+des mises à jour d&#8217;infrastructure à chaque nouvelle image Docker.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploy.ci">1.9. En paramétrant un logiciel d&#8217;intégration continue</h3>
+<div class="paragraph">
+<p>L&#8217;utilisation d&#8217;un logiciel d&#8217;intégration continue est la manière la plus
+flexible d&#8217;automatiser tout type de déploiement.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;intégration continue vise à vérifier si des régressions se sont glissées
+dans notre code.
+L&#8217;idée est de livrer régulièrement du code pour détecter les erreurs au plus tôt.<br>
+Les services d&#8217;intégration continue automatisent cette pratique.
+Ils s&#8217;intègrent avec d&#8217;autres services pour prévisualiser les branches,
+compiler la documentation mais aussi pour déployer des artéfacts sur d&#8217;autres
+plates-formes&#160;: <a href="../chapter-05/index.html#publish">registre npm</a>,
+GitHub Pages, Heroku ou même <a href="#hosting.lambda">Amazon Lambda</a>.</p>
+</div>
+<div class="paragraph">
+<p>Le logiciel Jenkins (<span class="URL"><a href="https://jenkins.io/" class="bare">jenkins.io/</a></span>) s&#8217;installe sur notre propre
+infrastructure tandis que des services en ligne comme
+Circle CI (<span class="URL"><a href="https://circleci.com" class="bare">circleci.com</a></span>), Travis CI (<span class="URL"><a href="https://travis-ci.com" class="bare">travis-ci.com</a></span>)
+et CodeShip (<span class="URL"><a href="https://codeship.com" class="bare">codeship.com</a></span>) mette à disposition leur
+infrastructure gratuitement pour les projets <em>open source</em>.
+GitLab (<span class="URL"><a href="https://www.gitlab.com" class="bare">www.gitlab.com</a></span>) combine l&#8217;hébergement de dépôts Git
+et l&#8217;intégration continue.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Windows</span> Service AppVeyor</div>
+<div class="paragraph">
+<p>J&#8217;utilise AppVeyor (<span class="URL"><a href="https://appveyor.com" class="bare">appveyor.com</a></span>) en complément d&#8217;un autre
+service d&#8217;intégration continue quand il s&#8217;agit de tester
+la <strong>compatibilité du code avec Windows</strong>
+—&#160;ce qui est le cas des exemples de cet ouvrage.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>J&#8217;ai une préférence pour GitLab lorsque le projet y est hébergé.
+Le reste du temps, j&#8217;utilise Travis CI car j&#8217;aime la clarté du fichier de configuration,
+l&#8217;exhaustivité de leur documentation et la qualité des échanges avec leur support technique.</p>
+</div>
+<div class="paragraph">
+<p>Le fichier suivant est un exemple de configuration pour Travis CI.
+Il se place à la racine d&#8217;un projet à tester et s&#8217;écrit avec la syntaxe <em>YAML</em>&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">.travis.yml</div>
+<div class="content">
+<pre>language: node_js
+node_js: v10
+
+script: npm test
+
+deploy:
+  provider: npm
+  on:
+    tags: true
+  email: "$NPM_EMAIL"
+  api-key: "$NPM_TOKEN"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Cet exemple est structuré en 3 parties&#160;:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>la <strong>configuration de l&#8217;environnement</strong>&#160;— en l&#8217;occurrence Node v10&#160;;</p>
+</li>
+<li>
+<p>la <strong>commande de test</strong>&#160;;</p>
+</li>
+<li>
+<p>la <strong>configuration du déploiement</strong> en cas de succès.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Ici, le déploiement consiste à
+<a href="../chapter-05/index.html#publish">déployer le code sur le registre npm</a>
+quand les tests passent lors de la création d&#8217;un tag Git.
+Les variables d&#8217;environnement <code>$NPM_EMAIL</code> et <code>$NPM_TOKEN</code> se configurent de
+manière sécurisée sur l&#8217;écran de configuration du projet
+(voir illustration ci-après).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💬</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Documentation</span> .travis.yml</div>
+<div class="paragraph">
+<p>Une documentation adaptée aux projets Node est disponible à cette adresse&#160;:
+<span class="URL"><a href="https://docs.travis-ci.com/user/languages/javascript-with-nodejs/" class="bare">docs.travis-ci.com/user/languages/javascript-with-nodejs/</a></span></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/travisci-secrets.png" alt="travisci secrets" width="85%">
+</div>
+<div class="title">Figure 7. Écran de configuration des variables d&#8217;environnement sécurisées.</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;exemple suivant illustre l&#8217;utilisation de
+l'<a href="#deploy.cli">outil en ligne de commande</a> <code>now</code> dès qu&#8217;un nouveau commit
+est poussé sur la branche <code>master</code> et que les tests passent au vert&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">.travis.yml</div>
+<div class="content">
+<pre>language: node_js
+node_js: v10
+
+before_deploy: npm install --global now
+
+deploy:
+  provider: script
+  script: now --token $NOW_TOKEN
+  on:
+    branch: master</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Les informations d&#8217;exécution des tests sont consignés au même titre que le statut
+du déploiement&#160;— voir image ci-contre.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/travisci-build.png" alt="travisci build" width="85%">
+</div>
+<div class="title">Figure 8. Écran illustrant le déploiement automatique d&#8217;une application Node avec la commande <code>now</code>.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hosting">2. Choisir son hébergement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nous allons nous intéresser aux différentes possibilités d&#8217;hébergement
+d&#8217;applications Node.</p>
+</div>
+<div class="paragraph">
+<p>Côté tarifs, certaines sont gratuites sous certaines conditions,
+d&#8217;autres se paient à l&#8217;heure et d&#8217;autres à l&#8217;année.
+Certaines offres sont figées, d&#8217;autres permettent de rajouter des machines
+voire même de changer la puissance en cours de route.</p>
+</div>
+<div class="sect2">
+<h3 id="hosting.paas">2.1. Plate-forme de services (<em>Platform as a Service</em>, <em>PaaS</em>)</h3>
+<div class="paragraph">
+<p>Les plates-formes de services <strong>automatisent la configuration et le déploiement</strong>
+de nos applications Node mais également Ruby, Python et PHP, entre autres.
+Elles se spécialisent dans des déploiements rapides, une allocation des
+ressources flexible, à la demande et en un clic.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est le <strong>moyen le plus facile de déployer une application Node</strong>, surtout si
+on utilise déjà Git pour versionner son code.</p>
+</div>
+<div class="paragraph">
+<p>Leur philosophie est de <strong>tout penser en termes de ressources modulaires</strong>.
+On paie pour une certaine capacité de CPU et de RAM, à la minute ou à l&#8217;heure.
+Ces capacités s&#8217;augmentent ou se réduisent en quelques clics et sans changer
+une seule ligne de code dans notre application.</p>
+</div>
+<div class="paragraph">
+<p>Une application se déploie avec un <a href="#deploy.cli">outil en ligne de commande</a> ou
+en <a href="#deploy.git">faisant <code>git push</code></a>.
+Et nous pouvons l&#8217;automatiser avec une <a href="#deploy.recipe">recette de déploiement</a>
+et de l'<a href="#deploy.ci">intégration continue</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Sélection de fournisseurs <em>PaaS</em></caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Service</th>
+<th class="tableblock halign-left valign-top">Déploiement</th>
+<th class="tableblock halign-left valign-top">Add-ons</th>
+<th class="tableblock halign-left valign-top">Gratuité</th>
+<th class="tableblock halign-left valign-top">Tarif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://zeit.co" class="bare">zeit.co</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cli</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 apps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15$/mois/10 apps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://clever-cloud.com" class="bare">clever-cloud.com</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">git</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crédit 20€</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5€/mois/app</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://gandi.net/hosting/simple" class="bare">gandi.net/hosting/simple</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cli/git/SSH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 jours</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5€/mois/app</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://scalingo.com" class="bare">scalingo.com</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">git/GitHub</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 jours</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7€/mois/app</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://heroku.com" class="bare">heroku.com</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cli/git/GitHub/Dropbox</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1000 heures/mois</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7$/mois/app</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>La startup californienne Zeit (<span class="URL"><a href="https://zeit.co" class="bare">zeit.co</a></span>) édite le service
+<em>now</em> (<span class="URL"><a href="https://zeit.co/now" class="bare">zeit.co/now</a></span>).
+Ce service est focalisé sur l&#8217;hébergement de sites statiques,
+d&#8217;applications Node et de conteneurs Docker.</p>
+</div>
+<div class="paragraph">
+<p>Sa particularité est de créer une <strong>nouvelle instance d&#8217;application par déploiement</strong>.
+On ne modifie donc jamais un déploiement déjà existant.
+On parle alors de <strong>déploiement immuable</strong>.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est un service que j&#8217;apprécie pour sa simplicité.
+C&#8217;est probablement le plus pratique à utiliser pour déployer votre première application,
+si vous n&#8217;utilisez pas Git ou si l&#8217;application n&#8217;utilise pas de base de données.</p>
+</div>
+<div class="paragraph">
+<p><em>Heroku</em> (<span class="URL"><a href="https://heroku.com" class="bare">heroku.com</a></span>) est une autre alternative plus complète,
+toujours pour démarrer en douceur et sans sortir la carte bleue.
+Des modules optionnels couvrent nos besoins en bases de données comme
+<em>MySQL</em>, <em>MariaDB</em>, <em>redis</em> ou <em>postgreSQL</em> par exemple.
+D&#8217;autres services gèrent l&#8217;envoi d&#8217;emails,
+l&#8217;indexation de contenus, le monitoring, les logs, etc.
+La majorité offre un petit espace de stockage gratuit pour tester le produit.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/heroku-addons.png" alt="heroku addons" width="85%">
+</div>
+<div class="title">Figure 9. Ensemble de ressources complémentaires à une application Node hébergée sur Heroku.</div>
+</div>
+<div class="paragraph">
+<p>S&#8217;il est facile de déployer sur ces infrastructures et de gérer les ressources
+allouées à nos applications, à l&#8217;inverse la facture peut vite devenir salée
+à mesure qu&#8217;on augmente leur puissance.
+Ce coût est tout relatif&#160;: il est surement inférieur à celui de notre temps
+passé à gérer les machines si on devait tout faire à la main.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="hosting.shared">2.2. Hébergement mutualisé</h3>
+<div class="paragraph">
+<p>Les hébergements mutualisés ont l&#8217;avantage d&#8217;être <strong>bon marché et sans entretien</strong>.
+Cette formule est un excellent compromis prix/services.
+Elle demande un peu plus d&#8217;efforts que les <a href="#hosting.paas">plates-formes de services</a>
+car tout le travail d&#8217;automatisation repose sur nos épaules, si on le souhaite.</p>
+</div>
+<div class="paragraph">
+<p>Ce modèle est adapté pour l&#8217;hébergement de fichiers statiques ou des sites web
+construits avec des langages de scripts comme Python ou PHP.
+Rares sont ceux qui ont adapté leur fonctionnement au modèle applicatif de Node.</p>
+</div>
+<div class="paragraph">
+<p>Alwaysdata (<span class="URL"><a href="https://alwaysdata.com" class="bare">alwaysdata.com</a></span>) fait exception à la règle.
+Ce service d&#8217;hébergement indépendant dispose d&#8217;une formule gratuite avec 100Mo
+d&#8217;espace disque pour démarrer.</p>
+</div>
+<div class="paragraph">
+<p>Le <a href="#deploy">déploiement</a> de nos applications se fait via
+<a href="#deploy.sftp">SSH ou SFTP</a>, en <a href="#deploy.clone">utilisant Git</a>,
+avec un <a href="#deploy.ci">service d&#8217;intégration continue</a> ou bien en
+<a href="#deploy.recipe">utilisant une recette</a>.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;interface d&#8217;administration référence une section <strong>Sites</strong> dans la barre de
+navigation.
+Cette section liste les différents sites de notre compte.
+Si vous venez juste de créer le vôtre, un site a automatiquement été créé.
+Son URL est déterminée à partir du <strong>nom d&#8217;utilisateur</strong> que vous avez choisi
+lors de la phase d&#8217;inscription.</p>
+</div>
+<div class="paragraph">
+<p>Un clic sur le bouton <strong>Modifier</strong> nous aidera à changer ses réglages&#160;:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/alwaysdata-site-list.png" alt="alwaysdata site list" width="85%">
+</div>
+<div class="title">Figure 10. Liste de nos sites configurés chez alwaysdata.</div>
+</div>
+<div class="paragraph">
+<p>Le nouvel écran mentionne les adresses auxquel le site répond.
+En basculant vers un compte payant, on pourra assigner un ou plusieurs domaines
+ou sous-domaines à ce même site.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/alwaysdata-site-informations.png" alt="alwaysdata site informations" width="85%">
+</div>
+<div class="title">Figure 11. Écran de configuration d&#8217;un site chez alwaysdata.</div>
+</div>
+<div class="paragraph">
+<p>Les réglages liés à Node se trouvent sous les adresses.
+Le <em>type</em> de site doit être changé en <code>Node.js</code> pour afficher
+les champs de configuration qui nous intéressent.</p>
+</div>
+<div class="paragraph">
+<p>La <em>commande</em> se configure de la même manière
+que l'<a href="../chapter-04/index.html#script">exécution d&#8217;un script Node</a>
+—&#160;cf. <a href="../chapter-04/index.html">chapitre 4</a>.
+On peut aussi faire appel au
+<a href="../chapter-05/index.html#start">script <code>npm start</code></a> comme vu pendant
+la lecture du <a href="../chapter-05/index.html">chapitre 5</a>&#160;:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/alwaysdata-site-configuration.png" alt="alwaysdata site configuration" width="85%">
+</div>
+<div class="title">Figure 12. Écran de configuration de Node.js pour un site chez alwaysdata.</div>
+</div>
+<div class="paragraph">
+<p>La commande complète devrait apparaître dans la section <strong>Processus</strong>
+une fois la configuration sauvegardée.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/alwaysdata-process-list.png" alt="alwaysdata process list" width="85%">
+</div>
+<div class="title">Figure 13. Liste des processus liés à nos sites chez alwaysdata.</div>
+</div>
+<div class="paragraph">
+<p>En cas de doute, un bouton <strong>Redémarrer</strong> est affiché à côté du bouton <strong>Modifier</strong>
+dans la liste des sites.
+L&#8217;application sera alors interrompue et relancée.
+Cette opération est nécessaire pour que l&#8217;application prenne en compte
+les changements après une mise à jour ou un plantage.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💬</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Configuration</span> Une application Node par site</div>
+<div class="paragraph">
+<p>Alwaysdata nous permet d&#8217;associer un seul processus à un seul site.</p>
+</div>
+<div class="paragraph">
+<p>Pour rendre une application Node accessibles sur Internet, il faudra
+alors créer un nouveau site et lui associer un autre nom de domaine,
+ou un sous-domaine.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Aide</span> Forum d&#8217;entraide</div>
+<div class="paragraph">
+<p>L&#8217;équipe et la communauté alwaysdata (<span class="URL"><a href="https://forum.alwaysdata.com" class="bare">forum.alwaysdata.com</a></span>) sont
+sympathiques et à l&#8217;écoute.
+C&#8217;est un endroit idéal pour chercher des informations et poser des questions
+pour mieux comprendre ce qui empêche votre application de fonctionner
+sur leurs services.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="hosting.cloud">2.3. Serveur virtualisé, dédié ou cloud</h3>
+<div class="paragraph">
+<p>La location d&#8217;un serveur dédié revient à payer pour un ordinateur complet,
+son entretien physique et son placement dans un <em>datacenter</em>&#160;— un immense
+parking à ordinateurs connecté à un réseau haute-capacité.</p>
+</div>
+<div class="paragraph">
+<p>Les <em>Virtual Private Servers</em> (<em>VPS</em>) sont des machines virtuelles
+(<em>Virtual Machine</em>, <em>VM</em>)&#160;: un serveur dédié dont les ressources sont réparties
+en plusieurs unités indépendantes les unes des autres, les VM.</p>
+</div>
+<div class="paragraph">
+<p>Les offres <em>cloud</em> sont une version "élastique" des VM&#160;: la puissance de calcul,
+la bande-passante et la mémoire allouées sont ajustables sans avoir à
+changer de machine, sans avoir à tout réinstaller.
+Ces ressources sont considérées comme étant "à la demande"&#160;: elles s&#8217;obtiennent
+en quelques secondes et peuvent être mises en pause, réduites, augmentées ou
+supprimées à tout moment.</p>
+</div>
+<div class="paragraph">
+<p>Leur modèle de facturation s&#8217;adapte à la souplesse d&#8217;allocation des ressources&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>au mois&#160;: VPS, serveur virtualisé, serveur dédié</p>
+</li>
+<li>
+<p>à l&#8217;heure&#160;: serveur <em>cloud</em></p>
+</li>
+<li>
+<p>à la (milli)seconde&#160;: <a href="#hosting.lambda">fonction événementielle</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Les modes de déploiement adaptés sont l'<a href="#deploy.clone">utilisation de Git</a>
+pour obtenir le code, l'<a href="#deploy.docker">orchestration d&#8217;applications avec Docker</a>
+en combinaison avec des <a href="#deploy.recipe">recettes de déploiement</a> et de
+l'<a href="#deploy.ci">intégration continue</a>.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;offre de serveurs virtualisés et dédiés (VPS, VM) est adaptée à des
+besoins constants et pour héberger plusieurs applications sur une même machine
+—&#160;à coût constant.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. Sélection de fournisseurs de serveur virtualisé et dédié</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Service</th>
+<th class="tableblock halign-left valign-top">Déploiement</th>
+<th class="tableblock halign-left valign-top">Add-ons</th>
+<th class="tableblock halign-left valign-top">Tarif horaire</th>
+<th class="tableblock halign-left valign-top">Tarif mensuel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://ovh.com/fr/vps/" class="bare">ovh.com/fr/vps/</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.00€/VM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://online.net/fr/serveur-dedie" class="bare">online.net/fr/serveur-dedie</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSH, CLI, API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14.50€/serveur</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://alwaysdata.com/fr/pricing/#vps" class="bare">alwaysdata.com/fr/pricing/#vps</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSH, API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">149.00€/VM</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>L&#8217;offre <em>cloud</em> est plus intéressante si vos besoins sont
+singulièrement fluctuants&#160;— par exemple lorsqu&#8217;il y a besoin de doubler le CPU
+pendant 2 heures, à heure fixe ou en fonction de la charge mais aussi quand il
+s&#8217;agit d&#8217;ajouter 10 serveurs d&#8217;un coup pour traiter un calcul gourmand.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. Sélection de fournisseurs de serveur <em>cloud</em></caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Service</th>
+<th class="tableblock halign-left valign-top">Déploiement</th>
+<th class="tableblock halign-left valign-top">Add-ons</th>
+<th class="tableblock halign-left valign-top">Tarif horaire</th>
+<th class="tableblock halign-left valign-top">Tarif mensuel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://scaleway.com" class="bare">scaleway.com</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CLI, SSH, API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.004€</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.30€/VM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://linode.com" class="bare">linode.com</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CLI, Git, API, Web</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.0075$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.00$/VM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://gandi.net/hosting/iaas" class="bare">gandi.net/hosting/iaas</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CLI, Git</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.0081€</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.00€/VM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://ovh.com/fr/public-cloud/" class="bare">ovh.com/fr/public-cloud/</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSH, API, Web</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.062€</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">26.00€/VM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://digitalocean.com" class="bare">digitalocean.com</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CLI, API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.007$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.00$/VM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://aws.amazon.com/fr/ec2/" class="bare">aws.amazon.com/fr/ec2/</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CLI, API, SSH, Web</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.0132$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9.67$/VM</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Avancé</span> HashiCorp Terraform</div>
+<div class="paragraph">
+<p>Le logiciel <em>Terraform</em> (<span class="URL"><a href="https://terraform.io/" class="bare">terraform.io/</a></span>) a pour intention
+de documenter une infrastructure (serveurs, DNS, stockage, etc.) sous forme
+d&#8217;un fichier de configuration&#160;— versionnable avec Git.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est un outil idéal pour automatiser le déploiement d&#8217;une infrastructure de zéro
+mais pour la faire évoluer d&#8217;une version à une autre.
+Nous pouvons ainsi créer une architecture combinant plusieurs fournisseurs
+sans gérer la complexité et la non-interopérabilité de leurs API.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="hosting.lambda">2.4. Fonction événementielle (<em>Serverless</em>, <em>Lambda</em>)</h3>
+<div class="paragraph">
+<p>La fonction événementielle est l&#8217;évolution ultime des offres <em>cloud</em>.
+Au lieu de payer une machine ou une VM à l&#8217;heure,
+<strong>nous payons pour exécuter du code à la milliseconde</strong>.
+Ce code se déclenche en réaction à événement se produisant ailleurs
+sur l&#8217;infrastructure&#160;: une requête HTTP entrante, un nouveau fichier ou encore
+un appel de l&#8217;API de l&#8217;hébergeur.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est le moyen le plus économique pour
+<strong>exécuter du code à tout instant sans payer le temps d&#8217;inactivité d&#8217;une machine</strong>.
+On pourrait comparer ce modèle à celui de la téléphonie mobile lorsqu&#8217;on a à choisir
+entre un forfait (coût fixe même si on ne consomme pas tout) et un paiement à la carte
+(coût dépendant de la consommation).</p>
+</div>
+<div class="paragraph">
+<p>Les applications destinées à être exécutées comme fonction événementielle
+ont une architecture un peu différente.
+Au lieu de démarrer un serveur web basé sur le
+<a href="../chapter-04/index.html#http">module <code>http</code></a>, nous exposons
+une <strong>fonction qui retourne un résultat de manière asynchrone</strong>&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">webtask.js</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">'use strict';
+
+const getPokemonName = require('pokemon-random-name');
+
+module.exports = (context, send) =&gt; {     <b class="conum">(1)</b>
+  return send(null, getPokemonName());
+};</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Le paramètre <code>context</code> contient des informations à propos de la requête entrante&#160;— paramètres, corps du message, etc.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Ce code est très similaire à ce que nous pourrions écrire lors de l&#8217;événement
+<code>server.on('request')</code> du <a href="../chapter-04/index.html#http">module <code>http</code></a>.</p>
+</div>
+<div class="paragraph">
+<p>Voyons ça en contexte dans l&#8217;interface web du service Webtask
+(<span class="URL"><a href="https://webtask.io/make" class="bare">webtask.io/make</a></span>)&#160;:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/webtask-make.png" alt="webtask make" width="85%">
+</div>
+<div class="title">Figure 14. Exemple de fonction événementielle et de son historique d&#8217;exécutions avec le service Webtask.</div>
+</div>
+<div class="paragraph">
+<p>Un nom de Pokémon est affiché lorsque nous accédons à l&#8217;URL indiquée en bas
+de l&#8217;écran.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. Sélection de fournisseurs</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Service</th>
+<th class="tableblock halign-left valign-top">Déploiement</th>
+<th class="tableblock halign-left valign-top">Gratuité</th>
+<th class="tableblock halign-left valign-top">Tarif des requêtes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://aws.amazon.com/lambda" class="bare">aws.amazon.com/lambda</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web, CLI, API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1M requêtes/mois</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.2$/million</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://webtask.io" class="bare">webtask.io</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web, GitHub, CLI, API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 requête/seconde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sur devis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://cloud.google.com/functions/" class="bare">cloud.google.com/functions/</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web, GitHub, CLI, API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2M requêtes/mois</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.4$/million</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://zeit.co/now" class="bare">zeit.co/now</a></span> + <code>micro</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CLI, API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 apps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15$/mois</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Chaque fournisseur de fonction événementielle a sa propre vision des paramètres
+qui nous sont donnés mais leur fonctionnement reste très proche.</p>
+</div>
+<div class="paragraph">
+<p>Je trouve que Webtask est le service avec la plus faible courbe d&#8217;apprentissage.
+Son interface y est pour beaucoup.</p>
+</div>
+<div class="paragraph">
+<p>Le service <em>now</em> est intéressant à plus d&#8217;un titre.
+Il déploie avec un <a href="#deploy.cli">outil en ligne de commande minimaliste</a>,
+y compris des <a href="#deploy.docker">conteneurs Docker</a>.
+Il se transforme en fonction événementielle avec l&#8217;aide du
+<a href="../chapter-05/index.html#modules">module npm</a>
+<em>micro</em> (<span class="URL"><a href="https://npmjs.com/micro" class="bare">npmjs.com/micro</a></span>).</p>
+</div>
+<div class="paragraph">
+<p>Le service Amazon Lambda représente une marche d&#8217;apprentissage un peu plus importante.
+C&#8217;est un service important de par l&#8217;outillage et la documentation disponibles
+à son sujet.
+Le service est complet, surtout une fois couplé avec le service
+<em>Amazon API Gateway</em>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Avancé</span> <em>Amazon API Gateway</em></div>
+<div class="paragraph">
+<p>Les Lambda d&#8217;Amazon ne sont pas accessibles depuis Internet par défaut.</p>
+</div>
+<div class="paragraph">
+<p>Pour ce faire, il faut les relier au service  et associer
+chaque route à une Lambda.
+Le service se charge de transformer le résultat
+—&#160;une chaîne de caractère, un tableau ou un objet ECMAScript&#160;—
+en une réponse HTTP.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💬</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Définition</span> <em>Serverless</em></div>
+<div class="paragraph">
+<p>Ce type d&#8217;infrastructure a été nommé <em>serverless</em> suite à une organisation
+du marché pour proposer des alternatives aux Lambda d&#8217;Amazon.</p>
+</div>
+<div class="paragraph">
+<p>Quand on entend le mot <em>serverless</em>&#160;— littéralement, sans serveur&#160;— il faut comprendre
+"sans serveur à gérer soi-même".
+L&#8217;hébergeur dispose quand même de machines pour exécuter le code.
+Leurs ressources sont mutualisées au maximum.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="améliorer_la_portabilité_applicative">3. Améliorer la portabilité applicative</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Le fonctionnement d&#8217;une application Node peut être impacté suite à son
+déploiement en ligne.</p>
+</div>
+<div class="paragraph">
+<p>Cette section a pour but de mettre en lumière des
+<strong>points importants qui contribuent à la portabilité de l&#8217;application</strong>
+—&#160;c&#8217;est-à-dire son bon fonctionnement une fois en fonctionnement autre part
+que sur un ordinateur de développement et ce,
+indépendamment du service d&#8217;hébergement retenu.</p>
+</div>
+<div class="sect2">
+<h3 id="node.version">3.1. Utiliser la bonne version de Node</h3>
+<div class="paragraph">
+<p>Les <a href="#hosting.paas">plates-formes de services</a> et certains
+<a href="#deploy.ci">services d&#8217;intégration continue</a> utilisent deux mécanismes
+pour déterminer notre préférence quant à la version de Node à utiliser&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>le fichier <code>.nvmrc</code>&#160;;</p>
+</li>
+<li>
+<p>la valeur <code>engines.node</code> du fichier <code>package.json</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Dans les deux cas, cela revient à préciser la version de Node
+pour chacun de nos projets.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Conseil</span> Une version de Node par application</div>
+<div class="paragraph">
+<p>Je trouve qu&#8217;il est plus facile de gérer la version de Node au cas par cas
+au lieu de m&#8217;imposer une seule version pour tout le code que j&#8217;écris.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est très utile quand je reprends le code après plusieurs mois d&#8217;inactivité.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Si vous avez décidé d&#8217;utiliser <a href="../chapter-02/index.html#nvm">nvm</a>
+(cf. <a href="../chapter-02/index.html">chapitre 2</a>) ou que vous utilisez un service
+compatible avec <em>nvm</em>, sachez que cet outil sait s&#8217;adapter à la version
+de Node précisée dans le fichier <code>.nvmrc</code>.</p>
+</div>
+<div class="paragraph">
+<p>Un fichier <code>.nvmrc</code> ressemble à ceci&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">.nvmrc</div>
+<div class="content">
+<pre>v10</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Avec cette valeur, cela revient au même de faire
+<code>nvm install v10</code> et <code>nvm install</code>.
+La commande <code>nvm use</code> lit également la version contenue dans <code>.nvmrc</code>
+et bascule automatiquement vers celle-ci&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>nvm install
+<span data-bash-subs="$"></span>nvm use
+<span data-bash-subs="$"></span>node --version</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Les <a href="#hosting.paas">plates-formes de services</a> qui ne se basent pas sur <em>nvm</em>
+vont en général jeter un œil du côté du fichier <code>package.json</code>&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name": "my-app",
+  "engines": {
+    "node": "{v}.x.x"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Cette notation signifie "la version la plus récente de Node v10".</p>
+</div>
+<div class="paragraph">
+<p>Enfin, la dernière version de Node est utilisée si cette information
+ne peut pas être déterminée avec les deux mécanismes précédemment cités.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="port">3.2. L&#8217;application tourne mais elle est injoignable</h3>
+<div class="paragraph">
+<p>Il est nécessaire de renseigner un <em>port</em> lorsqu&#8217;on démarre un serveur
+avec le <a href="../chapter-04/index.html#http">module <code>http</code></a>
+(cf. <a href="../chapter-04/index.html">chapitre 4</a>).<br>
+Pourtant nous allons faire face à un "problème" si le code suivant est déployé
+sur une <a href="#hosting.paas">plate-forme de services</a>&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">server-port.js</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">'use strict';
+
+const server = require('http').createServer();
+
+server.listen(8000, () =&gt; console.log('localhost:8000'));</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Le déploiement sera considéré comme réussi mais l&#8217;application est injoignable.
+C&#8217;est parce que les plates-formes de service choisissent ce port pour nous
+et l&#8217;associent à l&#8217;URL de notre application
+—&#160;`monapplication.heroku.com` par exemple.</p>
+</div>
+<div class="paragraph">
+<p>Le port est exposé au travers d&#8217;une
+<a href="../chapter-04/index.html#process.env">variable d&#8217;environnement</a>
+(cf. <a href="../chapter-04/index.html">chapitre 4</a>).
+Par convention, c&#8217;est la variable <code>PORT</code> qui est utilisée.</p>
+</div>
+<div class="paragraph">
+<p>Nous n&#8217;avons qu&#8217;à adapter le script précédent de cette manière&#160;:</p>
+</div>
+<div class="listingblock interactive interactive--javascript interactive--runtime--node-v10">
+<div class="title">server-port-dynamic.js</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">'use strict';
+
+const server = require('http').createServer();
+const {PORT=8000} = process.env;  <b class="conum">(1)</b>
+
+server.listen(PORT, () =&gt; console.log(`localhost:${PORT}`));</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Extrait la valeur de la variable d&#8217;environnement <code>process.env.PORT</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>La variable d&#8217;environnement <code>PORT</code> sera utilisée si elle existe et sinon,
+le port <code>8000</code> sera la valeur par défaut&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>node server-port-dynamic.js              <span data-bash-conum="1"></span>
+<span data-bash-subs="$"></span><i>PORT=4000</i> node server-port-dynamic.js    <span data-bash-conum="2"></span></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Affiche <code>localhost:8000</code>.</p>
+</li>
+<li>
+<p>Affiche <code>localhost:4000</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>C&#8217;est un premier pas pour s&#8217;affranchir des
+<a href="#configuration">éléments de configuration écrits en dur</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration">3.3. S&#8217;affranchir des chemins et configurations écrits "en dur"</h3>
+<div class="paragraph">
+<p>La <a href="#port">configuration du port</a> de l&#8217;application n&#8217;est pas le seul
+élément contextuel à changer entre notre ordinateur et un autre
+—&#160;que ce soit celui d&#8217;une personne contribuant au projet,
+au <a href="#deploy.ci">service d&#8217;intégration continue</a> ou au serveur d&#8217;hébergement.</p>
+</div>
+<div class="paragraph">
+<p>Les <a href="../chapter-04/index.html#process.env">variables d&#8217;environnement</a>
+sont à privilégier pour configurer nos applications avec souplesse.
+Elles s&#8217;appliquent aux&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>URL</strong> d&#8217;accès aux bases de données, à des API distantes&#160;;</p>
+</li>
+<li>
+<p><strong>clés d&#8217;API</strong> pour utiliser des services externes&#160;;</p>
+</li>
+<li>
+<p><strong>réglages</strong> influençant le comportement de l&#8217;application&#160;;</p>
+</li>
+<li>
+<p><strong>chemins d&#8217;accès</strong> vers des fichiers ou répertoires&#160;— stockage, cache, etc&#160;;</p>
+</li>
+<li>
+<p><strong>environnements d&#8217;exécution</strong>&#160;— développement, test, production, etc.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>L&#8217;accès à une base de données est un parfait exemple.
+Le nom d&#8217;utilisateur, mot de passe et adresse du serveur
+peuvent d&#8217;ailleurs se combiner en une seule variable composée sous forme d&#8217;URL.</p>
+</div>
+<div class="paragraph">
+<p>Par exemple, si vous avez connaissance des identifiants et de l&#8217;adresse d&#8217;une
+base de données MySQL ou MariaDB, composez l&#8217;URL de configuration comme suit&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>MYSQL_URL=mysql://user:password@server/database \
+  node sql-connect.js</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">sql-connect.js</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">'use strict';
+
+const mysql = require('mysql2/promise');
+const url = process.env.MYSQL_URL;
+
+mysql.createConnection(url).then((connection) =&gt; {  <b class="conum">(1)</b>
+  console.log('Connexion réussie :-)');             <b class="conum">(2)</b>
+  connection.end();                                 <b class="conum">(3)</b>
+});</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Connexion à la base de données en utilisant la variable d&#8217;environnement <code>MYSQL_URL</code>.</p>
+</li>
+<li>
+<p>Affiche <code>Connexion réussie&#160;:-)</code> en cas de succès de connexion à la base de données.</p>
+</li>
+<li>
+<p>Clôture de la connexion&#160;— autrement le script ne se terminerait pas sans avoir recours à <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>C</kbd></span>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Le script d&#8217;exemple devrait avoir affiché la liste des tables contenues
+dans cette base de données ou un message d&#8217;erreur le cas échéant.</p>
+</div>
+<div class="paragraph">
+<p>La documentation du <a href="../chapter-05/index.html#modules">module npm</a>
+<em>mysql2</em> (<span class="URL"><a href="http://npmjs.com/mysql2" class="bare">npmjs.com/mysql2</a></span>) détaille les différentes fonctions
+utilisables pour interagir avec les bases de données compatibles.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Raccourci</span> Créer une base de données MySQL avec Docker</div>
+<div class="paragraph">
+<p>Docker est un outil utile pour créer une base de données en
+une ligne de commande et ce, sans avoir à installer MySQL sur notre ordinateur.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>docker run -ti --rm -e MYSQL_ROOT_PASSWORD=demo \
+  -p 3306:3306 mysql:5</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Vous pourrez ainsi utiliser l&#8217;URL <code>mysql://root:demo@localhost/mysql</code>
+comme variable d&#8217;environnement <code>MYSQL_URL</code> avec
+le script d&#8217;exemple <code>sql-connect.js</code></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Certaines variables d&#8217;environnement sont tellement spécifiques à chaque usage
+qu&#8217;elles doivent être obligatoirement configurées&#160;— identifiants, URL de la
+base de données, etc.
+Je trouve pratique de proposer une valeur par défaut pour les autres&#160;— le port
+de l&#8217;application ou d&#8217;autres éléments plus "cosmétiques".</p>
+</div>
+<div class="paragraph">
+<p>Enfin, j&#8217;ai aussi pris l&#8217;habitude de documenter les variables d&#8217;environnement
+dans le fichier <code>README.md</code> à la racine de chaque projet.
+Nous pouvons ainsi avoir une vue d&#8217;ensemble de la complexité de configuration
+en un rapide coup d&#8217;œil&#160;— et ça nous évite de fouiller dans le code applicatif.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Optimisation</span> <code>NODE_ENV=production</code></div>
+<div class="paragraph">
+<p>Certains <a href="../chapter-05/index.html#modules">modules npm</a> comme <em>express</em>
+(<span class="URL"><a href="https://npmjs.com/express" class="bare">npmjs.com/express</a></span>) lisent la valeur de <code>process.env.NODE_ENV</code>.
+Ils s&#8217;en servent pour procéder à des optimisations et masquer des informations
+sensibles dans un contexte de production
+—&#160;l&#8217;environnement qui fait face à nos utilisateurs.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>NODE_ENV=production node app.js</pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data-persistence">3.4. Persister les fichiers en dehors de notre application</h3>
+<div class="paragraph">
+<p>Les fichiers écrits par notre application devraient être persistés en dehors
+de son arborescence de fichiers.</p>
+</div>
+<div class="paragraph">
+<p>Prenons cet exemple d&#8217;arborescence&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>└── app
+    ├── images
+    └── uploads
+        └── images</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Les images sont stockées à deux endroits&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>app/images</code>&#160;: images statiques affichées par notre application web&#160;— on les versionne avec Git;</p>
+</li>
+<li>
+<p><code>app/uploads/images</code>&#160;: fichiers enregistrés sur le disque par l&#8217;intermédiaire
+de notre application&#160;— on ne les versionne pas avec Git.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Un inconvénient se présente à nous&#160;: nous perdons tout si nous supprimons
+le répertoire <code>app</code> pour réinstaller l&#8217;application de zéro.
+Je conseille donc d'<strong>écrire tout nouveau fichier dans un répertoire indépendant</strong>.
+L&#8217;arborescence évoquée ci-dessus se transformerait ainsi&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>├── app
+│   └── images
+└── uploads
+    └── images</pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Rappel</span> Configurer le chemin avec une variable d&#8217;environnement</div>
+<div class="paragraph">
+<p>Le chemin d&#8217;accès devient flexible dès lors que nous le rendons configurable
+avec une variable d&#8217;environnement.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>UPLOAD_DIR=/uploads npm start</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En savoir plus en lisant la <a href="#configuration">section précédente</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Ce qui peut sembler être une précaution s&#8217;avère encore plus utile
+dès lors que nous utilisons une <a href="#hosting.paas">plate-forme de services</a>
+ou lorsque nous démarrons une nouvelle <a href="#hosting.cloud">machine virtuelle</a>.
+<strong>Chaque nouveau déploiement remet le système de fichiers à zéro</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Une solution complémentaire s&#8217;offre à nous lorsqu&#8217;il devient compliqué
+de partager un même stockage de fichiers entre plusieurs machines ou VM&#160;:
+c&#8217;est le <strong>stockage d&#8217;objets</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Le stockage d&#8217;objets est une solution de stockage élastique où la facturation
+est basée sur la quantité de données stockées et téléchargées.
+Nous accédons aux ressources stockées et à leur contenu avec des requêtes HTTP.
+Les fichiers sont ainsi disponibles à tout moment, sans limite et
+pour tous nos contextes applicatifs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💬</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Histoire</span> Amazon S3</div>
+<div class="paragraph">
+<p>Amazon S3 est le premier service à avoir rendu populaire le stockage d&#8217;objets
+en 2006.
+C&#8217;était la première fois que nous pouvions stocker des fichiers de manière infinie,
+sans limitation de taille de fichiers.</p>
+</div>
+<div class="paragraph">
+<p>Son interface d&#8217;accès (API) est même devenue un standard <em>de facto</em>&#160;: il est
+utilisé par la plupart des concurrents afin de pouvoir passer d&#8217;un fournisseur
+à un autre sans avoir à changer grand-chose à ses applications.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. Services de stockage d&#8217;objets compatibles avec l&#8217;API Amazon S3</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Service</th>
+<th class="tableblock halign-left valign-top">Emplacement(s) du stockage</th>
+<th class="tableblock halign-left valign-top">Tarif mensuel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://aws.amazon.com/s3/" class="bare">aws.amazon.com/s3/</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Paris, Europe, Monde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.024$/Go</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://ovh.com/fr/public-cloud/storage/" class="bare">ovh.com/fr/public-cloud/storage/</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">France</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.01€/Go</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://cloud.google.com/storage/" class="bare">cloud.google.com/storage/</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Europe, Monde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.026$/Go</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="URL"><a href="https://minio.io" class="bare">minio.io</a></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flexible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="database-migration">3.5. Versionner les schémas de base de données</h3>
+<div class="paragraph">
+<p>Le contenu et la structure d&#8217;une application peuvent changer selon qu&#8217;elle tourne
+sur notre ordinateur ou sur notre hébergement.
+Nous pourrions reporter les changements de structure à la main mais c&#8217;est
+sujet à erreurs, difficile à reproduire et difficile à intégrer dans le
+<a href="#deploy">processus de déploiement</a>.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;idéal serait de synchroniser la structure de nos bases de données.
+Ou plutôt, l&#8217;idéal est de <strong>reproduire les changements de structure</strong>.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;exemple suivant illustre la création d&#8217;un nouveau champ&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">db-migration-step.js</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">'use strict';
+
+module.exports = {
+  up (database) {                                  <b class="conum">(1)</b>
+    return database.addColumn('fromages', 'aoc', { <b class="conum">(2)</b>
+      type: 'boolean',                             <b class="conum">(3)</b>
+      defaultValue: false,
+    });
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Fonction exécutée lors de la migration.</p>
+</li>
+<li>
+<p>Nous ajoutons un champ <code>aoc</code> dans la table <code>fromages</code>.</p>
+</li>
+<li>
+<p>Ce champ est de type <em>booléen</em> avec <code>false</code> comme valeur par défaut.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Ce fichier représente une <em>étape de migration</em>.
+L&#8217;idée est de créer une nouvelle étape pour chaque changement de structure
+et de les jouer au prochain déploiement.</p>
+</div>
+<div class="paragraph">
+<p>Cet exemple de migration se base sur le module npm <em>db-migrate</em>
+(<span class="URL"><a href="https://npmjs.com/db-migrate" class="bare">npmjs.com/db-migrate</a></span>).
+Il se connecte à la base de données de notre choix, charge la liste des
+migrations et exécute celles qui n&#8217;ont pas encore été jouées.</p>
+</div>
+<div class="paragraph">
+<p>Les migrations ne s&#8217;utilisent pas que pour changer la structure.
+Elles s&#8217;utilisent aussi pour <strong>créer la structure de notre base de données</strong>&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">db-migration-init.js</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">'use strict';
+
+module.exports = {
+  up (database) {
+    return database.createTable('fromages', { <b class="conum">(1)</b>
+      columns: {
+        id: {                                 <b class="conum">(2)</b>
+          type: 'int',
+          primaryKey: true,
+          autoIncrement: true
+        },
+        name: {                               <b class="conum">(3)</b>
+          type: 'string'
+        }
+      }
+    });
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Création d&#8217;une nouvelle table <code>fromages</code> avec 2 colonnes.</p>
+</li>
+<li>
+<p>La première colonne se nomme <code>id</code>&#160;— elle est numérique et s&#8217;auto-incrémente à chaque nouvel enregistrement.</p>
+</li>
+<li>
+<p>La seconde colonne se nomme <code>name</code>&#160;— c&#8217;est une chaîne de caractères.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Si on met ces deux exemples bout à bout, nous sommes alors en mesure
+de créer une table puis d&#8217;y appliquer un changement en ajoutant une nouvelle
+colonne.</p>
+</div>
+<div class="paragraph">
+<p>Ainsi, nous pouvons répliquer les changements de structures sur d&#8217;autres ordinateurs
+et <strong>reproduire l&#8217;évolution du schéma de la base de données en partant de zéro</strong>.
+Nous avons ainsi rejoué toutes les migrations sur notre outil d&#8217;intégration
+continue pour nous assurer de leur robustesse et revenir en arrière si nécessaire.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="startup">4. Démarrer automatiquement une application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jusqu&#8217;à présent, nous avons démarré les scripts de cet ouvrage
+avec l&#8217;exécutable <code>node</code> ou avec la commande <code>npm start</code>.
+C&#8217;est un processus manuel qui nécessite de conserver un onglet ouvert
+dans notre terminal pour maintenir l&#8217;application en fonctionnement.</p>
+</div>
+<div class="paragraph">
+<p>Cette section explore des mécanismes pour <strong>détacher le processus du terminal</strong>
+et pour <strong>lancer l&#8217;application au démarrage ou redémarrage d&#8217;un ordinateur</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="l_hébergeur_s_en_occupe_à_notre_place">4.1. L&#8217;hébergeur s&#8217;en occupe à notre place</h3>
+<div class="paragraph">
+<p>Les <a href="#hosting.paas">plates-formes de service</a> automatisent le démarrage de
+l&#8217;application.<br>
+Elles exécutent la <a href="../chapter-05/index.html#start">commande <code>npm start</code></a>
+dès que le déploiement est terminé.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est tout.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="process-manager">4.2. Avec un gestionnaire de processus</h3>
+<div class="paragraph">
+<p>Un gestionnaire de processus a deux utilités&#160;:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>détacher un processus</strong> de notre terminal&#160;— si on le ferme, l&#8217;application tourne toujours&#160;;</p>
+</li>
+<li>
+<p><strong>gérer plusieurs processus par application</strong>&#160;— un frontal web et l&#8217;admin par exemple.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>pm2</em> (<span class="URL"><a href="https://pm2.keymetrics.io" class="bare">pm2.keymetrics.io</a></span>) est un gestionnaire de processus
+disponible en tant que <a href="../chapter-05/index.html#modules">module npm</a>
+(<span class="URL"><a href="https://npmjs.com/pm2" class="bare">npmjs.com/pm2</a></span>).
+Il fonctionne sous Linux, Windows et macOS.</p>
+</div>
+<div class="paragraph">
+<p>La commande suivante démarre un script et le place aussitôt en tâche de fond&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>pm2 start app.js</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/pm2-start.png" alt="pm2 start" width="85%">
+</div>
+<div class="title">Figure 15. Exemple de démarrage et d&#8217;affichage de l&#8217;état d&#8217;une application Node avec <em>pm2</em>.</div>
+</div>
+<div class="paragraph">
+<p>Cette même application s&#8217;arrête avec la commande <code>pm2 stop</code> et
+se relance pour prendre en compte des changements de code avec <code>pm2 restart</code>.</p>
+</div>
+<div class="paragraph">
+<p>Les gestionnaires de processus facilitent l&#8217;intégration
+d&#8217;une application en tant que <a href="#system-service">service système</a>
+(cf. section suivante).<br>
+C&#8217;est mon choix de prédilection pour ne pas avoir à apprendre un nouveau
+fichier de configuration.</p>
+</div>
+<div class="paragraph">
+<p>La commande suivante nous guide dans la configuration de notre système
+d&#8217;exploitation&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>pm2 startup</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Celle-ci sauvegarde les applications démarrées avec le gestionnaire de processus.
+Elles seront restaurées au prochain redémarrage de l&#8217;ordinateur&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>pm2 save</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On peut aussi revenir en arrière et décider de désactiver le démarrage
+automatique de nos applications&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>pm2 unstartup</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💬</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Windows</span> Configurer pm2</div>
+<div class="paragraph">
+<p>La commande <code>pm2 startup</code> pose problème sous Windows.
+Je recommande d&#8217;utiliser le module npm <em>pm2-windows-service</em>
+(<span class="URL"><a href="https://www.npmjs.com/package/pm2-windows-service" class="bare">www.npmjs.com/package/pm2-windows-service</a></span>) pour simplifier
+cette procédure.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="system-service">4.3. En créant un service système</h3>
+<div class="paragraph">
+<p>Tous les systèmes d&#8217;exploitation ont un mécanisme pour
+démarrer des applications en fonction de certains critères&#160;:
+quand le réseau ou une connexion Internet est disponible,
+lorsqu&#8217;une session utilisateur s&#8217;est ouverte
+ou même quand un autre logiciel est actif.</p>
+</div>
+<div class="paragraph">
+<p>Systemd, Upstart et launchd sont des gestionnaires de services système parmi d&#8217;autres.
+Ils se configurent avec des fichiers écrits dans des formats différents.</p>
+</div>
+<div class="paragraph">
+<p>Voici un exemple de fichier de configuration pour <em>systemd</em>
+(<span class="URL"><a href="https://doc.ubuntu-fr.org/systemd" class="bare">doc.ubuntu-fr.org/systemd</a></span>).
+C&#8217;est le gestionnaire de services des distributions Linux <em>Ubuntu</em>,
+ <em>Debian</em>, <em>Fedora</em> et <em>CentOS</em>.</p>
+</div>
+<div class="listingblock">
+<div class="title">systemd/nodebook.d/app.conf</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>[Unit]
+Description="Application Node.js"
+After=NetworkManager.service            <b class="conum">(1)</b>
+
+[Service]
+Restart=on-failure                      <b class="conum">(2)</b>
+DefaultStartLimitBurst=5
+StartLimitIntervalSec=120
+User=nobody                             <b class="conum">(3)</b>
+
+Environment="NODE_ENV=production"
+WorkingDirectory=/usr/local/node-app    <b class="conum">(4)</b>
+ExecStart=/usr/bin/npm start            <b class="conum">(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>L&#8217;application démarrera dès que l&#8217;interface réseau sera opérationnelle.</p>
+</li>
+<li>
+<p>L&#8217;application sera relancée en cas de plantage&#160;— maximum 5 fois dans un délai de 120 secondes.</p>
+</li>
+<li>
+<p>Le processus sera démarré au nom de l&#8217;utilisateur système <code>nobody</code>.</p>
+</li>
+<li>
+<p>C&#8217;est comme si nous faisions <code>cd /usr/local/node-app</code> avant de lancer l&#8217;application&#160;— c&#8217;est la valeur qu&#8217;on retrouve avec <code>process.cwd()</code>.</p>
+</li>
+<li>
+<p>Commande à exécuter pour démarrer l&#8217;application.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Le service associé au fichier de configuration précédent peut être démarré
+manuellement comme suit&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="#"></span>Cf. /etc/systemd/<i>nodebook</i>.d/app.conf
+<span data-bash-subs="$"></span>sudo systemctl start <i>nodebook</i>.service</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Les commandes <code>systemctl stop</code> et <code>systemctl restart</code>
+arrêtent et relancent un service.</p>
+</div>
+<div class="paragraph">
+<p>Dans tous les cas, le service sera lancé automatiquement au prochain
+démarrage du système d&#8217;exploitation.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Alternative</span> Et pour Windows ?</div>
+<div class="paragraph">
+<p>Le gestionnaire de services Windows est compliqué à utiliser.
+Je recommande d&#8217;utiliser le module npm
+<em>node-windows</em> (<span class="URL"><a href="https://npmjs.com/node-windows" class="bare">npmjs.com/node-windows</a></span>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="application-manager">4.4. Avec un serveur d&#8217;applications web</h3>
+<div class="paragraph">
+<p>Un serveur d&#8217;applications web est un logiciel informatique
+qui a deux objectifs&#160;: <strong>être toujours disponible</strong>
+et <strong>répartir le trafic HTTP</strong> vers des fichiers et des applications web.
+C&#8217;est une sorte de parapluie optimisé et résistant qui se met au-devant
+de nos applications.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💬</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Question</span> Pourquoi utiliser un serveur d&#8217;applications ?</div>
+<div class="paragraph">
+<p>Les serveurs d&#8217;applications sont excellents pour gérer la charge des requêtes,
+se protéger de failles de sécurité HTTP et être performants dans le
+traitement des fichiers statiques.</p>
+</div>
+<div class="paragraph">
+<p>Leur capacité à redémarrer une application Node en cas de plantage ou de
+nouveau déploiement nous enlève une épine du pied.
+Certains ont même des facultés de <em>répartition de charge</em> (<em>load balancing</em>)&#160;:
+plusieurs instances de la même application tournent alors en parallèle
+—&#160;une par CPU.
+Le trafic est réparti vers l&#8217;instance qui a le plus de CPU disponible.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Phusion Passenger</strong> (<span class="URL"><a href="https://phusionpassenger.com/" class="bare">phusionpassenger.com/</a></span>) est un
+serveur d&#8217;applications web open source, léger et performant.
+Il est compatible avec des applications Ruby, Node et Python.
+Il s&#8217;installe de manière autonome ou en complément des serveurs <em>nginx</em>
+(<span class="URL"><a href="https://nginx.org" class="bare">nginx.org</a></span>) et <em>Apache httpd</em> (<span class="URL"><a href="https://httpd.apache.org" class="bare">httpd.apache.org</a></span>).</p>
+</div>
+<div class="paragraph">
+<p>Regardons ensemble à quoi ressemble un fichier de configuration <em>nginx</em>
+minimaliste&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">nginx/static.conf</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-nginx hljs" data-lang="nginx">server {
+  listen 80 default_server;
+  server_name _;
+
+  root /var/www;       <b class="conum">(1)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Répertoire racine où <em>nginx</em> va chercher les fichiers.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Si <em>nginx</em> est lancé sur notre ordinateur avec ce fichier de configuration
+et que le fichier <code>image.jpg</code> est placé dans le répertoire <code>/var/www</code>,
+alors nous pourrons y accéder dans un navigateur web
+sur <code><a href="http://localhost/image.jpg" class="bare">localhost/image.jpg</a></code>.</p>
+</div>
+<div class="paragraph">
+<p>Transformons maintenant ce fichier de configuration
+après avoir installé le module <em>Phusion Passenger</em> pour <em>nginx</em>
+(<span class="URL"><a href="https://phusionpassenger.com/library/install/nginx/" class="bare">phusionpassenger.com/library/install/nginx/</a></span>)&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">nginx/phusionwebapp.conf</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-nginx hljs" data-lang="nginx">server {
+  listen 80 default_server;
+  server_name _;
+  root /var/www;
+
+  passenger_enabled on;                             <b class="conum">(1)</b>
+  passenger_app_type node;                          <b class="conum">(2)</b>
+  passenger_app_root /var/apps/my-app;              <b class="conum">(3)</b>
+  passenger_startup_file app.js;                    <b class="conum">(4)</b>
+  passenger_document_root /var/apps/my-app/public;  <b class="conum">(5)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Activation du module <em>Phusion Passenger</em> pour <em>nginx</em>.</p>
+</li>
+<li>
+<p>Nous indiquons à <em>Phusion Passenger</em> qu&#8217;il s&#8217;agit d&#8217;une application Node.</p>
+</li>
+<li>
+<p>L&#8217;application se trouve dans le répertoire <code>/var/apps/my-app</code>.</p>
+</li>
+<li>
+<p>Le script à démarrer est <code>app.js</code>&#160;— c&#8217;est-à-dire <code>/var/apps/my-app/app.js</code>.</p>
+</li>
+<li>
+<p>Emplacement où <em>Phusion Passenger</em> ira chercher les fichiers statiques.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>Phusion Passenger</em> démarre l&#8217;application Node pour nous.
+Il la maintient en vie en cas de plantage.
+Son comportement se configure finement à l&#8217;aide de directives dont la liste
+intégrale se trouve sur
+<span class="URL"><a href="http://phusionpassenger.com/library/config/nginx/reference/" class="bare">phusionpassenger.com/library/config/nginx/reference/</a></span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="monitoring">5. À quoi penser après la mise en ligne ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>De la programmation au déploiement, nous sommes toujours en mesure
+de savoir quand quelque chose ne va pas&#160;: les <strong>erreurs se produisent sous nos yeux</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Les problèmes commencent à <strong>échapper à notre attention dès la mise en ligne</strong>.
+Regardons ensemble ce que nous pouvons faire pour intervenir au bon moment.</p>
+</div>
+<div class="sect2">
+<h3 id="uptime">5.1. L&#8217;application a planté</h3>
+<div class="paragraph">
+<p>Que se passe-t-il lorsqu&#8217;une application plante en plein milieu du week-end&#160;?
+<em>Rien</em>.
+Nous n&#8217;en savons rien tant que nous n&#8217;allons pas sur l&#8217;application en question.
+L&#8217;action la plus simple à mettre en œuvre est de <strong>recevoir une alerte</strong>
+par e-mail ou par SMS.</p>
+</div>
+<div class="paragraph">
+<p><em>Pingdom</em> (<span class="URL"><a href="https://www.pingdom.com/free" class="bare">www.pingdom.com/free</a></span>) répond exactement à ce besoin.
+Il est gratuit pour un site web et payant au-delà.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/pingdom-uptime.png" alt="pingdom uptime" width="85%">
+</div>
+<div class="title">Figure 16. Écran de configuration des alertes de sites web avec Pingdom.</div>
+</div>
+<div class="paragraph">
+<p><em>Uptime Robot</em> (<span class="URL"><a href="https://uptimerobot.com" class="bare">uptimerobot.com</a></span>) est un service similaire.
+Il offre en plus un flux RSS d&#8217;alertes et une intégration avec Slack.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exceptions">5.2. S&#8217;informer des erreurs applicatives</h3>
+<div class="paragraph">
+<p>Lorsque nous prenons connaissance d&#8217;un plantage applicatif, comment déterminer
+ce qui l&#8217;a causé&#160;?</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/heroku-app-error.png" alt="heroku app error" width="85%">
+</div>
+<div class="title">Figure 17. Écran affiché par Heroku lorsque l&#8217;application a planté et ne répond plus.</div>
+</div>
+<div class="paragraph">
+<p>S&#8217;il s&#8217;agit d&#8217;une application personnelle ou sans enjeu,
+nous pouvons nous contenter de reproduire le problème localement.<br>
+Dans le cas d&#8217;une application professionnelle,
+nous aurons besoin d&#8217;avoir plus de précisions, rapidement.</p>
+</div>
+<div class="paragraph">
+<p><em>Sentry</em> (<span class="URL"><a href="https://sentry.io" class="bare">sentry.io</a></span>) est un service en ligne qui s&#8217;intègre
+dans notre code comme une sonde.
+Une fois placée, la sonde transmet les erreurs vers la plate-forme <em>Sentry</em>.
+Cette plate-forme affiche les erreurs connues sous forme de tableau de bord&#160;—
+leur nature, combien de fois elles se répètent.
+Elle nous envoie également une notification par e-mail avec une indication
+de sévérité, pour que nous puissions réagir plus ou moins rapidement.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/sentry-error.png" alt="sentry error" width="85%">
+</div>
+<div class="title">Figure 18. Écran d&#8217;affichage d&#8217;une erreur analysée par Sentry.</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;inclusion d&#8217;une sonde basique revient à insérer 2 lignes dans notre code&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="title">sentry.js</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">'use strict';
+
+const sentry = require('raven');                  <b class="conum">(1)</b>
+sentry.config(process.env.SENTRY_DSN).install();  <b class="conum">(2)</b>
+
+const express = require('express');
+const app = express();
+
+test;                                             <b class="conum">(3)</b>
+
+app.get('/', (request, response) =&gt; response.send('OK!'));
+app.listen(process.env.PORT || 4000);</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p><em>raven</em> est le nom du module npm édité par Sentry pour collecter les erreurs.</p>
+</li>
+<li>
+<p>Configuration du client Sentry&#160;— il collectera et enverra les erreurs auprès du service Sentry.</p>
+</li>
+<li>
+<p>Cette ligne est la source de notre erreur&#160;— la variable n&#8217;est pas définie.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>Sentry</em> nous communique une clé d&#8217;API pour chaque projet à monitorer.
+Quand vous obtenez la vôtre, modifiez la ligne de commande suivante afin
+de provoquer l&#8217;erreur, de recevoir l&#8217;e-mail d&#8217;alerte et de la visualiser
+en détails sur le tableau de bord&#160;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>SENTRY_DSN=https://0c...@sentry.io/1201870 node sentry.js</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💬</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Documentation</span> Configurer Sentry</div>
+<div class="paragraph">
+<p>Un guide complet (en anglais) documente comment aller plus loin
+dans l&#8217;utilisation de Sentry.</p>
+</div>
+<div class="paragraph">
+<p>Il se lit sur <span class="URL"><a href="https://docs.sentry.io/clients/node/" class="bare">docs.sentry.io/clients/node/</a></span>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Le service <em>New Relic</em> (<span class="URL"><a href="https://newrelic.com/nodejs" class="bare">newrelic.com/nodejs</a></span>)
+est une alternative à <em>Sentry</em>.
+Il mesure également les performances et les sources de ralentissement.
+<em>New Relic</em> s&#8217;installe gratuitement et en quelques clics sur la
+<a href="#hosting.paas">plate-forme de services</a> Heroku.
+Il devient payant à partir d&#8217;un certain volume de requêtes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="security.node">5.3. Notre version de Node fait l&#8217;objet d&#8217;une faille de sécurité</h3>
+<div class="paragraph">
+<p>Certaines versions de Node sortent pour apporter de nouvelles fonctionnalités
+ou pour corriger des bugs.
+D&#8217;autres sont publiées pour corriger des failles de sécurité.
+Ces <strong>failles sont critiques pour nos applications</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Lorsqu&#8217;une faille est exploitée, la personne à l&#8217;origine de l&#8217;attaque
+peut ralentir, faire planter ou extraire des informations confidentielles
+de notre application.
+En cas de faille critique, l&#8217;attaquant·e peut aussi gagner un accès
+à l&#8217;ordinateur et aux bases de données hébergeant l&#8217;application.</p>
+</div>
+<div class="paragraph">
+<p>Solution&#160;: <strong>redéployer nos applications</strong> avec une version de Node plus récente.</p>
+</div>
+<div class="paragraph">
+<p>Je vous encourage à recevoir des alertes par e-mail ou en
+vous abonnant au fil RSS pour être prevenu·e au bon moment.</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+E-mail
+</td>
+<td class="hdlist2">
+<p><span class="URL"><a href="https://groups.google.com/group/nodejs-sec" class="bare">groups.google.com/group/nodejs-sec</a></span></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Fil RSS
+</td>
+<td class="hdlist2">
+<p><span class="URL"><a href="https://nodejs.org/en/feed/vulnerability.xml" class="bare">nodejs.org/en/feed/vulnerability.xml</a></span></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/node-security-bulletin.png" alt="node security bulletin">
+</div>
+<div class="title">Figure 19. Exemple d&#8217;alerte de sécurité envoyée par e-mail.</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="security.npm">5.4. Un des modules npm fait l&#8217;objet d&#8217;une faille de sécurité</h3>
+<div class="paragraph">
+<p>Les modules npm sont aussi affectés par des failles de sécurité.</p>
+</div>
+<div class="paragraph">
+<p>Les conséquences de leur exploitation sont similaires aux failles de Node&#160;:
+les personnes à l&#8217;origine des attaques peuvent saturer le serveur et
+paralyser l&#8217;application.
+Elles sont aussi en mesure de subtiliser des informations confidentielles
+stockées en base de données ou saisies par les usagers.</p>
+</div>
+<div class="paragraph">
+<p><em>Snyk</em> (<span class="URL"><a href="https://snyk.io" class="bare">snyk.io</a></span>) est un service de sécurité gratuit pour les
+projets open source.
+Il scanne les vulnérabilités de nos dépendances et
+des dépendances de nos dépendances.
+Il nous alerte sur la sévérité des failles décelées dans nos projets.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/snyk-dashboard.png" alt="snyk dashboard" width="85%">
+</div>
+<div class="title">Figure 20. Tableau de bord des dépendances vulnérables avec Snyk.</div>
+</div>
+<div class="paragraph">
+<p>Ces failles sont classées en 3 niveaux&#160;: dangereuses, modérées et superficielles.
+Mieux vaut mettre à jour les dépendances affectées par une faille dangereuse
+le plus rapidement possible.</p>
+</div>
+<div class="paragraph">
+<p>Ce n&#8217;est pas grave si nous ne mettons pas à jour un vieux module npm.
+Ça peut avoir un impact négatif si cette vieille version est affectée par une faille.</p>
+</div>
+<div class="paragraph">
+<p>La capture d&#8217;écran suivante illustre une vulnérabilité décelée dans le module
+npm <em>restify</em> dans sa version 4&#160;:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/snyk-vulnerability.png" alt="TIP" width="85%">
+</div>
+<div class="title">Figure 21. Affichage d&#8217;une vulnérabilité et d&#8217;un chemin de résolution avec Snyk.</div>
+</div>
+<div class="paragraph">
+<p>La correction du problème implique de passer à la version 5.
+Cette action nous demandera surement d&#8217;adapter notre code car nous changeons
+de version majeure&#160;— de la version 4 à la version 5.
+Ces migrations sont souvent documentées par les auteurs des modules.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Pratique</span> Intégrations npm, Heroku, etc.</div>
+<div class="paragraph">
+<p>Snyk s&#8217;intègre à d&#8217;autres services que GitHub&#160;: GitLab, Heroku, BitBucket, etc.</p>
+</div>
+<div class="paragraph">
+<p>Les applications au code source privé peuvent être vérifiées gratuitement
+avec l&#8217;API de Snyk ou son application en ligne de commande.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="hdlist">
+<div class="title">Ressources proposées par Snyk.</div>
+<table>
+<tr>
+<td class="hdlist1">
+Base de données
+</td>
+<td class="hdlist2">
+<p><span class="URL"><a href="https://snyk.io/vuln/?type=npm" class="bare">snyk.io/vuln/?type=npm</a></span></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Fil RSS
+</td>
+<td class="hdlist2">
+<p><span class="URL"><a href="https://snyk.io/vuln/feed.xml?type=npm" class="bare">snyk.io/vuln/feed.xml?type=npm</a></span></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Nous avons parlé de la commande <code>npm audit</code> dans
+le <a href="../chapter-05/index.html#audit">chapitre 5</a>.
+Elle dispose d&#8217;une option pour mettre à jour automatiquement
+les dépendances dangereuses&#160;: <code>npm audit fix</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span data-bash-subs="$"></span>npm audit fix
+<span data-bash-subs=">"></span>fixed 20 of 21 vulnerabilities in 1867 scanned packages
+<span data-bash-subs=">"></span>  1 vulnerability required manual review and could not be updated</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Rester à l&#8217;écoute des vulnérabilités en combinaison de l&#8217;utilisation
+de Snyk ou de <code>npm audit fix</code> suffit à prendre des mesures de correction
+efficaces sans avoir à trop s&#8217;y connaitre.</p>
+</div>
+<div class="paragraph">
+<p>La lecture des rapports de vulnérabilité est un bon moyen de comprendre
+comment ces exploits fonctionnent, et comment penser nos applications
+pour éviter d&#8217;exposer une surface d&#8217;attaque minimale.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conclusion">6. Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nous avons désormais <strong>toutes les clés pour partager notre code</strong> et le
+résultat de son exécution de manière publique.</p>
+</div>
+<div class="paragraph">
+<p>Nous avons appris à <strong>choisir un hébergement et un mode de déploiement</strong>
+adapté à notre temps disponible ainsi qu&#8217;à nos envies.
+Nous sommes en mesure d&#8217;aller vite ou de prendre le temps de configurer
+une machine pour des besoins très précis.</p>
+</div>
+<div class="paragraph">
+<p>La <strong>configuration d&#8217;une application</strong> avec des variables d&#8217;environnement
+est une des clés pour automatiser le déploiement.</p>
+</div>
+<div class="paragraph">
+<p>L'<strong>automatisation du démarrage</strong> d&#8217;une application demande d&#8217;investir du temps
+pour être à l&#8217;aise.
+Ce temps est utile car le principe s&#8217;applique à d&#8217;autres langages
+et ouvre la porte de la maîtrise de l&#8217;hébergement applicatif,
+quand les <a href="#hosting.paas">plate-formes de service</a> commencent à nous
+coûter trop cher.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Dernière mise à jour 2018-06-13 15:44:45 Coordinated Universal Time
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlighting()</script>
+</body>
+</html>

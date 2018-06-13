@@ -1,0 +1,3053 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.6.2">
+<title>Histoire, écosystème et gouvernance</title>
+<style>
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+/* Uncomment @import statement below to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+script {
+  display: none !important;
+}
+html {
+  /* font-family: sans-serif; */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+a {
+  background: transparent;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace;
+  font-size: 1em;
+}
+pre {
+  white-space: pre-wrap;
+}
+q {
+  quotes: '\201C' '\201D' '\2018' '\2019';
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+input[type='checkbox'],
+input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 18px;
+}
+body {
+  background: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  padding: 0;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  position: relative;
+  cursor: auto;
+  tab-size: 4;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+a:hover {
+  cursor: pointer;
+}
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+object,
+embed {
+  height: 100%;
+}
+img {
+  -ms-interpolation-mode: bicubic;
+}
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-justify {
+  text-align: justify !important;
+}
+.hide {
+  display: none;
+}
+img,
+object,
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+textarea {
+  height: auto;
+  min-height: 50px;
+}
+select {
+  width: 100%;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.stretch {
+  width: 100%;
+}
+p.lead,
+.paragraph.lead > p,
+#preamble > .sectionbody > .paragraph:first-of-type p {
+  font-size: 1.21875em;
+  line-height: 1.6;
+}
+.subheader,
+.admonitionblock td.content > .title,
+.audioblock > .title,
+.exampleblock > .title,
+.imageblock > .title,
+.listingblock > .title,
+.literalblock > .title,
+.stemblock > .title,
+.openblock > .title,
+.paragraph > .title,
+.quoteblock > .title,
+table.tableblock > .title,
+.verseblock > .title,
+.videoblock > .title,
+.dlist > .title,
+.olist > .title,
+.ulist > .title,
+.qlist > .title,
+.hdlist > .title {
+  line-height: 1.45;
+  color: #7a2518;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+#toctitle,
+.sidebarblock > .content > .title,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  direction: ltr;
+}
+a {
+  color: #2156a5;
+  text-decoration: underline;
+  line-height: inherit;
+}
+a:hover,
+a:focus {
+  color: #1d4b8f;
+}
+a img {
+  border: none;
+}
+p {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 1.25em;
+  text-rendering: optimizeLegibility;
+}
+p aside {
+  font-size: 0.875em;
+  line-height: 1.35;
+  font-style: italic;
+}
+h1,
+h2,
+h3,
+#toctitle,
+.sidebarblock > .content > .title,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', 'DejaVu Sans', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #ba3925;
+  text-rendering: optimizeLegibility;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  line-height: 1.0125em;
+}
+h1 small,
+h2 small,
+h3 small,
+#toctitle small,
+.sidebarblock > .content > .title small,
+h4 small,
+h5 small,
+h6 small {
+  font-size: 60%;
+  color: #e99b8f;
+  line-height: 0;
+}
+h1 {
+  font-size: 2.125em;
+}
+h2 {
+  font-size: 1.6875em;
+}
+h3,
+#toctitle,
+.sidebarblock > .content > .title {
+  font-size: 1.375em;
+}
+h4,
+h5 {
+  font-size: 1.125em;
+}
+h6 {
+  font-size: 1em;
+}
+hr {
+  border: solid #ddddd8;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1.25em 0 1.1875em;
+  height: 0;
+}
+em,
+i {
+  font-style: italic;
+  line-height: inherit;
+}
+strong,
+b {
+  font-weight: bold;
+  line-height: inherit;
+}
+small {
+  font-size: 60%;
+  line-height: inherit;
+}
+code {
+  font-family: 'Droid Sans Mono', 'DejaVu Sans Mono', monospace;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+}
+ul,
+ol,
+dl {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 1.25em;
+  list-style-position: outside;
+  font-family: inherit;
+}
+ul,
+ol {
+  margin-left: 1.5em;
+}
+ul li ul,
+ul li ol {
+  margin-left: 1.25em;
+  margin-bottom: 0;
+  font-size: 1em;
+}
+ul.square li ul,
+ul.circle li ul,
+ul.disc li ul {
+  list-style: inherit;
+}
+ul.square {
+  list-style-type: square;
+}
+ul.circle {
+  list-style-type: circle;
+}
+ul.disc {
+  list-style-type: disc;
+}
+ol li ul,
+ol li ol {
+  margin-left: 1.25em;
+  margin-bottom: 0;
+}
+dl dt {
+  margin-bottom: 0.3125em;
+  font-weight: bold;
+}
+dl dd {
+  margin-bottom: 1.25em;
+}
+abbr,
+acronym {
+  text-transform: uppercase;
+  font-size: 90%;
+  color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px dotted #ddd;
+  cursor: help;
+}
+abbr {
+  text-transform: none;
+}
+blockquote {
+  margin: 0 0 1.25em;
+  padding: 0.5625em 1.25em 0 1.1875em;
+  border-left: 1px solid #ddd;
+}
+blockquote cite {
+  display: block;
+  font-size: 0.9375em;
+  color: rgba(0, 0, 0, 0.6);
+}
+blockquote cite::before {
+  content: '\2014 \0020';
+}
+blockquote cite a,
+blockquote cite a:visited {
+  color: rgba(0, 0, 0, 0.6);
+}
+blockquote,
+blockquote p {
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.85);
+}
+@media only screen and (min-width: 768px) {
+  h1,
+  h2,
+  h3,
+  #toctitle,
+  .sidebarblock > .content > .title,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: 2.75em;
+  }
+  h2 {
+    font-size: 2.3125em;
+  }
+  h3,
+  #toctitle,
+  .sidebarblock > .content > .title {
+    font-size: 1.6875em;
+  }
+  h4 {
+    font-size: 1.4375em;
+  }
+}
+table {
+  background: #fff;
+  margin-bottom: 1.25em;
+  border: solid 1px #dedede;
+}
+table thead,
+table tfoot {
+  background: #f7f8f7;
+}
+table thead tr th,
+table thead tr td,
+table tfoot tr th,
+table tfoot tr td {
+  padding: 0.5em 0.625em 0.625em;
+  font-size: inherit;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: left;
+}
+table tr th,
+table tr td {
+  padding: 0.5625em 0.625em;
+  font-size: inherit;
+  color: rgba(0, 0, 0, 0.8);
+}
+table tr.even,
+table tr.alt,
+table tr:nth-of-type(even) {
+  background: #f8f8f7;
+}
+table thead tr th,
+table tfoot tr th,
+table tbody tr td,
+table tr td,
+table tfoot tr td {
+  display: table-cell;
+  line-height: 1.6;
+}
+h1,
+h2,
+h3,
+#toctitle,
+.sidebarblock > .content > .title,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  word-spacing: -0.05em;
+}
+h1 strong,
+h2 strong,
+h3 strong,
+#toctitle strong,
+.sidebarblock > .content > .title strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  font-weight: 400;
+}
+.clearfix::before,
+.clearfix::after,
+.float-group::before,
+.float-group::after {
+  content: ' ';
+  display: table;
+}
+.clearfix::after,
+.float-group::after {
+  clear: both;
+}
+*:not(pre) > code {
+  font-size: 0.9375em;
+  font-style: normal !important;
+  letter-spacing: 0;
+  padding: 0.1em 0.5ex;
+  word-spacing: -0.15em;
+  background-color: #f7f7f8;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  line-height: 1.45;
+  text-rendering: optimizeSpeed;
+  word-wrap: break-word;
+}
+*:not(pre) > code.nobreak {
+  word-wrap: normal;
+}
+*:not(pre) > code.nowrap {
+  white-space: nowrap;
+}
+pre,
+pre > code {
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.9);
+  font-family: 'Droid Sans Mono', 'DejaVu Sans Mono', monospace;
+  font-weight: 400;
+  text-rendering: optimizeSpeed;
+}
+em em {
+  font-style: normal;
+}
+strong strong {
+  font-weight: 400;
+}
+.keyseq {
+  color: rgba(51, 51, 51, 0.8);
+}
+kbd {
+  font-family: 'Droid Sans Mono', 'DejaVu Sans Mono', monospace;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 0.65em;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 0.1em white inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 0.1em #fff inset;
+  margin: 0 0.15em;
+  padding: 0.2em 0.5em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.1em;
+  white-space: nowrap;
+}
+.keyseq kbd:first-child {
+  margin-left: 0;
+}
+.keyseq kbd:last-child {
+  margin-right: 0;
+}
+.menuseq,
+.menuref {
+  color: #000;
+}
+.menuseq b:not(.caret),
+.menuref {
+  font-weight: inherit;
+}
+.menuseq {
+  word-spacing: -0.02em;
+}
+.menuseq b.caret {
+  font-size: 1.25em;
+  line-height: 0.8;
+}
+.menuseq i.caret {
+  font-weight: bold;
+  text-align: center;
+  width: 0.45em;
+}
+b.button::before,
+b.button::after {
+  position: relative;
+  top: -1px;
+  font-weight: 400;
+}
+b.button::before {
+  content: '[';
+  padding: 0 3px 0 2px;
+}
+b.button::after {
+  content: ']';
+  padding: 0 2px 0 3px;
+}
+p a > code:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+#header,
+#content,
+#footnotes,
+#footer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 62.5em;
+  *zoom: 1;
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+}
+#header::before,
+#header::after,
+#content::before,
+#content::after,
+#footnotes::before,
+#footnotes::after,
+#footer::before,
+#footer::after {
+  content: ' ';
+  display: table;
+}
+#header::after,
+#content::after,
+#footnotes::after,
+#footer::after {
+  clear: both;
+}
+#content {
+  margin-top: 1.25em;
+}
+#content::before {
+  content: none;
+}
+#header > h1:first-child {
+  color: rgba(0, 0, 0, 0.85);
+  margin-top: 2.25rem;
+  margin-bottom: 0;
+}
+#header > h1:first-child + #toc {
+  margin-top: 8px;
+  border-top: 1px solid #ddddd8;
+}
+#header > h1:only-child,
+body.toc2 #header > h1:nth-last-child(2) {
+  border-bottom: 1px solid #ddddd8;
+  padding-bottom: 8px;
+}
+#header .details {
+  border-bottom: 1px solid #ddddd8;
+  line-height: 1.45;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 0.25em;
+  color: rgba(0, 0, 0, 0.6);
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+#header .details span:first-child {
+  margin-left: -0.125em;
+}
+#header .details span.email a {
+  color: rgba(0, 0, 0, 0.85);
+}
+#header .details br {
+  display: none;
+}
+#header .details br + span::before {
+  content: '\00a0\2013\00a0';
+}
+#header .details br + span.author::before {
+  content: '\00a0\22c5\00a0';
+  color: rgba(0, 0, 0, 0.85);
+}
+#header .details br + span#revremark::before {
+  content: '\00a0|\00a0';
+}
+#header #revnumber {
+  text-transform: capitalize;
+}
+#header #revnumber::after {
+  content: '\00a0';
+}
+#content > h1:first-child:not([class]) {
+  color: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid #ddddd8;
+  padding-bottom: 8px;
+  margin-top: 0;
+  padding-top: 1rem;
+  margin-bottom: 1.25rem;
+}
+#toc {
+  border-bottom: 1px solid #efefed;
+  padding-bottom: 0.5em;
+}
+#toc > ul {
+  margin-left: 0.125em;
+}
+#toc ul.sectlevel0 > li > a {
+  font-style: italic;
+}
+#toc ul.sectlevel0 ul.sectlevel1 {
+  margin: 0.5em 0;
+}
+#toc ul {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  list-style-type: none;
+}
+#toc li {
+  line-height: 1.3334;
+  margin-top: 0.3334em;
+}
+#toc a {
+  text-decoration: none;
+  white-space: normal;
+}
+#toc a:active {
+  text-decoration: underline;
+}
+#toctitle {
+  color: #7a2518;
+  font-size: 1.2em;
+}
+@media only screen and (min-width: 768px) {
+  #toctitle {
+    font-size: 1.375em;
+  }
+  body.toc2 {
+    padding-left: 16em;
+    padding-right: 1em;
+  }
+  #toc.toc2 {
+    margin-top: 0 !important;
+    background-color: #f8f8f7;
+    position: fixed;
+    width: 15em;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #efefed;
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
+    z-index: 1000;
+    padding: 1.25em 1em;
+    height: 100%;
+    overflow: auto;
+  }
+  #toc.toc2 #toctitle {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.2em;
+  }
+  #toc.toc2 > ul {
+    font-size: 0.85em;
+    margin-bottom: 0;
+  }
+  #toc.toc2 ul ul {
+    margin-left: 0;
+    padding-left: 1em;
+  }
+  #toc.toc2 ul.sectlevel0 ul.sectlevel1 {
+    padding-left: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  body.toc2.toc-right {
+    padding-left: 0;
+    padding-right: 15em;
+  }
+  body.toc2.toc-right #toc.toc2 {
+    border-right-width: 0;
+    border-left: 1px solid #efefed;
+    left: auto;
+    right: 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  body.toc2 {
+    padding-left: 27%;
+    padding-left: 27vw;
+    padding-right: 2%;
+    padding-right: 2vw;
+  }
+  #toc.toc2 {
+    width: 25%;
+    width: 25vw;
+  }
+  #toc.toc2 #toctitle {
+    font-size: 1.375em;
+  }
+  #toc.toc2 ul ul {
+    padding-left: 1.25em;
+  }
+  body.toc2.toc-right {
+    padding-left: 0;
+    padding-right: 20em;
+  }
+}
+#content #toc {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e0e0dc;
+  margin-bottom: 1.25em;
+  padding: 1.25em;
+  background: #f8f8f7;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+#content #toc > :first-child {
+  margin-top: 0;
+}
+#content #toc > :last-child {
+  margin-bottom: 0;
+}
+#footer {
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1.25em;
+}
+#footer-text {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.44;
+}
+#content {
+  margin-bottom: 0.625em;
+}
+.sect1 {
+  padding-bottom: 0.625em;
+}
+@media only screen and (min-width: 768px) {
+  #content {
+    margin-bottom: 1.25em;
+  }
+  .sect1 {
+    padding-bottom: 1.25em;
+  }
+}
+.sect1:last-child {
+  padding-bottom: 0;
+}
+.sect1 + .sect1 {
+  border-top: 1px solid #efefed;
+}
+#content h1 > a.anchor,
+h2 > a.anchor,
+h3 > a.anchor,
+#toctitle > a.anchor,
+.sidebarblock > .content > .title > a.anchor,
+h4 > a.anchor,
+h5 > a.anchor,
+h6 > a.anchor {
+  position: absolute;
+  z-index: 1001;
+  width: 1.5ex;
+  margin-left: -1.5ex;
+  display: block;
+  text-decoration: none !important;
+  visibility: hidden;
+  text-align: center;
+  font-weight: 400;
+}
+#content h1 > a.anchor::before,
+h2 > a.anchor::before,
+h3 > a.anchor::before,
+#toctitle > a.anchor::before,
+.sidebarblock > .content > .title > a.anchor::before,
+h4 > a.anchor::before,
+h5 > a.anchor::before,
+h6 > a.anchor::before {
+  content: '\00A7';
+  font-size: 0.85em;
+  display: block;
+  padding-top: 0.1em;
+}
+#content h1:hover > a.anchor,
+#content h1 > a.anchor:hover,
+h2:hover > a.anchor,
+h2 > a.anchor:hover,
+h3:hover > a.anchor,
+#toctitle:hover > a.anchor,
+.sidebarblock > .content > .title:hover > a.anchor,
+h3 > a.anchor:hover,
+#toctitle > a.anchor:hover,
+.sidebarblock > .content > .title > a.anchor:hover,
+h4:hover > a.anchor,
+h4 > a.anchor:hover,
+h5:hover > a.anchor,
+h5 > a.anchor:hover,
+h6:hover > a.anchor,
+h6 > a.anchor:hover {
+  visibility: visible;
+}
+#content h1 > a.link,
+h2 > a.link,
+h3 > a.link,
+#toctitle > a.link,
+.sidebarblock > .content > .title > a.link,
+h4 > a.link,
+h5 > a.link,
+h6 > a.link {
+  color: #ba3925;
+  text-decoration: none;
+}
+#content h1 > a.link:hover,
+h2 > a.link:hover,
+h3 > a.link:hover,
+#toctitle > a.link:hover,
+.sidebarblock > .content > .title > a.link:hover,
+h4 > a.link:hover,
+h5 > a.link:hover,
+h6 > a.link:hover {
+  color: #a53221;
+}
+.audioblock,
+.imageblock,
+.literalblock,
+.listingblock,
+.stemblock,
+.videoblock {
+  margin-bottom: 1.25em;
+}
+.admonitionblock td.content > .title,
+.audioblock > .title,
+.exampleblock > .title,
+.imageblock > .title,
+.listingblock > .title,
+.literalblock > .title,
+.stemblock > .title,
+.openblock > .title,
+.paragraph > .title,
+.quoteblock > .title,
+table.tableblock > .title,
+.verseblock > .title,
+.videoblock > .title,
+.dlist > .title,
+.olist > .title,
+.ulist > .title,
+.qlist > .title,
+.hdlist > .title {
+  text-rendering: optimizeLegibility;
+  text-align: left;
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 300;
+}
+table.tableblock > caption.title {
+  white-space: nowrap;
+  overflow: visible;
+  max-width: 0;
+}
+.paragraph.lead > p,
+#preamble > .sectionbody > .paragraph:first-of-type p {
+  color: rgba(0, 0, 0, 0.85);
+}
+table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
+  font-size: inherit;
+}
+.admonitionblock > table {
+  border-collapse: separate;
+  border: 0;
+  background: none;
+  width: 100%;
+}
+.admonitionblock > table td.icon {
+  text-align: center;
+  width: 80px;
+}
+.admonitionblock > table td.icon img {
+  max-width: none;
+}
+.admonitionblock > table td.icon .title {
+  font-weight: bold;
+  /* font-family: 'Open Sans', 'DejaVu Sans', sans-serif; */
+  text-transform: uppercase;
+}
+.admonitionblock > table td.content {
+  padding-left: 1.125em;
+  padding-right: 1.25em;
+  border-left: 1px solid #ddddd8;
+  color: rgba(0, 0, 0, 0.6);
+}
+.admonitionblock > table td.content > :last-child > :last-child {
+  margin-bottom: 0;
+}
+.exampleblock > .content {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  margin-bottom: 1.25em;
+  padding: 1.25em;
+  background: #fff;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.exampleblock > .content > :first-child {
+  margin-top: 0;
+}
+.exampleblock > .content > :last-child {
+  margin-bottom: 0;
+}
+.sidebarblock {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e0e0dc;
+  margin-bottom: 1.25em;
+  padding: 1.25em;
+  background: #f8f8f7;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.sidebarblock > :first-child {
+  margin-top: 0;
+}
+.sidebarblock > :last-child {
+  margin-bottom: 0;
+}
+.sidebarblock > .content > .title {
+  color: #7a2518;
+  margin-top: 0;
+  text-align: center;
+}
+.exampleblock > .content > :last-child > :last-child,
+.exampleblock > .content .olist > ol > li:last-child > :last-child,
+.exampleblock > .content .ulist > ul > li:last-child > :last-child,
+.exampleblock > .content .qlist > ol > li:last-child > :last-child,
+.sidebarblock > .content > :last-child > :last-child,
+.sidebarblock > .content .olist > ol > li:last-child > :last-child,
+.sidebarblock > .content .ulist > ul > li:last-child > :last-child,
+.sidebarblock > .content .qlist > ol > li:last-child > :last-child {
+  margin-bottom: 0;
+}
+.literalblock pre,
+.listingblock pre:not(.highlight),
+.listingblock pre[class='highlight'],
+.listingblock pre[class^='highlight '],
+.listingblock pre.CodeRay,
+.listingblock pre.prettyprint {
+  background: #f7f7f8;
+}
+.sidebarblock .literalblock pre,
+.sidebarblock .listingblock pre:not(.highlight),
+.sidebarblock .listingblock pre[class='highlight'],
+.sidebarblock .listingblock pre[class^='highlight '],
+.sidebarblock .listingblock pre.CodeRay,
+.sidebarblock .listingblock pre.prettyprint {
+  background: #f2f1f1;
+}
+.literalblock pre,
+.literalblock pre[class],
+.listingblock pre,
+.listingblock pre[class] {
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  word-wrap: break-word;
+  padding: 1em;
+  font-size: 0.8125em;
+}
+.literalblock pre.nowrap,
+.literalblock pre[class].nowrap,
+.listingblock pre.nowrap,
+.listingblock pre[class].nowrap {
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+}
+@media only screen and (min-width: 768px) {
+  .literalblock pre,
+  .literalblock pre[class],
+  .listingblock pre,
+  .listingblock pre[class] {
+    font-size: 0.90625em;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .literalblock pre,
+  .literalblock pre[class],
+  .listingblock pre,
+  .listingblock pre[class] {
+    font-size: 1em;
+  }
+}
+.literalblock.output pre {
+  color: #f7f7f8;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.listingblock pre.highlightjs {
+  padding: 0;
+}
+.listingblock pre.highlightjs > code {
+  padding: 1em;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.listingblock pre.prettyprint {
+  border-width: 0;
+}
+.listingblock > .content {
+  position: relative;
+}
+.listingblock code[data-lang]::before {
+  display: none;
+  content: attr(data-lang);
+  position: absolute;
+  font-size: 0.75em;
+  top: 0.425rem;
+  right: 0.5rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #999;
+}
+.listingblock:hover code[data-lang]::before {
+  display: block;
+}
+.listingblock.terminal pre .command::before {
+  content: attr(data-prompt);
+  padding-right: 0.5em;
+  color: #999;
+}
+.listingblock.terminal pre .command:not([data-prompt])::before {
+  content: '$';
+}
+table.pyhltable {
+  border-collapse: separate;
+  border: 0;
+  margin-bottom: 0;
+  background: none;
+}
+table.pyhltable td {
+  vertical-align: top;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1.45;
+}
+table.pyhltable td.code {
+  padding-left: 0.75em;
+  padding-right: 0;
+}
+pre.pygments .lineno,
+table.pyhltable td:not(.code) {
+  color: #999;
+  padding-left: 0;
+  padding-right: 0.5em;
+  border-right: 1px solid #ddddd8;
+}
+pre.pygments .lineno {
+  display: inline-block;
+  margin-right: 0.25em;
+}
+table.pyhltable .linenodiv {
+  background: none !important;
+  padding-right: 0 !important;
+}
+.quoteblock {
+  margin: 0 1em 1.25em 1.5em;
+  display: table;
+}
+.quoteblock > .title {
+  margin-left: -1.5em;
+  margin-bottom: 0.75em;
+}
+.quoteblock blockquote,
+.quoteblock blockquote p {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 1.15rem;
+  line-height: 1.75;
+  word-spacing: 0.1em;
+  letter-spacing: 0;
+  font-style: italic;
+  text-align: justify;
+}
+.quoteblock blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.quoteblock blockquote::before {
+  content: '\201c';
+  float: left;
+  font-size: 2.75em;
+  font-weight: bold;
+  line-height: 0.6em;
+  margin-left: -0.6em;
+  color: #7a2518;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.quoteblock blockquote > .paragraph:last-child p {
+  margin-bottom: 0;
+}
+.quoteblock .attribution {
+  margin-top: 0.5em;
+  margin-right: 0.5ex;
+  text-align: right;
+}
+.quoteblock .quoteblock {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0.5em 0;
+  border-left: 3px solid rgba(0, 0, 0, 0.6);
+}
+.quoteblock .quoteblock blockquote {
+  padding: 0 0 0 0.75em;
+}
+.quoteblock .quoteblock blockquote::before {
+  display: none;
+}
+.verseblock {
+  margin: 0 1em 1.25em 1em;
+}
+.verseblock pre {
+  /* font-family: 'Open Sans', 'DejaVu Sans', sans; */
+  font-size: 1.15rem;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+.verseblock pre strong {
+  font-weight: 400;
+}
+.verseblock .attribution {
+  margin-top: 1.25rem;
+  margin-left: 0.5ex;
+}
+.quoteblock .attribution,
+.verseblock .attribution {
+  font-size: 0.9375em;
+  line-height: 1.45;
+  font-style: italic;
+}
+.quoteblock .attribution br,
+.verseblock .attribution br {
+  display: none;
+}
+.quoteblock .attribution cite,
+.verseblock .attribution cite {
+  display: block;
+  letter-spacing: -0.025em;
+  color: rgba(0, 0, 0, 0.6);
+}
+.quoteblock.abstract {
+  margin: 0 0 1.25em 0;
+  display: block;
+}
+.quoteblock.abstract blockquote,
+.quoteblock.abstract blockquote p {
+  text-align: left;
+  word-spacing: 0;
+}
+.quoteblock.abstract blockquote::before,
+.quoteblock.abstract blockquote p:first-of-type::before {
+  display: none;
+}
+table.tableblock {
+  max-width: 100%;
+  border-collapse: separate;
+}
+p.tableblock:last-child {
+  margin-bottom: 0;
+}
+td.tableblock > .content {
+  margin-bottom: -1.25em;
+}
+table.tableblock,
+th.tableblock,
+td.tableblock {
+  border: 0 solid #dedede;
+}
+table.grid-all > thead > tr > .tableblock,
+table.grid-all > tbody > tr > .tableblock {
+  border-width: 0 1px 1px 0;
+}
+table.grid-all > tfoot > tr > .tableblock {
+  border-width: 1px 1px 0 0;
+}
+table.grid-cols > * > tr > .tableblock {
+  border-width: 0 1px 0 0;
+}
+table.grid-rows > thead > tr > .tableblock,
+table.grid-rows > tbody > tr > .tableblock {
+  border-width: 0 0 1px 0;
+}
+table.grid-rows > tfoot > tr > .tableblock {
+  border-width: 1px 0 0 0;
+}
+table.grid-all > * > tr > .tableblock:last-child,
+table.grid-cols > * > tr > .tableblock:last-child {
+  border-right-width: 0;
+}
+table.grid-all > tbody > tr:last-child > .tableblock,
+table.grid-all > thead:last-child > tr > .tableblock,
+table.grid-rows > tbody > tr:last-child > .tableblock,
+table.grid-rows > thead:last-child > tr > .tableblock {
+  border-bottom-width: 0;
+}
+table.frame-all {
+  border-width: 1px;
+}
+table.frame-sides {
+  border-width: 0 1px;
+}
+table.frame-topbot {
+  border-width: 1px 0;
+}
+table.stripe-all tr,
+table.stripe-odd tr:nth-of-type(odd) {
+  background: #f8f8f7;
+}
+table.stripe-none tr,
+table.stripe-odd tr:nth-of-type(even) {
+  background: none;
+}
+th.halign-left,
+td.halign-left {
+  text-align: left;
+}
+th.halign-right,
+td.halign-right {
+  text-align: right;
+}
+th.halign-center,
+td.halign-center {
+  text-align: center;
+}
+th.valign-top,
+td.valign-top {
+  vertical-align: top;
+}
+th.valign-bottom,
+td.valign-bottom {
+  vertical-align: bottom;
+}
+th.valign-middle,
+td.valign-middle {
+  vertical-align: middle;
+}
+table thead th,
+table tfoot th {
+  font-weight: bold;
+}
+tbody tr th {
+  display: table-cell;
+  line-height: 1.6;
+  background: #f7f8f7;
+}
+tbody tr th,
+tbody tr th p,
+tfoot tr th,
+tfoot tr th p {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
+p.tableblock > code:only-child {
+  background: none;
+  padding: 0;
+}
+p.tableblock {
+  font-size: 1em;
+}
+td > div.verse {
+  white-space: pre;
+}
+ol {
+  margin-left: 1.75em;
+}
+ul li ol {
+  margin-left: 1.5em;
+}
+dl dd {
+  margin-left: 1.125em;
+}
+dl dd:last-child,
+dl dd:last-child > :last-child {
+  margin-bottom: 0;
+}
+ol > li p,
+ul > li p,
+ul dd,
+ol dd,
+.olist .olist,
+.ulist .ulist,
+.ulist .olist,
+.olist .ulist {
+  margin-bottom: 0.625em;
+}
+ul.checklist,
+ul.none,
+ol.none,
+ul.no-bullet,
+ol.no-bullet,
+ol.unnumbered,
+ul.unstyled,
+ol.unstyled {
+  list-style-type: none;
+}
+ul.no-bullet,
+ol.no-bullet,
+ol.unnumbered {
+  margin-left: 0.625em;
+}
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+}
+ul.checklist {
+  margin-left: 0.625em;
+}
+ul.checklist li > p:first-child > .fa-square-o:first-child,
+ul.checklist li > p:first-child > .fa-check-square-o:first-child {
+  width: 1.25em;
+  font-size: 0.8em;
+  position: relative;
+  bottom: 0.125em;
+}
+ul.checklist li > p:first-child > input[type='checkbox']:first-child {
+  margin-right: 0.25em;
+}
+ul.inline {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  list-style: none;
+  margin: 0 0 0.625em -1.25em;
+}
+ul.inline > li {
+  margin-left: 1.25em;
+}
+.unstyled dl dt {
+  font-weight: 400;
+  font-style: normal;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.decimal {
+  list-style-type: decimal-leading-zero;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+ol.lowergreek {
+  list-style-type: lower-greek;
+}
+.hdlist > table,
+.colist > table {
+  border: 0;
+  background: none;
+}
+.hdlist > table > tbody > tr,
+.colist > table > tbody > tr {
+  background: none;
+}
+td.hdlist1,
+td.hdlist2 {
+  vertical-align: top;
+  padding: 0 0.625em;
+}
+td.hdlist1 {
+  font-weight: bold;
+  padding-bottom: 1.25em;
+}
+.literalblock + .colist,
+.listingblock + .colist {
+  margin-top: -0.5em;
+}
+.colist td:not([class]):first-child {
+  padding: 0.4em 0.75em 0 0.75em;
+  line-height: 1;
+  vertical-align: top;
+}
+.colist td:not([class]):first-child img {
+  max-width: none;
+}
+.colist td:not([class]):last-child {
+  padding: 0.25em 0;
+}
+.thumb,
+.th {
+  line-height: 0;
+  display: inline-block;
+  border: solid 4px #fff;
+  -webkit-box-shadow: 0 0 0 1px #ddd;
+  box-shadow: 0 0 0 1px #ddd;
+}
+.imageblock.left,
+.imageblock[style*='float: left'] {
+  margin: 0.25em 0.625em 1.25em 0;
+}
+.imageblock.right,
+.imageblock[style*='float: right'] {
+  margin: 0.25em 0 1.25em 0.625em;
+}
+.imageblock > .title {
+  margin-bottom: 0;
+}
+.imageblock.thumb,
+.imageblock.th {
+  border-width: 6px;
+}
+.imageblock.thumb > .title,
+.imageblock.th > .title {
+  padding: 0 0.125em;
+}
+.image.left,
+.image.right {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  display: inline-block;
+  line-height: 0;
+}
+.image.left {
+  margin-right: 0.625em;
+}
+.image.right {
+  margin-left: 0.625em;
+}
+a.image {
+  text-decoration: none;
+  display: inline-block;
+}
+a.image object {
+  pointer-events: none;
+}
+sup.footnote,
+sup.footnoteref {
+  font-size: 0.875em;
+  position: static;
+  vertical-align: super;
+}
+sup.footnote a,
+sup.footnoteref a {
+  text-decoration: none;
+}
+sup.footnote a:active,
+sup.footnoteref a:active {
+  text-decoration: underline;
+}
+#footnotes {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  margin-bottom: 0.625em;
+}
+#footnotes hr {
+  width: 20%;
+  min-width: 6.25em;
+  margin: -0.25em 0 0.75em 0;
+  border-width: 1px 0 0 0;
+}
+#footnotes .footnote {
+  padding: 0 0.375em 0 0.225em;
+  line-height: 1.3334;
+  font-size: 0.875em;
+  margin-left: 1.2em;
+  margin-bottom: 0.2em;
+}
+#footnotes .footnote a:first-of-type {
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: -1.05em;
+}
+#footnotes .footnote:last-of-type {
+  margin-bottom: 0;
+}
+#content #footnotes {
+  margin-top: -0.625em;
+  margin-bottom: 0;
+  padding: 0.75em 0;
+}
+.gist .file-data > table {
+  border: 0;
+  background: #fff;
+  width: 100%;
+  margin-bottom: 0;
+}
+.gist .file-data > table td.line-data {
+  width: 99%;
+}
+div.unbreakable {
+  page-break-inside: avoid;
+}
+.big {
+  font-size: larger;
+}
+.small {
+  font-size: smaller;
+}
+.underline {
+  text-decoration: underline;
+}
+.overline {
+  text-decoration: overline;
+}
+.line-through {
+  text-decoration: line-through;
+}
+.aqua {
+  color: #00bfbf;
+}
+.aqua-background {
+  background-color: #00fafa;
+}
+.black {
+  color: #000;
+}
+.black-background {
+  background-color: #000;
+}
+.blue {
+  color: #0000bf;
+}
+.blue-background {
+  background-color: #0000fa;
+}
+.fuchsia {
+  color: #bf00bf;
+}
+.fuchsia-background {
+  background-color: #fa00fa;
+}
+.gray {
+  color: #606060;
+}
+.gray-background {
+  background-color: #7d7d7d;
+}
+.green {
+  color: #006000;
+}
+.green-background {
+  background-color: #007d00;
+}
+.lime {
+  color: #00bf00;
+}
+.lime-background {
+  background-color: #00fa00;
+}
+.maroon {
+  color: #600000;
+}
+.maroon-background {
+  background-color: #7d0000;
+}
+.navy {
+  color: #000060;
+}
+.navy-background {
+  background-color: #00007d;
+}
+.olive {
+  color: #606000;
+}
+.olive-background {
+  background-color: #7d7d00;
+}
+.purple {
+  color: #600060;
+}
+.purple-background {
+  background-color: #7d007d;
+}
+.red {
+  color: #bf0000;
+}
+.red-background {
+  background-color: #fa0000;
+}
+.silver {
+  color: #909090;
+}
+.silver-background {
+  background-color: #bcbcbc;
+}
+.teal {
+  color: #006060;
+}
+.teal-background {
+  background-color: #007d7d;
+}
+.white {
+  color: #bfbfbf;
+}
+.white-background {
+  background-color: #fafafa;
+}
+.yellow {
+  color: #bfbf00;
+}
+.yellow-background {
+  background-color: #fafa00;
+}
+span.icon > .fa {
+  cursor: default;
+}
+a span.icon > .fa {
+  cursor: inherit;
+}
+.admonitionblock td.icon [class^='fa icon-'] {
+  font-size: 2.5em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+.admonitionblock td.icon .icon-note::before {
+  content: '\f05a';
+  color: #19407c;
+}
+.admonitionblock td.icon .icon-tip::before {
+  content: '\f0eb';
+  text-shadow: 1px 1px 2px rgba(155, 155, 0, 0.8);
+  color: #111;
+}
+.admonitionblock td.icon .icon-warning::before {
+  content: '\f071';
+  color: #bf6900;
+}
+.admonitionblock td.icon .icon-caution::before {
+  content: '\f06d';
+  color: #bf3400;
+}
+.admonitionblock td.icon .icon-important::before {
+  content: '\f06a';
+  color: #bf0000;
+}
+.conum[data-value] {
+  display: inline-block;
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  text-align: center;
+  font-size: 0.75em;
+  width: 1.67em;
+  height: 1.67em;
+  line-height: 1.67em;
+  /* font-family: 'Open Sans', 'DejaVu Sans', sans-serif; */
+  font-style: normal;
+  font-weight: bold;
+}
+.conum[data-value] * {
+  color: #fff !important;
+}
+.conum[data-value] + b {
+  display: none;
+}
+.conum[data-value]::after {
+  content: attr(data-value);
+}
+pre .conum[data-value] {
+  position: relative;
+  top: -0.125em;
+}
+b.conum * {
+  color: inherit !important;
+}
+.conum:not([data-value]):empty {
+  display: none;
+}
+dt,
+th.tableblock,
+td.content,
+div.footnote {
+  text-rendering: optimizeLegibility;
+}
+h1,
+h2,
+p,
+td.content,
+span.alt {
+  letter-spacing: -0.01em;
+}
+p strong,
+td.content strong,
+div.footnote strong {
+  letter-spacing: -0.005em;
+}
+p,
+blockquote,
+dt,
+td.content,
+span.alt {
+  font-size: 1.0625rem;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+.sidebarblock p,
+.sidebarblock dt,
+.sidebarblock td.content,
+p.tableblock {
+  font-size: 1em;
+}
+.exampleblock > .content {
+  background-color: #fffef7;
+  border-color: #e0e0dc;
+  -webkit-box-shadow: 0 1px 4px #e0e0dc;
+  box-shadow: 0 1px 4px #e0e0dc;
+}
+.print-only {
+  display: none !important;
+}
+@page {
+  margin: 1.25cm 0.75cm;
+}
+@media print {
+  * {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  html {
+    font-size: 80%;
+  }
+  a {
+    color: inherit !important;
+    text-decoration: underline !important;
+  }
+  a.bare,
+  a[href^='#'],
+  a[href^='mailto:'] {
+    text-decoration: none !important;
+  }
+  a[href^='http:']:not(.bare)::after,
+  a[href^='https:']:not(.bare)::after {
+    content: '(' attr(href) ')';
+    display: inline-block;
+    font-size: 0.875em;
+    padding-left: 0.25em;
+  }
+  abbr[title]::after {
+    content: ' (' attr(title) ')';
+  }
+  pre,
+  blockquote,
+  tr,
+  img,
+  object,
+  svg {
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  svg {
+    max-width: 100%;
+  }
+  p,
+  blockquote,
+  dt,
+  td.content {
+    font-size: 1em;
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3,
+  #toctitle,
+  .sidebarblock > .content > .title {
+    page-break-after: avoid;
+  }
+  #toc,
+  .sidebarblock,
+  .exampleblock > .content {
+    background: none !important;
+  }
+  #toc {
+    border-bottom: 1px solid #ddddd8 !important;
+    padding-bottom: 0 !important;
+  }
+  .sect1 {
+    padding-bottom: 0 !important;
+  }
+  .sect1 + .sect1 {
+    border: 0 !important;
+  }
+  #header > h1:first-child {
+    margin-top: 1.25rem;
+  }
+  body.book #header {
+    text-align: center;
+  }
+  body.book #header > h1:first-child {
+    border: 0 !important;
+    margin: 2.5em 0 1em 0;
+  }
+  body.book #header .details {
+    border: 0 !important;
+    display: block;
+    padding: 0 !important;
+  }
+  body.book #header .details span:first-child {
+    margin-left: 0 !important;
+  }
+  body.book #header .details br {
+    display: block;
+  }
+  body.book #header .details br + span::before {
+    content: none !important;
+  }
+  body.book #toc {
+    border: 0 !important;
+    text-align: left !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  body.book #toc,
+  body.book #preamble,
+  body.book h1.sect0,
+  body.book .sect1 > h2 {
+    page-break-before: always;
+  }
+  .listingblock code[data-lang]::before {
+    display: block;
+  }
+  #footer {
+    background: none !important;
+    padding: 0 0.9375em;
+  }
+  #footer-text {
+    color: rgba(0, 0, 0, 0.6) !important;
+    font-size: 0.9em;
+  }
+  .hide-on-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .hide-for-print {
+    display: none !important;
+  }
+  .show-for-print {
+    display: inherit !important;
+  }
+}
+
+.admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title, #toctitle {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title {
+  font-size: 1.0625rem;
+}
+/* highlight code (grepping) */
+.listingblock pre > code i,
+.listingblock pre > i {
+  background-color: #e0c1ff;
+  color: #000;
+  font-style: normal;
+}
+
+a {
+  white-space: nowrap;
+}
+.RemarquePreTitre {
+  font-style: normal;
+  font-weight: bold;
+}
+  .RemarquePreTitre::after {
+    content: "•";
+    padding-left: 5px;
+  }
+.admonitionblock {
+}
+.admonitionblock > table {
+  border: 1px solid #ddddd8;
+  box-shadow: 0 0 8px rgba(0,0,0,.1);
+  margin: 1.5em 0;
+  padding: 1em;
+}
+.icon .title {
+  font-size: 2em;
+}
+
+.colist ol {
+  margin-left: 1em;    /* aligns with the listing edge */
+  font-weight: bold;   /* makes it stand out more */
+}
+.listingblock pre:not(.hljs),
+.language-bash.hljs {
+  background: #323232;
+  color: wheat;
+}
+.language-bash.hljs .hljs-built_in,
+.language-bash.hljs .hljs-builtin-name {
+  color: white;
+}
+.language-bash.hljs .hljs-string {
+  color: lightgreen;
+}
+.language-bash.hljs .hljs-variable {
+  color: lightskyblue;
+}
+.keyseq {
+  font-weight: normal;
+  white-space: nowrap;
+}
+.language-bash.hljs .keyseq {
+  color: white;
+}
+.language-bash.hljs kbd {
+  background: transparent;
+  box-shadow: none;
+  color: white;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding: 0.1em 0.4em;
+}
+
+.listingblock pre.highlightjs > code {
+  border-left: 4px solid #7a2518;
+}
+.listingblock pre.highlightjs > code.language-bash {
+  border-color: #323232;
+}
+
+</style>
+
+<style type="text/css">
+.listingblock [data-bash-subs]::before {
+  content: attr(data-bash-subs) " ";
+  opacity: .5; }
+
+.listingblock [data-bash-conum]::before {
+  content: "(" attr(data-bash-conum) ")";
+  font-weight: bold;
+  opacity: .7;
+}</style>
+<script>
+(function(d){
+  d.addEventListener('DOMContentLoaded', function(){
+    const script = d.createElement('script');
+    script.src = 'https://wzrd.in/standalone/menuspy';
+    script.async = true;
+    script.onload = () => new menuspy(document.querySelector('#toc'), {enableLocationHash: false});
+    d.body.appendChild(script);
+  });
+})(document);</script>
+<style type="text/css">
+#toc li.active > a[href^="#"] {
+  background: #ffc;
+  font-weight: bold;
+}
+#toc li.active > a[href^="#"]::before {
+  content: "▶ ";
+  display: inline-block;
+  position: absolute;
+  margin-left: -1.2em;
+  font-size: .8em;
+  margin-top: 3px;
+}
+</style>
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>Histoire, écosystème et gouvernance</h1>
+<div class="details">
+<span id="revdate">2018-06-13</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table des matières</div>
+<ul class="sectlevel1">
+<li><a href="#node_js_un_environnement_d_exécution_javascript">1. Node.js : un environnement d&#8217;exécution JavaScript</a></li>
+<li><a href="#bref_historique">2. Bref historique</a></li>
+<li><a href="#les_raisons_du_succès">3. Les raisons du succès</a></li>
+<li><a href="#avoiding-node">4. Pourquoi éviter Node.js ?</a></li>
+<li><a href="#pourquoi_choisir_node_js">5. Pourquoi choisir Node.js ?</a></li>
+<li><a href="#l_écosystème_des_acteurs">6. L&#8217;écosystème des acteurs</a>
+<ul class="sectlevel2">
+<li><a href="#joyent">6.1. Joyent</a></li>
+<li><a href="#npm">6.2. npm</a></li>
+<li><a href="#npm-inc">6.3. npm, Inc.</a></li>
+<li><a href="#iojs">6.4. io.js</a></li>
+<li><a href="#node-foundation">6.5. Node.js Foundation</a></li>
+<li><a href="#nodejitsu">6.6. Nodejitsu</a></li>
+<li><a href="#node_security_platform">6.7. Node Security Platform</a></li>
+</ul>
+</li>
+<li><a href="#governance">7. Gouvernance du projet</a></li>
+<li><a href="#conclusion">8. Conclusion</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Node.js génère beaucoup de discussions, d&#8217;intérêts et d&#8217;envies.</p>
+</div>
+<div class="paragraph">
+<p>Dans ce chapitre, nous allons faire le point sur ce qu&#8217;est Node.js pour mieux comprendre dans quel cambouis nous allons plonger les mains.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="ulist">
+<div class="title">Sommaire</div>
+<ul>
+<li>
+<p>Comprendre ce qu&#8217;est Node.js</p>
+</li>
+<li>
+<p>Savoir qui assure la gouvernance de Node.js</p>
+</li>
+<li>
+<p>Décider si Node.js et JavaScript peuvent compléter ou remplacer le langage de programmation de votre entreprise/organisation</p>
+</li>
+<li>
+<p>Pourquoi autant de <em>hype</em>&#160;?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="quoteblock abstract">
+<blockquote>
+<div class="paragraph">
+<p>Node.js est-il un langage de programmation&#160;?
+Node.js est-il un <em>framework</em> JavaScript&#160;?
+Qu&#8217;en restera-t-il une fois la frénésie retombée&#160;?</p>
+</div>
+<div class="paragraph">
+<p>Ce chapitre permet de <strong>comprendre pourquoi Node a émergé</strong> et comment.
+Surtout, il vous permettra de comprendre les choix techniques
+à l&#8217;origine des fondations de Node et ce que l&#8217;utiliser
+peut vous apporter, que ce soit dans un contexte personnel ou professionnel.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="node_js_un_environnement_d_exécution_javascript">1. Node.js : un environnement d&#8217;exécution JavaScript</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Node.js n&#8217;est pas un langage de programmation. Node.js n&#8217;est pas non plus un <em>framework</em> JavaScript. <strong>Node.js est un environnement d&#8217;exécution JavaScript</strong>.<br>
+La différence entre ces trois désignations peut sembler subtile, futile voire inutile mais le terme <strong>environnement</strong> est la véritable nature de Node.</p>
+</div>
+<div class="paragraph">
+<p><strong>Exécuter du JavaScript côté serveur n&#8217;est pas une révolution</strong>.<br>
+L&#8217;entreprise <em>Netscape</em> s&#8217;y est déjà essayée au début des années 1990 avec <em>Netscape Enterprise Server</em>, juste après l&#8217;avoir introduit dans son navigateur web <em>Netscape Navigator</em>.</p>
+</div>
+<div class="paragraph">
+<p>En 1997, <em>Netscape</em> s&#8217;est attelée à créer <em>Rhino</em> (<span class="URL"><a href="https://www.mozilla.org/rhino/" class="bare">www.mozilla.org/rhino/</a></span>), un environnement d&#8217;exécution JavaScript tournant sous Java disponible sous licence libre.
+<em>Rhino</em> était un des projets liés à la réécriture de <em>Netscape Navigator</em> en Java.
+Si <em>Netscape</em> a depuis fermé ses portes, <em>Rhino</em> a permis l&#8217;émergence de projets utiles aux développeurs web.</p>
+</div>
+<div class="paragraph">
+<p>Entre temps le langage JavaScript évolue, le <em>Web 2.0</em> émerge des cendres de la première bulle Internet et d&#8217;autres initiatives émergent dans les années 2000 comme <em>APE</em> (<em>Ajax Push Engine</em>, <span class="URL"><a href="http://ape-project.org/" class="bare">ape-project.org/</a></span>).
+Elles mettent également en œuvre JavaScript côté serveur.
+JavaScript était surtout un choix logique de partage de code entre client et serveur pour Comet, le précurseur des <a href="../chapter-09/index.html#websockets">WebSockets</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Glossaire</span> Comet</div>
+<div class="paragraph">
+<p><em>Comet</em> est un terme regroupant les différentes tentatives techniques permettant à un serveur web d&#8217;envoyer des données à un client sans que celui-ci ne les ait demandées initialement.</p>
+</div>
+<div class="paragraph">
+<p>Parmi ces techniques, on retrouve le <em>long polling</em>, consistant à conserver une connexion Ajax ouverte pendant la durée de vie d&#8217;une page web.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Glossaire</span> WebSockets</div>
+<div class="paragraph">
+<p><em>WebSockets</em> est un protocole basé sur TCP.</p>
+</div>
+<div class="paragraph">
+<p>Il permet de maintenir une connexion HTTP active entre un client et un serveur et d&#8217;y faire transiter les données de manière bidirectionnelle.</p>
+</div>
+<div class="paragraph">
+<p>Ce protocole sera probablement rendu obsolète par <em>HTTP/2</em>&#160;— le successeur d'<em>HTTP/1.1</em>.
+<em>HTTP/2</em> a été initié par Google sous le nom de protocole
+<em>SPDY</em> (prononcer <em>speedy</em>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title">Cas d&#8217;utilisation modernes de <em>Rhino</em>.</div>
+<div class="paragraph">
+<p>Rhino est toujours utile dès qu&#8217;un projet Java implique du JavaScript.</p>
+</div>
+<div class="paragraph">
+<p>Google l&#8217;utilise comme environnement d&#8217;exécution de ses <a href="https://gsuite-developers.googleblog.com/2012/11/using-open-source-libraries-in-apps.html">Apps Scripts</a>.
+Ces scripts permettent à tout un chacun de développer des extensions et des interactions supplémentaires pour les documents Google Drive.</p>
+</div>
+<div class="paragraph">
+<p>Rhino est également employé dans <em>yuicompressor</em> (<span class="URL"><a href="https://yui.github.io/yuicompressor/" class="bare">yui.github.io/yuicompressor/</a></span>), un optimiseur CSS et JavaScript créé par Yahoo.
+<em>yuicompressor</em> a été surpassé par <em>Closure Compiler</em> (<span class="URL"><a href="https://developers.google.com/closure/compiler/" class="bare">developers.google.com/closure/compiler/</a></span>) et <em>UglifyJS</em> (<span class="URL"><a href="https://npmjs.com/uglify-js" class="bare">npmjs.com/uglify-js</a></span>).
+Ce dernier est écrit en JavaScript et repose sur Node.<br>
+La boucle est bouclée.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Node représente un <strong>environnement d&#8217;exécution</strong> (<em>runtime</em>), un <strong>ensemble d&#8217;API JavaScript</strong> ainsi qu&#8217;une <strong>machine virtuelle (VM) JavaScript</strong> performante (parseur, interpréteur et compilateur) pouvant accéder à des ressources système telles que des fichiers (<em>filesystem</em>) ou des connexions réseau (<em>sockets</em>).</p>
+</div>
+<div class="paragraph">
+<p>Typiquement, une personne développant en Node écrit du code se basant sur les API à disposition.
+Ce code est lu par le <em>runtime</em> Node qui le transmet à la VM JavaScript. Enfin, la VM traduit le programme en langage machine (<em>bytecode</em>) avant que le programme soit effectivement exécuté par le processeur.</p>
+</div>
+<div class="paragraph">
+<p>Pour comprendre comment Node a opté pour cette approche, retournons en 2009, lorsque son créateur <strong>Ryan Dahl</strong> cherchait à résoudre élégamment un problème de performance de programmation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bref_historique">2. Bref historique</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En 2006, <em>Ryan Dahl</em> est un étudiant américain en troisième année de doctorat de mathématiques.
+Si son but initial était de devenir professeur de mathématiques, il prend la décision de ne pas terminer sa thèse et d&#8217;entreprendre un voyage au Chili.</p>
+</div>
+<div class="paragraph">
+<p>Alors qu&#8217;il cherche à effectuer des petits boulots, il y rencontre une autre personne développant des sites web.
+Ruby on Rails connaît un succès grandissant et attire son attention.
+Alors que Ryan envisageait d&#8217;utiliser Rails, il découvre avec horreur la lenteur du <em>framework</em> et cherche à en découvrir les causes.</p>
+</div>
+<div class="paragraph">
+<p>Ryan débute alors sa <strong>quête des applications web performantes</strong> et découvre <em>Mongrel</em>, un serveur HTTP écrit en Ruby.
+Il est séduit par deux choses&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>la possibilité d'<strong>inclure</strong> un serveur HTTP comme librairie applicative&#160;;</p>
+</li>
+<li>
+<p>la simplicité de fonctionnement&#160;: recevoir une requête HTTP et décider soi-même de la réponse à apporter.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>La quête initiale se dirige alors sur la possibilité de créer <strong>un serveur web non bloquant</strong>.
+En d&#8217;autres termes, un serveur capable dans un même processus de traiter d&#8217;autres requêtes en attendant de renvoyer la réponse initiale.</p>
+</div>
+<div class="paragraph">
+<p>Nous sommes alors en 2008 et le site de partage de photos Flickr innove avec un nouveau système de téléversement d&#8217;images&#160;: une <strong>barre de progression</strong> représentant le statut du téléversement remplace alors la page figée&#160;– effet  inhérent à l&#8217;envoi de fichiers depuis un formulaire HTML.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://www.flickr.com/photos/schill/7112862941/"><img src="./images/7112862941_3b8c8e9916_o_d.png" alt="7112862941 3b8c8e9916 o d" width="85%"></a>
+</div>
+<div class="title">Figure 1. Interface du service Flickr après et avant l&#8217;introduction du téléversement progressif.</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Lien</span> Annonce du nouveau Flickr Uploadr</div>
+<div class="paragraph">
+<p>L&#8217;équipe d&#8217;ingénierie de Flickr explique comment elle a contourné le problème de l&#8217;upload via un formulaire classique&#160;; problème qui gelait la fenêtre du navigateur pendant la durée du téléversement.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="URL"><a href="https://wp.me/p2DMyG-ok" class="bare">wp.me/p2DMyG-ok</a></span></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>C&#8217;est le <strong>déclic</strong> pour Ryan&#160;: <em>Mongrel</em> avait déjà un plug-in pour cette fonctionnalité mais il souhaitait simplifier davantage le travail pour les développeurs.
+Il reproduit le mécanisme avec succès en C.
+Les développeurs web jugeant la solution trop complexe, Ryan tente la même approche avec d&#8217;autres langages, comme Python, Lua ou même Haskell.
+Il se heurte au sempiternel problème des ressources bloquantes des différents interpréteurs.</p>
+</div>
+<div class="paragraph">
+<p>Le deuxième <strong>déclic</strong> se produit en janvier 2009 lorsque <em>JavaScript</em> émerge dans une discussion entre développeurs.
+<em>Eurêka</em>&#160;!
+La machine virtuelle JavaScript V8 de Google a été libérée en <em>open source</em> depuis quelques mois et Apple, Microsoft, Mozilla et Google se livrent à une course à la performance de leur machine virtuelle respective.
+En ligne de mire, rendre la navigation sur <em>mobile</em> et sur <em>ordinateur</em> plus rapide et moins gourmande en ressources.</p>
+</div>
+<div class="paragraph">
+<p>Ryan admet que JavaScript dispose des caractéristiques idéales même s&#8217;il n&#8217;est pas un adepte du langage&#160;: fonctions anonymes, <em>closures</em> et l'<em>event loop</em> (dans le DOM en tous cas).
+Il manque juste aux machines virtuelles JavaScript la capacité d&#8217;accéder à des <em>sockets</em>, au système de fichiers et à d&#8217;autres fonctions système.</p>
+</div>
+<div class="paragraph">
+<p>Ryan quitte alors son travail, s&#8217;inspire de ses travaux de modules non bloquants pour Nginx et s&#8217;affaire pendant six mois à marier JavaScript, V8 et l&#8217;environnement du système d&#8217;exploitation.
+De ces efforts naît Node.js.<br>
+Il effectue une démonstration de <a href="https://gist.github.com/ry/a3d0bbbff196af633995">serveur IRC écrit en 400 lignes de JavaScript</a> lors de la <a href="https://www.youtube.com/watch?v=ztspvPYybIY">conférence JSConf.eu 2009</a> qui suscite l&#8217;enthousiasme et attire l&#8217;attention.</p>
+</div>
+<div class="videoblock">
+<div class="title">Présentation de Node.js par Ryan Dahl lors de JSConf.eu 2009.</div>
+<div class="content">
+<iframe width="640" height="480" src="https://www.youtube.com/embed/ztspvPYybIY?rel=0&amp;hl=fr" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;entreprise américaine <em>Joyent</em> l&#8217;embauche à plein temps pour continuer le développement de Node.
+Ils pressentent que Node répondra à leurs projets de <em>datacenter</em> et d&#8217;hébergement.</p>
+</div>
+<div class="paragraph">
+<p><strong>Node et sa communauté sont nés</strong> et ont continué à prospérer depuis lors.
+Pour une simple affaire de <em>barre de progression</em> et une obsession de <em>perception de rapidité</em>.</p>
+</div>
+<div class="paragraph">
+<p>En 2018, l&#8217;avenir de Node est au beau fixe avec plus de 2&#160;000 contributeurs
+et plus de 712&#160;000 modules publics hébergés sur le registre <em>npm</em>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Vidéo</span> <em>History of Node.js</em></div>
+<div class="paragraph">
+<p>La vidéo suivante est une vidéoconférence donnée par Ryan Dahl, le créateur de Node, au cours de l&#8217;année 2011.
+C&#8217;est la première fois qu&#8217;il intervient pour expliquer son parcours et la genèse du projet.</p>
+</div>
+<div class="paragraph">
+<p>Peut-être un élément qui figurera dans les livres d&#8217;histoire&#160;!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="URL"><a href="https://www.youtube.com/watch?v=SAc0vQCC6UQ" class="bare">www.youtube.com/watch?v=SAc0vQCC6UQ</a></span></p>
+</li>
+</ul>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="640" height="480" src="https://www.youtube.com/embed/SAc0vQCC6UQ?rel=0&amp;hl=fr" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="les_raisons_du_succès">3. Les raisons du succès</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La tension et l&#8217;attention autour de JavaScript sont énormes en 2009.
+La mode du tout <em>Ajax</em> et des <em>mashups</em> s&#8217;est estompée mais une chose en est ressortie&#160;: JavaScript n&#8217;a plus à rougir ni à être relégué au rang de sous-langage.
+Les initiatives JSLint, CommonJS et les <em>good parts</em> de Douglas Crockford sont pour beaucoup dans la création de code élégant.</p>
+</div>
+<div class="paragraph">
+<p>D&#8217;un autre côté, les entreprises développant des navigateurs web se livrent à une féroce compétition d&#8217;optimisation.
+Google, Mozilla et Apple ont besoin de navigateurs rapides pour améliorer leurs parts de marché sur les ordinateurs mais aussi les téléphones et tablettes.
+On peut considérer que JavaScript est à cette époque le langage de programmation bénéficiant du plus grand investissement financier et humain en R&amp;D.</p>
+</div>
+<div class="paragraph">
+<p>La communauté JavaScript accueille avec ferveur Node lors
+de la conférence JSConf Europe en 2009.
+Elle contribue à son amélioration et à la création d&#8217;un écosystème
+de modules réutilisables.</p>
+</div>
+<div class="paragraph">
+<p>Il faudra attendre la création de <em>npm</em> au tout début 2010.
+<em>npm</em> a pour but d&#8217;héberger des modules Node et de faciliter
+leur installation.
+Dès lors, une simple commande suffit pour inclure du code écrit par
+d&#8217;autres personnes dans nos projets.</p>
+</div>
+<div class="paragraph">
+<p><em>npm</em> devient une pierre angulaire.
+À tel point qu&#8217;il est inclus dans l&#8217;installation de Node
+à partir de la version 0.6.3 en novembre 2011.
+La communauté Node fait le reste du travail
+en constituant un <strong>écosystème de modules riche et varié</strong>&#160;:
+frameworks web, drivers de bases de données,
+serveurs HTTP, serveurs WebSockets, préprocesseurs CSS,
+CoffeeScript, parseurs, proxy, serveurs de log, modules de tests,
+langages de <em>templating</em>, etc.</p>
+</div>
+<div class="paragraph">
+<p>Malgré ses défauts de jeunesse, Node réussit le tour
+de force de la performance&#160;: la recette de l&#8217;accès non-bloquant
+a-t-elle fonctionné&#160;?
+À en croire les personnes ayant migré vers Node pour ces raisons,
+la réponse est <strong>oui</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="avoiding-node">4. Pourquoi éviter Node.js ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Il est tentant de vouloir suivre un chemin populaire,
+d&#8217;adopter le dernier outil ou <em>framework</em> à la mode.</p>
+</div>
+<div class="paragraph">
+<p>J&#8217;ai pourtant envie d&#8217;écrire qu&#8217;il n&#8217;est pas forcément nécessaire
+de passer à Node.</p>
+</div>
+<div class="paragraph">
+<p>Si votre équipe dispose déjà de fortes compétences,
+d&#8217;aisance et de productivité dans un autre langage,
+il n&#8217;y a pas de raison de passer à Node.
+Cette équipe a tout intérêt à capitaliser sur ses
+connaissances pour être efficace et minimiser la dette technique
+de ses applications.</p>
+</div>
+<div class="paragraph">
+<p>L'<strong>offre logicielle est également à prendre en compte</strong>&#160;: CMS,
+systèmes e-commerce ou autre application prête à l&#8217;emploi
+que la communauté Node n&#8217;offrirait pas à ce jour.</p>
+</div>
+<div class="paragraph">
+<p>Un facteur important et souvent oublié est <strong>l&#8217;acceptation et la compréhension de l&#8217;utilisation de Node</strong> par une ou plusieurs équipes.
+Il est alors plus intéressant de comprendre les raisons
+d&#8217;un blocage que de forcer ou d&#8217;imposer Node.<br>
+Cela peut être simple&#160;: balayer des idées reçues,
+animer un atelier technique ou inviter un·e expert·e
+pour répondre aux questions, interrogations et utilité d&#8217;un tel changement.</p>
+</div>
+<div class="paragraph">
+<p>Node ne vous aidera probablement pas si vous cherchez
+à <strong>réaliser des choses contre-productives pour JavaScript</strong>.
+Je pense à des opérations mathématiques de très haute précision,
+du <em>machine learning</em> avancé ou du calcul scientifique poussé par exemple.
+Difficile d&#8217;égaler la richesse fonctionnelle de Python
+et de ses librairies SciPy, NumPy ou scikit-learn.
+Difficile aussi d&#8217;égaler la finesse de gestion de mémoire de <em>C++</em> ou de <em>Rust</em>.</p>
+</div>
+<div class="paragraph">
+<p>Node ne va <strong>pas résoudre les problèmes par magie</strong>.
+Cela reste avant tout une affaire de compétences et d&#8217;expérience.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pourquoi_choisir_node_js">5. Pourquoi choisir Node.js ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Node est un choix de langage principal tout à fait viable.</p>
+</div>
+<div class="paragraph">
+<p>Il est préférable que ce choix soit une <strong>volonté partagée</strong> entre membres d&#8217;une équipe.
+Que ce choix soit motivé par ce que Node apporte et simplifie pour vous.</p>
+</div>
+<div class="paragraph">
+<p>Node est tout désigné pour créer des <strong>applications à nombreuses actions concurrentes</strong>.
+Autrement dit, dès qu&#8217;une application ou programme fait appel à des accès réseau, aux fichiers ou au système.</p>
+</div>
+<div class="paragraph">
+<p>Node est également adapté pour <strong>transformer des flux importants de données</strong>
+en utilisant peu de mémoire.
+Cela concerne aussi bien la lecture de fichiers CSV, JSON ou XML de plusieurs gigaoctets.</p>
+</div>
+<div class="paragraph">
+<p>Le mécanisme de module de Node encourage à respecter le <em>principe de responsabilité unique</em>.
+Nos applications peuvent être <strong>modulaires et autonomes</strong> au lieu d&#8217;être lourdes et monolithiques.</p>
+</div>
+<div class="paragraph">
+<p>Les développeurs et développeuses verront dans Node leur <strong>compagnon idéal pour compiler, générer, assembler et minifier</strong> leurs applications front-end.
+Le bénéfice évident est le partage d&#8217;un outillage CSS, JavaScript et HTML
+entre équipes, par projet.</p>
+</div>
+<div class="paragraph">
+<p>Conséquence directe, Node offre l&#8217;opportunité d'<strong>unifier vos équipes de développement <em>front-end</em> et <em>back-end</em></strong>.
+Node devient un environnement commun, un langage partagé entre les individus.
+Ils peuvent se focaliser sur des fonctionnalités indistinctement de la cible, que ce soit pour le web, un serveur ou une API.</p>
+</div>
+<div class="paragraph">
+<p>Node est un environnement adapté à <strong>l&#8217;apprentissage et l&#8217;amélioration de nos connaissances en JavaScript</strong>.
+On peut désormais penser sur du long terme, en se souciant moins de devoir supporter de vieilles versions de Node ou de navigateurs web tant il est facile de passer d&#8217;une version du langage à une autre.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="l_écosystème_des_acteurs">6. L&#8217;écosystème des acteurs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La majorité des développements initiaux de Node est financée par <em>Joyent</em>,
+à commencer par l&#8217;embauche de Ryan Dahl.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;écosystème des acteurs se diversifie avec le temps.
+Avec de nouveaux employés chez <em>Joyent</em>.
+Puis avec des contributeurs externes qui voyaient un avenir prometteur dans le projet.
+S&#8217;ensuivent des entreprises privées comme IBM ou PayPal qui sponsorisent le projet ou le salaire de contributeurs.</p>
+</div>
+<div class="sect2">
+<h3 id="joyent">6.1. Joyent</h3>
+<div class="paragraph">
+<p>Joyent est une entreprise américaine fondée en 2004.
+Elle proposait à l&#8217;origine des services de collaborations
+en ligne&#160;: documents, calendriers, e-mails, etc.</p>
+</div>
+<div class="paragraph">
+<p>Elle se lance sur le marché de l&#8217;hébergement fin 2005
+par le biais d&#8217;une acquisition-fusion.
+Parmi ses clients, on peut dénombrer le site de Ruby on Rails
+(société Basecamp), WordPress.com (société Automattic) ou
+encore le site historique <em>A List Apart</em>.</p>
+</div>
+<div class="paragraph">
+<p>En 2009, Joyent se spécialise dans les infrastructures et
+plate-formes à la demande et à haute performance.
+L&#8217;entreprise se concentre sur des solutions dites temps réel
+pour les réseaux sociaux, applications mobiles et compagnies
+de jeux vidéo en ligne.</p>
+</div>
+<div class="paragraph">
+<p>En avril 2011, Joyent dépose la marque <em>Node.js</em> ainsi que son logo.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/nodejs-new-pantone-black.png" alt="nodejs new pantone black" width="40%">
+</div>
+<div class="title">Figure 2. Logo officiel de Node.js.</div>
+</div>
+<div class="paragraph">
+<p>En février 2015, Joyent transfère la gestion de Node à la <a href="#node-foundation">Node.js Foundation</a>.
+La société <em>Joyent</em> reste propriétaire de la marque <em>Node.js</em>
+et de son logo.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Lien</span> Annonce du dépôt de marque</div>
+<div class="paragraph">
+<p>Ryan Dahl, alors développeur actif de Node, annonce le dépôt de marque par l&#8217;entreprise Joyent sur le blog officiel du projet Node.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="URL"><a href="https://nodejs.org/en/blog/uncategorized/trademark/" class="bare">nodejs.org/en/blog/uncategorized/trademark/</a></span></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="npm">6.2. npm</h3>
+<div class="paragraph">
+<p><em>npm</em> est une dénomination qui abrite plusieurs concepts&#160;: un <strong>outil en ligne de commande</strong>, un <strong>registre de modules</strong> ainsi qu&#8217;une <strong>entreprise privée</strong> à but lucratif (<a href="#npm-inc">npm, Inc</a>).</p>
+</div>
+<div class="paragraph">
+<p><em>npm</em> est originellement un module Node créé par Isaacs Schlueter.
+Ce module permet d&#8217;installer des modules tiers et de les lier sous forme d&#8217;un arbre de dépendances.
+Il est l’équivalent de <em>Rubygems</em> (<span class="URL"><a href="https://rubygems.org/" class="bare">rubygems.org/</a></span>) pour Ruby, de <em>CPAN</em> (<span class="URL"><a href="http://www.cpan.org/" class="bare">www.cpan.org/</a></span>) pour Perl ou encore de <em>pypi</em> (<span class="URL"><a href="https://pypi.python.org/pypi" class="bare">pypi.python.org/pypi</a></span>) pour Python.</p>
+</div>
+<div class="paragraph">
+<p>Nous reviendrons plus en détail sur son utilisation dans le <a href="../chapter-05/index.html">chapitre 5 <em>Utiliser des modules tiers</em></a>.</p>
+</div>
+<div class="paragraph">
+<p><em>npm</em> désigne également le <em>registre</em> principal qui héberge les modules des communautés Node&#160;: <span class="URL"><a href="https://www.npmjs.com/" class="bare">www.npmjs.com/</a></span>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Lien</span> Annonce de l’inclusion de <em>npm</em> dans Node</div>
+<div class="paragraph">
+<p><em>npm</em> est installé par défaut avec Node depuis la version 0.6.3, sortie en novembre 2011.
+Auparavant, il fallait installer le module <em>npm</em> séparément.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="URL"><a href="https://nodejs.org/en/blog/release/v0.6.3/" class="bare">nodejs.org/en/blog/release/v0.6.3/</a></span></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="npm-inc">6.3. npm, Inc.</h3>
+<div class="paragraph">
+<p>Isaacs Schlueter a été embauché par Joyent en septembre 2010.
+Il a succédé à Ryan Dahl dans la gestion du projet Node de
+janvier 2012 jusqu’à janvier 2014.</p>
+</div>
+<div class="paragraph">
+<p><em>npm, Inc</em> est une entreprise privée américaine fondée en janvier 2014 par Isaacs Schlueter, directement après son départ de Joyent.
+Le but de <em>npm, Inc</em> est de fournir des solutions professionnelles basées sur <em>npm</em>.
+L&#8217;entreprise souhaite en parallèle soutenir l’effort open source
+et les coûts d’infrastructure du registre <em>npm</em>.</p>
+</div>
+<div class="paragraph">
+<p>Elle lève 2,6 millions de dollars en février 2014 pour élaborer une nouvelle architecture du registre <em>npm</em>.
+Ce financement a également pour vocation la mise en place d&#8217;une stratégie commerciale basée sur les modules privés et les solutions professionnelles.</p>
+</div>
+<div class="paragraph">
+<p>La société <em>npm, Inc</em> détient la marque <em>npm</em>, <em>npm, Inc</em> et le <em>logo npm</em>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/logo-npm.png" alt="logo npm" width="40%">
+</div>
+<div class="title">Figure 3. Logo officiel de npm, Inc.</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="iojs">6.4. io.js</h3>
+<div class="paragraph">
+<p><em>io.js</em> est un <em>fork</em> de Node initié par la communauté Node en décembre 2014.
+La raison&#160;? La main-mise de Joyent sur les développements et la communication erratique du projet.</p>
+</div>
+<div class="paragraph">
+<p>Les objectifs initiaux du projet <em>io.js</em> sont doubles&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>offrir à la communauté Node une gestion transparente, inclusive et ouverte&#160;;</p>
+</li>
+<li>
+<p>fournir un environnement technique plus moderne, une version de v8 plus récente ainsi qu&#8217;une intégration rapide des nouvelles fonctionnalités ECMAScript.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Le projet <em>io.js</em> connait une fin heureuse en 2015&#160;:
+les efforts du projet et de sa communauté auront abouti à
+la création de la <a href="#node-foundation">Node.js Foundation</a> et
+du <em>Node.js Advisory Board</em>, respectivement l&#8217;organe
+de gestion du projet et le groupe d&#8217;individus en charge
+de la gestion du projet Node.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Lien</span> Clap de fin</div>
+<div class="paragraph">
+<p>L&#8217;annonce de la sortie de Node v4 et de la création de la <em>Node.js Foundation</em>
+est consultable à cette adresse&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="URL"><a href="https://nodejs.org/en/blog/announcements/foundation-v4-announce/" class="bare">nodejs.org/en/blog/announcements/foundation-v4-announce/</a></span></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="node-foundation">6.5. Node.js Foundation</h3>
+<div class="paragraph">
+<p>La <em>Node.js Foundation</em> est l&#8217;un des organes officiels de gouvernance du projet Node depuis juin 2015.
+Cette fondation est une organisation à but non lucratif.
+Elle fait elle-même partie de la <a href="http://collabprojects.linuxfoundation.org/">Linux Foundation</a>, au même titre que des projets comme <em>Open Container</em>, <em>Let&#8217;s Encrypt</em> ou <em>Xen</em>.</p>
+</div>
+<div class="paragraph">
+<p>La tâche première de la fondation a été d&#8217;opérer la fusion entre la base de code de <em>Node</em> et d'<a href="#iojs">io.js</a> en septembre 2015.
+Cela donne lieu à la sortie de Node v4.0.0.</p>
+</div>
+<div class="paragraph">
+<p>La fondation fait partie intégrante de la <a href="#governance">gouvernance du projet Node</a>.</p>
+</div>
+<div class="paragraph">
+<p><span class="URL"><a href="https://foundation.nodejs.org" class="bare">foundation.nodejs.org</a></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nodejitsu">6.6. Nodejitsu</h3>
+<div class="paragraph">
+<p><em>Nodejitsu</em> est une entreprise privée américaine fondée en 2010.
+Elle vise à fournir des solutions professionnelles autour de Node en tant que <em>Platform as a Service</em> (<em>PaaS</em>) ainsi qu&#8217;avec des dépôts <em>npm</em> privés.<br>
+Son activité en fait un concurrent direct de <a href="#joyent">Joyent</a> et de <a href="#npm-inc">npm, Inc.</a>.</p>
+</div>
+<div class="paragraph">
+<p><em>Nodejitsu</em> démontre un investissement fort dans la communauté Node en contribuant à plusieurs centaines de modules.
+La société prend en charge l&#8217;hébergement du registre <em>npm</em> de 2010 jusqu&#8217;en décembre 2013.</p>
+</div>
+<div class="paragraph">
+<p>En 2013, <em>Nodejitsu</em> lance l&#8217;initiative controversée <a href="#scalenpm">scalenpm</a> (voir l&#8217;encadré ci-après).
+Elle vise à collecter des fonds pour améliorer la performance
+et la stabilité du <em>registre npm</em> (<span class="URL"><a href="https://www.npmjs.com/" class="bare">www.npmjs.com/</a></span>).<br>
+<em>Nodejitsu</em> attise les tensions avec la compagnie <em>npm, Inc.</em>
+en tentant de lui couper l&#8217;herbe sous le pied.
+Ce ne sera pas un succès.</p>
+</div>
+<div class="paragraph">
+<p>En février 2015, la société américaine <em>GoDaddy</em> rachète <em>Nodejitsu</em>,
+absorbe son équipe et met fin à ses activités commerciales.</p>
+</div>
+<div id="scalenpm" class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Lien</span> La controverse <em>#scalenpm</em></div>
+<div class="paragraph">
+<p>L&#8217;initiative <em>#scalenpm</em> a réuni quelque 326 000 $ auprès
+d&#8217;entreprises privées et de la communauté Node.</p>
+</div>
+<div class="paragraph">
+<p>Son effort se poursuit dans le but de fournir une meilleure instrumentation et
+une architecture résistant à la montée en puissance de l&#8217;utilisation des modules <em>npm</em>.</p>
+</div>
+<div class="paragraph">
+<p>Cette initiative a suscité une controverse dans la mesure où l’opération s’est
+déroulée lors de la naissance de <em>npm, Inc</em> et du dépôt de marque associé mais
+sans entente apparente entre les deux parties.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="URL"><a href="http://web.archive.org/web/20160506191542/https://scalenpm.nodejitsu.com/" class="bare">web.archive.org/web/20160506191542/https://scalenpm.nodejitsu.com/</a></span></p>
+</li>
+<li>
+<p><span class="URL"><a href="https://twitter.com/hashtag/scalenpm" class="bare">twitter.com/hashtag/scalenpm</a></span></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="node_security_platform">6.7. Node Security Platform</h3>
+<div class="paragraph">
+<p>Le <em>Node Security Platform</em> (<span class="URL"><a href="https://nodesecurity.io/" class="bare">nodesecurity.io/</a></span>&#160;— anciennement <em>Node Security Project</em>) est un projet à but lucratif soutenu par la société américaine <em>&amp;yet</em> (<span class="URL"><a href="https://andyet.com/" class="bare">andyet.com/</a></span>).
+Il a été initié au début de l&#8217;année 2013.</p>
+</div>
+<div class="paragraph">
+<p>Son but est triple&#160;:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>auditer la sécurité de tous les modules npm&#160;;</p>
+</li>
+<li>
+<p>communiquer les failles auprès des auteurs de modules&#160;;</p>
+</li>
+<li>
+<p>permettre à quiconque de savoir si un module donné dépend de modules vulnérables.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Le projet met à disposition des <em>services</em> et des <em>modules</em>
+tout en cherchant à impliquer la communauté Node dans le processus.
+Cela concerne aussi bien la déclaration des vulnérabilités
+que leur résolution ou l&#8217;éducation des développeurs à la sécurité.</p>
+</div>
+<div class="paragraph">
+<p>Nous aborderons le sujet de la sécurité tout au long de cet ouvrage&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>au <a href="../chapter-04/index.html#security">Chapitre 4</a>&#160;: mettre à jour Node en cas de failles de sécurité&#160;;</p>
+</li>
+<li>
+<p>au <a href="../chapter-06/index.html#security">Chapitre 6</a>&#160;: surveiller la santé d&#8217;une application en production&#160;;</p>
+</li>
+<li>
+<p>au <a href="../chapter-07/index.html#security">Chapitre 7</a>&#160;: identifier les opérations à risques dans une application web.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="governance">7. Gouvernance du projet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Node a connu une <strong>forte croissance depuis 2012</strong>.
+La gouvernance du projet open source a été effectuée
+par la <a href="#joyent">société Joyent</a>.
+Ses agissements et la direction donnée au projet ont régulièrement
+fait grincer des dents.
+Notamment en entretenant un climat d&#8217;incertitude sur
+la pérennité à long terme, si Node venait à ne plus
+répondre aux intérêts commerciaux de <em>Joyent</em>.</p>
+</div>
+<div class="paragraph">
+<p>Des voix se sont élevées pour critiquer l&#8217;absence d&#8217;une
+organisation ouverte, commercialement neutre et
+ouverte aux contributeurs externes.
+Cela a mené à la création d&#8217;un <em>fork</em> de Node&#160;: <a href="#iojs">io.js</a>.</p>
+</div>
+<div class="paragraph">
+<p>La réconciliation entre le projet Node et <em>io.js</em> a sérieusement assaini
+les rapports de gouvernance.
+Cela a également apporté une direction et des opportunités plus claires
+de contribuer à la direction du projet.</p>
+</div>
+<div class="paragraph">
+<p>Depuis juin 2015, la gérance du projet est garantie par plusieurs entités&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>le <em>Technical Steering Committee</em> (TSC)&#160;: planning, décisions techniques, direction du projet, documentation et qualité du projet&#160;;</p>
+</li>
+<li>
+<p>le <em><a href="#node-foundation">Node.js Foundation</a> Board</em>&#160;: évangélisation, relations commerciales&#160;;</p>
+</li>
+<li>
+<p>le <em><a href="#node-foundation">Node.js Foundation</a> Community Committee</em> (CommComm)&#160;: relation avec la communauté, <em>onboarding</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Le <em>Technical Steering Committee</em> réfère ses intentions d&#8217;actions
+au <em>Board</em>.
+Son fonctionnement est régi par une charte co-signée avec le <em>Board</em>.
+Ce comité est composé de contributeurs et de collaborateurs individuels.</p>
+</div>
+<div class="paragraph">
+<p><span class="URL"><a href="https://github.com/nodejs/TSC" class="bare">github.com/nodejs/TSC</a></span></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Anecdote</span> Une fois n&#8217;est pas coutume</div>
+<div class="paragraph">
+<p>Le <em>Technical Steering Committee</em> était autrefois dissocié d&#8217;une autre entité, le <em>Core Technical Committee</em>.
+Les conflits de gouvernance ayant résulté dans la création du <a href="#ayojs">fork ayo.js</a> ont mené à la fusion des deux comités.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;objectif recherché était de rapprocher gouvernance et décisions techniques
+tout en réduisant les opportunités d&#8217;abus de pouvoir par les membres
+techniques éminents.</p>
+</div>
+<div class="paragraph">
+<p><span class="URL"><a href="https://github.com/nodejs/CTC" class="bare">github.com/nodejs/CTC</a></span></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>À l&#8217;inverse, le <em>Board</em> géré par la <a href="#node-foundation">Node.js Foundation</a> est composé essentiellement d&#8217;acteurs de l&#8217;industrie&#160;— dont Google,
+IBM, Joyent et PayPal.
+Certains membres émérites ou choisis par le <em>Board</em> sont des individus
+agissant en leur nom propre.</p>
+</div>
+<div class="paragraph">
+<p><span class="URL"><a href="https://github.com/nodejs/board" class="bare">github.com/nodejs/board</a></span></p>
+</div>
+<div class="paragraph">
+<p>Les participant·e·s du <em>Technical Steering Committee</em> ont une obligation
+de régularité, de présence et de vote aux différents rendez-vous
+organisés par le comité.<br>
+Ce mécanisme a été choisi afin de préserver la vitalité du projet.</p>
+</div>
+<div class="paragraph">
+<p>Un quota d&#8217;appartenance à une même entreprise a été mis en place
+pour maintenir une diversité de représentation.
+Dans une moindre mesure, ce mécanisme vise à réduire les possibles conflits
+d&#8217;intérêt ou une prise en otage du projet Node comme a pu le faire
+<a href="#joyent">Joyent</a> avant l&#8217;apparition de ce modèle de gouvernance.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">💡</div>
+</td>
+<td class="content">
+<div class="title"><span class="RemarquePreTitre">Liens</span> Documentation</div>
+<div class="paragraph">
+<p>Les documents clés régissant le fonctionnement du projet Node
+sont répartis dans les dépôts GitHub des différents acteurs&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="URL"><a href="https://github.com/nodejs/node/blob/master/GOVERNANCE.md" class="bare">github.com/nodejs/node/blob/master/GOVERNANCE.md</a></span></p>
+</li>
+<li>
+<p><span class="URL"><a href="https://github.com/nodejs/TSC/blob/master/TSC-Charter.md" class="bare">github.com/nodejs/TSC/blob/master/TSC-Charter.md</a></span></p>
+</li>
+<li>
+<p><span class="URL"><a href="https://github.com/nodejs/admin/blob/master/CODE_OF_CONDUCT.md" class="bare">github.com/nodejs/admin/blob/master/CODE_OF_CONDUCT.md</a></span></p>
+</li>
+<li>
+<p><span class="URL"><a href="https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md" class="bare">github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md</a></span></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conclusion">8. Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nous venons d&#8217;en apprendre davantage sur les <strong>origines de Node</strong>, les différentes parties prenantes dans son développement mais aussi sa <strong>philosophie</strong>&#160;— de <em>conception</em>, de <em>distribution</em> et d'<em>évolution</em>.</p>
+</div>
+<div class="paragraph">
+<p>Nous allons voir dans le prochain chapitre comment installer un environnement fonctionnel pour développer et exécuter des programmes Node.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Dernière mise à jour 2018-06-13 15:44:45 Coordinated Universal Time
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlighting()</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "nodebook.chapter-03",
+  "private": true,
+  "version": "1.0.0",
+  "main": "./examples/index.js",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "^10.0.0"
+  },
+  "author": "Thomas Parisot (https://oncletom.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oncletom/nodebook/issues"
+  },
+  "homepage": "https://github.com/oncletom/nodebook",
+  "dependencies": {}
+}

@@ -1,0 +1,108 @@
+{
+  "name": "nodebook",
+  "version": "0.10.0",
+  "description": "Apprendre Node.js par l'exemple • Devenez autonome avec JavaScript, l'écosystème npm, le développement frontend, les applications web et en ligne de commande.",
+  "bin": {
+    "nodebook": "./bin/cli.js"
+  },
+  "main": "server.js",
+  "scripts": {
+    "build:html": "node bin/build.js html5 .html index.adoc chapter-*/index.adoc foreword/*.adoc appendix-*/*.adoc",
+    "build:docbook": "node bin/build.js docbook5 .xml book.adoc",
+    "build:odt": "node bin/build.js odt .fodt book.adoc",
+    "install:all": "./bin/cli.js install all",
+    "lint": "eslint '**/*.js'",
+    "prestart": "npm run build:html",
+    "start": "node server.js",
+    "test": "tape 'tests/*.js' | tap-spec",
+    "test:docker": "docker run -ti --rm -v $(pwd):/tests -e CI=1 -w /tests node:${npm_package_engines_node}-slim npm test",
+    "posttest": "npm run lint"
+  },
+  "engines": {
+    "node": "10",
+    "npm": "6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oncletom/nodebook.git"
+  },
+  "keywords": [
+    "nodejs",
+    "book",
+    "french",
+    "livre",
+    "learn",
+    "apprendre"
+  ],
+  "author": "Thomas Parisot (https://oncletom.io)",
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/oncletom/nodebook/issues"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": false,
+    "singleQuote": true
+  },
+  "homepage": "https://oncletom.io/node.js/",
+  "dependencies": {
+    "finalhandler": "^1.1.1",
+    "get-port": "^3.2.0",
+    "glob": "^7.1.2",
+    "serve-static": "^1.13.2",
+    "update-check": "^1.5.2",
+    "yargs": "^11.1.0"
+  },
+  "devDependencies": {
+    "asciidoctor-converter-opendocument": "^1.0.0-alpha.1",
+    "asciidoctor-docbook.js": "^1.5.6-rc.1",
+    "asciidoctor-extension-interactive-runner": "^1.2.1",
+    "asciidoctor.js": "^1.5.6",
+    "blue-tape": "^1.0.0",
+    "chokidar": "^2.0.3",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.9.1",
+    "ora": "^2.1.0",
+    "tap-spec": "^5.0.0",
+    "tape-spawn": "^1.4.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "jsx": true
+      }
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "env": {
+      "es6": true,
+      "node": true,
+      "commonjs": true
+    },
+    "rules": {
+      "callback-return": 2,
+      "curly": 2,
+      "eqeqeq": 2,
+      "global-require": 2,
+      "handle-callback-err": 2,
+      "no-console": 0,
+      "no-path-concat": 1,
+      "no-sync": 1,
+      "no-undef": 2,
+      "no-unused-vars": 1,
+      "no-use-before-define": 1,
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "strict": [
+        2,
+        "global"
+      ]
+    }
+  }
+}
